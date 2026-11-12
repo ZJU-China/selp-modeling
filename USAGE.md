@@ -2,14 +2,14 @@
 
 ## Review the 2KY5 worked example
 
-Open the [2KY5 log directory](website/2KY5/logs/) directly on GitHub. The files are organized by stage:
+Open the [2KY5 log directory](methods-and-data/2KY5/logs/) directly on GitHub. The files are organized by stage:
 
 | Stage | Records |
 | --- | --- |
-| All-atom preparation | [Seven NAMD preparation logs](website/2KY5/logs/preparation_logs/) |
-| Coarse-grained box preparation | [Chain packing](website/2KY5/logs/packing.log) and [energy minimization](website/2KY5/logs/em_bounded.log) |
-| Network sampling | GROMACS output for the 4 ns endpoint segments of [branch A](website/2KY5/logs/A_4000_mdrun.out), [branch B](website/2KY5/logs/B_4000_mdrun.out), and [branch C](website/2KY5/logs/C_4000_mdrun.out) |
-| Sampling checks | [Thermodynamics and crosslink-distance XVG files](website/2KY5/logs/sampling/) for the 500 ps segments from 2 to 4 ns |
+| All-atom preparation | [Seven NAMD preparation logs](methods-and-data/2KY5/logs/preparation_logs/) |
+| Coarse-grained box preparation | [Chain packing](methods-and-data/2KY5/logs/packing.log) and [energy minimization](methods-and-data/2KY5/logs/em_bounded.log) |
+| Network sampling | GROMACS output for the 4 ns endpoint segments of [branch A](methods-and-data/2KY5/logs/A_4000_mdrun.out), [branch B](methods-and-data/2KY5/logs/B_4000_mdrun.out), and [branch C](methods-and-data/2KY5/logs/C_4000_mdrun.out) |
+| Sampling checks | [Thermodynamics and crosslink-distance XVG files](methods-and-data/2KY5/logs/sampling/) for the 500 ps segments from 2 to 4 ns |
 
 GitHub can show the text logs directly. Open the raw file to download it. The public copies use generic host addresses and local paths where applicable.
 
@@ -18,10 +18,10 @@ GitHub can show the text logs directly. Open the raw file to download it. The pu
 With Python 3 installed, run this command from the repository root:
 
 ```bash
-python3 -m http.server 8000 --bind 127.0.0.1 --directory website
+python3 -m http.server 8000 --bind 127.0.0.1 --directory methods-and-data
 ```
 
-Open [http://127.0.0.1:8000/](http://127.0.0.1:8000/). The page walks through sequence preparation, all-atom sampling, coarse-graining, box setup, crosslinking, network relaxation, and elastic modulus calculation. The [protocol directory](website/2KY5/) contains the corresponding scripts and configurations.
+Open [http://127.0.0.1:8000/](http://127.0.0.1:8000/). The page walks through sequence preparation, all-atom sampling, coarse-graining, box setup, crosslinking, network relaxation, and elastic modulus calculation. The [protocol directory](methods-and-data/2KY5/) contains the corresponding scripts and configurations.
 
 ## Work with the platform source
 
