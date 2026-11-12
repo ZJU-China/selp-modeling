@@ -8,7 +8,7 @@ The workflow starts from a protein sequence, samples single-chain conformations 
 | --- | --- |
 | [Usage guide](USAGE.md) | How to review the method and preview the website |
 | [Modeling Methods and Data](methods-and-data/) | Step-by-step method page and 2KY5 files |
-| [2KY5 simulation logs](methods-and-data/logs/) | All-atom preparation, packing, minimization, and A/B/C network sampling |
+| [2KY5 simulation logs](methods-and-data/logs/) | All-atom preparation and TIGER2 production, packing, minimization, and A/B/C network sampling |
 | [2KY5 protocols and configurations](methods-and-data/protocols/) | NAMD and GROMACS inputs, network construction, and static analysis scripts |
 | [Monitoring platform](monitoring-platform/) | FAMD monitoring, workflow interface, figure service, and deployment configuration |
 | [Platform source](monitoring-platform/platform-source/) | Frontend, backend, and modeling tools |

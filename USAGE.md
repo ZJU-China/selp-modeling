@@ -7,11 +7,14 @@ Open the [2KY5 log directory](methods-and-data/logs/) directly on GitHub. The fi
 | Stage | Records |
 | --- | --- |
 | All-atom preparation | [Seven NAMD preparation logs](methods-and-data/logs/preparation_logs/) |
+| All-atom production (TIGER2) | [Four NAMD logs and four exchange histories](methods-and-data/logs/production_logs/) |
 | Coarse-grained box preparation | [Chain packing](methods-and-data/logs/packing.log) and [energy minimization](methods-and-data/logs/em_bounded.log) |
 | Network sampling | GROMACS output for the 4 ns endpoint segments of [branch A](methods-and-data/logs/A_4000_mdrun.out), [branch B](methods-and-data/logs/B_4000_mdrun.out), and [branch C](methods-and-data/logs/C_4000_mdrun.out) |
 | Sampling checks | [Thermodynamics and crosslink-distance XVG files](methods-and-data/logs/sampling/) for the 500 ps segments from 2 to 4 ns |
 
 GitHub can show the text logs directly. Open the raw file to download it. The public copies use generic host addresses and local paths where applicable.
+
+Each TIGER2 production log and exchange history reaches step 25,005,000 (100.02 ns at 4 fs). The replica 3 log records the final output writes and ends before NAMD's usual end-of-program line. Each exchange history has 1,667 entries. The full production logs are about 22 MB each. Open the raw text for [replica 0](https://raw.githubusercontent.com/ZJU-China/selp-modeling/main/methods-and-data/logs/production_logs/replica-0.log), [replica 1](https://raw.githubusercontent.com/ZJU-China/selp-modeling/main/methods-and-data/logs/production_logs/replica-1.log), [replica 2](https://raw.githubusercontent.com/ZJU-China/selp-modeling/main/methods-and-data/logs/production_logs/replica-2.log), [replica 3](https://raw.githubusercontent.com/ZJU-China/selp-modeling/main/methods-and-data/logs/production_logs/replica-3.log).
 
 ## Preview the method page
 
