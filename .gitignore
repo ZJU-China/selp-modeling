@@ -11,10 +11,10 @@ venv/
 !.env.example
 *.pem
 *.key
-/platform-source/backend/servers.json
-/platform-source/backend/llm.json
-/platform-source/backend/tasks.json
-/platform-source/backend/flows.json
-/platform-source/backend/guard-state.json
-/platform-source/backend/tasks/
-/platform-source/backend/flows/
+/monitoring-platform/platform-source/backend/servers.json
+/monitoring-platform/platform-source/backend/llm.json
+/monitoring-platform/platform-source/backend/tasks.json
+/monitoring-platform/platform-source/backend/flows.json
+/monitoring-platform/platform-source/backend/guard-state.json
+/monitoring-platform/platform-source/backend/tasks/
+/monitoring-platform/platform-source/backend/flows/

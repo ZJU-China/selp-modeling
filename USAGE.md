@@ -23,11 +23,13 @@ python3 -m http.server 8000 --bind 127.0.0.1 --directory methods-and-data
 
 Open [http://127.0.0.1:8000/](http://127.0.0.1:8000/). The page walks through sequence preparation, all-atom sampling, coarse-graining, box setup, crosslinking, network relaxation, and elastic modulus calculation. The [protocol directory](methods-and-data/2KY5/) contains the corresponding scripts and configurations.
 
-## Work with the platform source
+## Work with the monitoring platform
 
-- [platform-source/frontend/](platform-source/frontend/) contains the frontend. Run `npm ci` and `npm run dev` from that directory to start its development server.
-- [platform-source/backend/](platform-source/backend/) contains the API and workflow services. [flows-app/](flows-app/) contains a snapshot of the deployed flow interface.
-- [figure-service/](figure-service/) contains the figure rendering code. Configure local task data paths in `tasks.json` before using the service.
-- [deployment/](deployment/) contains configuration examples. Adjust file paths, service accounts, and listener addresses for your environment.
+The [monitoring platform](monitoring-platform/) groups the following components.
+
+- [platform-source/frontend/](monitoring-platform/platform-source/frontend/) contains the frontend. Run `npm ci` and `npm run dev` from that directory to start its development server.
+- [platform-source/backend/](monitoring-platform/platform-source/backend/) contains the API and workflow services. [flows-app/](monitoring-platform/flows-app/) contains a snapshot of the deployed flow interface.
+- [figure-service/](monitoring-platform/figure-service/) contains the figure rendering code. Configure local task data paths in `tasks.json` before using the service.
+- [deployment/](monitoring-platform/deployment/) contains configuration examples. Adjust file paths, service accounts, and listener addresses for your environment.
 
 The static preview requires no simulation software. Running the modeling workflows requires the appropriate scientific tools, compatible input structures and force-field files, and locally configured task paths. The public review files include 2KY5 logs as their only run data.

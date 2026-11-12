@@ -10,7 +10,8 @@ The workflow starts from a protein sequence, samples single-chain conformations 
 | [Modeling Methods and Data](methods-and-data/) | Step-by-step method page and 2KY5 files |
 | [2KY5 simulation logs](methods-and-data/2KY5/logs/) | All-atom preparation, packing, minimization, and A/B/C network sampling |
 | [2KY5 protocols and configurations](methods-and-data/2KY5/) | NAMD and GROMACS inputs, network construction, and static analysis scripts |
-| [Platform source](platform-source/) | Frontend, backend, and modeling tools |
-| [Figure service](figure-service/) | Source code for rendering plots from locally configured task data |
+| [Monitoring platform](monitoring-platform/) | FAMD monitoring, workflow interface, figure service, and deployment configuration |
+| [Platform source](monitoring-platform/platform-source/) | Frontend, backend, and modeling tools |
+| [Figure service](monitoring-platform/figure-service/) | Source code for rendering plots from locally configured task data |
 
 [SHA256_manifest.json](SHA256_manifest.json) records the checksums of the files in this snapshot.
