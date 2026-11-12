@@ -1,0 +1,40 @@
+{
+  "_comment": "Default scaffold for a new GROMACS CG task's scripts/task_config.json. Written once by the quick-create channel (backend/services/task-dir.js scaffoldTaskConfig, called from POST /api/tasks/create) and never overwritten afterwards, so hand edits here are permanent. Fields marked FILL-IN are placeholders the quick-create channel cannot know and a human must set. See backend/tasktype/gromacs_cg/lib/task_config.py for how every field is consumed, and docs/task-creation.md for the full workflow.",
+  "remoteDir": "FILL-IN: absolute remote path where this task's sample dirs live, e.g. /home/<user>/CG_2KY10/<name>",
+  "logPrefix": "gromacs_cg",
+  "defaults": {
+    "numReplicas": 1,
+    "stepsPerCycle": 500000,
+    "totalCycles": 10,
+    "protein": "FILL-IN: short protein/construct description shown on the Dashboard, e.g. '2KY10 SELP CG network (Martini 3.0.0)'",
+    "timestepFs": 20,
+    "forceField": "Martini 3.0.0",
+    "solvent": "CG water + ions (0.15 M NaCl)",
+    "hmrMass": 0,
+    "tempMin": 310,
+    "tempMax": 310
+  },
+  "gromacs": {
+    "mdlogName": "relax.log",
+    "mdpName": "relax_out.mdp",
+    "batchMdp": null,
+    "plannedNs": 10,
+    "sampleGlobs": [
+      "FILL-IN: remote glob(s) for this task's per-sample output dirs, relative to remoteDir, e.g. 'shear/*'"
+    ],
+    "outputFiles": ["relax.xtc", "relax.gro", "deformed.gro", "relax.tpr", "relax.edr", "relax.cpt"]
+  },
+  "slurm": {
+    "user": "FILL-IN: remote SLURM username (for scancel on stop)",
+    "jobPrefix": "FILL-IN: SLURM job name prefix used by this task's sbatch scripts"
+  },
+  "process": {
+    "psPattern": "gmx_mpi mdrun|gmx mdrun|mdrun_mpi",
+    "pgrepPattern": "gmx.*mdrun",
+    "freshnessMinutes": 5
+  },
+  "modulus": {
+    "temperatureK": 310,
+    "volumeNm3": null
+  }
+}

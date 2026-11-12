@@ -1,0 +1,394 @@
+/* Flow-centric UI: progress bar, step cards, parameter panels, results grid.
+   Reuses the original app's token layer (colors.css / variables.css), so this
+   file only adds layout for the new structures and never redefines a token. */
+
+/* ---------------------------------------------------------------- header */
+.header-right { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+.header-brand { text-decoration: none; }
+
+/* ---------------------------------------------------------------- buttons */
+.btn {
+  font: inherit;
+  font-size: 13px;
+  padding: 7px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--divider-soft);
+  background: var(--surface-card);
+  color: var(--body);
+  cursor: pointer;
+  transition: background .12s, border-color .12s;
+}
+.btn:hover:not(:disabled) { background: var(--surface-elevated); border-color: var(--primary); }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.btn-sm { padding: 5px 11px; font-size: 12px; }
+.btn-active { border-color: var(--primary); color: var(--primary); font-weight: 600; }
+.btn-danger { border-color: var(--danger); color: var(--danger); }
+.btn-primary {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+}
+.btn-primary:hover:not(:disabled) { background: var(--primary); filter: brightness(1.08); }
+
+/* ------------------------------------------- editable parameters (flow_tiger2) */
+.flow-panel-meta { font-size: 12px; color: var(--body-muted); }
+
+.flow-form { display: flex; flex-direction: column; gap: 12px; margin: 10px 0 4px; }
+.flow-form-field { display: flex; flex-direction: column; gap: 4px; }
+.flow-form-label { font-size: 12px; font-weight: 600; color: var(--body); }
+.flow-form-hint { font-size: 11px; color: var(--body-muted); line-height: 1.4; }
+.flow-form-unit { color: var(--body-muted); font-weight: 400; }
+
+.flow-input {
+  font: inherit;
+  font-size: 13px;
+  width: 100%;
+  padding: 6px 9px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--divider-soft);
+  background: var(--surface-card);
+  color: var(--body);
+}
+.flow-input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+.flow-textarea { font-family: var(--font-mono); resize: vertical; }
+.flow-input-sm { padding: 4px 7px; font-size: 12px; }
+.flow-input-mono { font-family: var(--font-mono); }
+
+.flow-edit-table input[type="color"].flow-color-input {
+  width: 26px;
+  height: 24px;
+  padding: 1px;
+  border: 1px solid var(--divider-soft);
+  border-radius: var(--radius-sm);
+  background: none;
+  cursor: pointer;
+}
+.flow-color-cell { display: flex; align-items: center; gap: 6px; }
+.flow-color-cell .flow-input { width: 88px; }
+
+.flow-num { text-align: center; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.flow-warn-inline { color: var(--danger); font-weight: 600; cursor: help; }
+
+.flow-form-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--divider-soft);
+}
+
+.flow-derive-row { display: flex; gap: 8px; align-items: center; }
+.flow-derive-row .flow-input { flex: 1; min-width: 0; }
+.flow-derive-chains { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0; }
+
+/* Uploaded input file slot. The label is a button, so the real file input is
+   hidden and kept at 1px rather than display:none, which would stop it being
+   focusable and clickable. */
+.flow-file-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 6px; }
+.flow-file-pick { position: relative; overflow: hidden; cursor: pointer; }
+.flow-file-pick.is-disabled { opacity: 0.5; pointer-events: none; }
+.flow-file-pick input[type="file"] {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.flow-file-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ------------------------------------------------------------- flow list */
+.flow-header-actions { display: flex; gap: 8px; }
+.flow-mini-bar {
+  height: 6px;
+  background: var(--divider-soft);
+  border-radius: 3px;
+  overflow: hidden;
+  min-width: 120px;
+}
+.flow-mini-fill { height: 100%; background: var(--primary); border-radius: 3px; }
+.flow-mini-label { font-size: 11px; color: var(--body-muted); }
+
+/* ----------------------------------------------------------- flow header */
+.flow-back-row {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 16px;
+}
+.flow-id { font-size: 11px; color: var(--body-muted); }
+.flow-hero-badges {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  justify-content: center; margin-top: 14px;
+}
+.flow-steps-host { display: flex; flex-direction: column; gap: 10px; }
+.flow-step-count {
+  font-size: 12px; color: var(--body-muted);
+  background: var(--divider-soft); border-radius: 999px; padding: 2px 10px;
+}
+
+/* ------------------------------------------------------- progress bar card */
+.flow-progress-summary {
+  display: grid;
+  grid-template-columns: 140px 140px 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.flow-progress-metric { display: flex; flex-direction: column; gap: 2px; }
+.flow-progress-current .stat-value-sm {
+  font-size: 15px; font-weight: 600; line-height: 1.3;
+  word-break: break-word;
+}
+
+.flow-progress-track {
+  position: relative;
+  height: 8px;
+  background: var(--divider-soft);
+  border-radius: 4px;
+  margin: 0 8px 26px;
+}
+.flow-progress-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 4px;
+  transition: width .3s ease;
+}
+.flow-progress-node {
+  position: absolute;
+  top: 50%;
+  width: 14px; height: 14px;
+  margin-left: -7px; margin-top: -7px;
+  border-radius: 50%;
+  background: var(--surface-card);
+  border: 2px solid var(--divider-soft);
+}
+.flow-node-done { background: var(--success); border-color: var(--success); }
+.flow-node-running { background: var(--info); border-color: var(--info); }
+.flow-node-failed { background: var(--danger); border-color: var(--danger); }
+.flow-node-pending { background: var(--surface-card); border-color: var(--divider-soft); }
+.flow-progress-node.is-current {
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--info) 25%, transparent);
+  transform: scale(1.15);
+}
+
+.flow-step-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.flow-step {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+}
+.flow-step.is-current { background: var(--surface-elevated); border-color: var(--info); }
+.flow-step.is-done { opacity: .72; }
+.flow-step-index {
+  width: 24px; height: 24px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: var(--divider-soft);
+  font-size: 12px; font-weight: 600;
+  color: var(--body-muted);
+}
+.flow-step-index.is-current { background: var(--info); color: #fff; }
+.flow-step-name { font-size: 13px; font-weight: 500; }
+.flow-step-type { font-size: 11px; color: var(--body-muted); }
+.flow-step-bar {
+  margin-top: 5px; height: 3px; background: var(--divider-soft);
+  border-radius: 2px; overflow: hidden; max-width: 320px;
+}
+.flow-step-bar-fill { height: 100%; background: var(--primary); }
+
+/* ------------------------------------------------- the four flow blocks */
+/* Dashboard / Parameters / Results / Control are four top-level sections, not
+   columns: each aggregates across every step of the flow. */
+.flow-block {
+  padding: 18px 20px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface-card);
+}
+
+.flow-block-tabs {
+  display: flex; flex-wrap: wrap; gap: 4px;
+  margin: 0 0 16px; padding: 5px;
+  border: 1px solid var(--hairline); border-radius: var(--radius-md);
+  background: var(--surface-card);
+}
+.flow-block-tab {
+  flex: 1 1 auto;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 9px 16px;
+  font: inherit; font-size: 14px;
+  border: 1px solid transparent; border-radius: var(--radius-sm);
+  background: transparent; color: var(--body-muted);
+  cursor: pointer;
+  transition: background .12s, color .12s;
+}
+.flow-block-tab:hover { background: var(--surface-elevated); color: var(--body); }
+.flow-block-tab.is-active {
+  background: var(--surface-elevated);
+  border-color: var(--primary);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+
+/* One task inside an aggregate section. */
+.flow-task-panel {
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface-card);
+  margin-bottom: 12px;
+}
+.flow-task-panel.is-open { border-color: var(--divider-soft); }
+.flow-task-panel-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 14px; cursor: pointer; user-select: none;
+}
+.flow-task-panel-head:hover { background: var(--surface-elevated); }
+.flow-task-panel-caret {
+  color: var(--body-muted); font-size: 11px;
+  transition: transform .15s; display: inline-block;
+}
+.flow-task-panel.is-open .flow-task-panel-caret { transform: rotate(90deg); }
+.flow-task-panel-name { font-size: 14px; font-weight: 600; }
+.flow-task-panel-type {
+  font-size: 11px; color: var(--body-muted);
+  padding: 2px 8px; border-radius: 999px; background: var(--divider-soft);
+}
+.flow-task-panel-summary {
+  margin-left: auto; font-size: 12px; color: var(--body-muted);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.flow-task-panel-body { padding: 0 14px 14px; }
+
+/* ------------------------------------------------------- parameter panels */
+.flow-panel {
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  background: var(--surface-card);
+}
+.flow-panel-head {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 8px; margin-bottom: 12px;
+}
+.flow-panel-title {
+  margin: 0; font-size: 12px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .05em; color: var(--body-muted);
+}
+.flow-tabs { border: none; }
+
+.flow-kv { margin: 0; display: flex; flex-direction: column; gap: 6px; }
+.flow-kv-row { display: grid; grid-template-columns: 42% 1fr; gap: 10px; align-items: baseline; }
+.flow-kv-row dt { font-size: 12px; color: var(--body-muted); }
+.flow-kv-row dd { margin: 0; font-size: 13px; word-break: break-word; }
+.flow-kv-tight { gap: 4px; }
+.flow-suffix { color: var(--body-muted); font-size: 12px; }
+.flow-none { color: var(--body-muted); font-style: italic; }
+
+.flow-subpanel { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--hairline); }
+.flow-subpanel-title {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--body-muted); margin-bottom: 8px;
+}
+.flow-subpanel-meta { display: block; text-transform: none; letter-spacing: 0; font-weight: 400; margin-top: 2px; }
+.flow-seq { font-size: 11px; word-break: break-all; }
+.flow-hex { font-size: 10px; color: var(--body-muted); }
+.flow-swatch {
+  display: inline-block; width: 11px; height: 11px;
+  border-radius: 3px; margin-right: 6px; vertical-align: -1px;
+  border: 1px solid var(--hairline);
+}
+.flow-plain-list { margin: 0; padding-left: 18px; font-size: 11px; }
+
+.flow-local-tag {
+  display: inline-block; margin-left: 8px; padding: 1px 7px;
+  border-radius: 999px; background: var(--info-soft);
+  color: var(--info-soft-fg); font-size: 10px; font-weight: 600;
+}
+
+/* -------------------------------------------------------------- messages */
+.flow-note {
+  margin-top: 10px; padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 12px; line-height: 1.5;
+  border-left: 3px solid var(--divider-soft);
+  background: var(--surface-elevated);
+  color: var(--body-muted);
+}
+.flow-note code { font-size: 11px; word-break: break-all; }
+.flow-note-muted { border-left-color: var(--divider-soft); }
+.flow-note-warn { border-left-color: var(--warning); color: var(--body); }
+.flow-note-ok { border-left-color: var(--success); color: var(--body); }
+.flow-note-detail { margin-top: 5px; }
+
+/* --------------------------------------------------------------- results */
+.flow-chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 16px;
+}
+.flow-pre {
+  font-size: 11px; max-height: 420px; overflow: auto;
+  background: var(--surface-elevated); padding: 10px; border-radius: var(--radius-sm);
+}
+.flow-field-pane { display: flex; flex-direction: column; gap: 14px; }
+
+/* -------------------------------------------------------------- controls */
+.flow-control-rows { display: flex; flex-direction: column; gap: 10px; }
+.flow-control-row { display: grid; grid-template-columns: 52px 1fr; gap: 10px; align-items: center; }
+.flow-control-label {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--body-muted);
+}
+.flow-control-buttons { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* ------------------------------------------------------------------ */
+/* Execution panel: where a step runs and how its tools are invoked.   */
+/* Paths are long absolute strings, so these wrap rather than overflow */
+/* the panel.                                                          */
+/* ------------------------------------------------------------------ */
+.flow-exec-rows { display: flex; flex-direction: column; gap: 4px; padding: 8px 12px 12px; }
+.flow-exec-row { display: flex; gap: 10px; align-items: baseline; font-size: 0.82rem; }
+.flow-exec-label {
+  flex: 0 0 92px;
+  color: var(--body-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 0.68rem;
+}
+.flow-exec-value { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.flow-exec-value code { font-size: 0.75rem; }
+/* A configured command that does not resolve is the case worth noticing: it
+   is why a run fails later, for a reason invisible until then. */
+.flow-exec-bad { color: var(--danger); }
+.flow-exec-error { color: var(--danger); }
+.flow-exec-resolved { color: var(--body-muted); font-size: 0.72rem; }
+.flow-exec-mode {
+  font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;
+  padding: 2px 7px; border-radius: 999px; border: 1px solid currentColor;
+}
+.flow-exec-mode-local { color: var(--teal-500); }
+.flow-exec-mode-ssh { color: var(--blue-500); }
+.flow-exec-mode-unresolved { color: var(--red-500); }
+
+/* New-flow form */
+.flow-new-rows { display: flex; flex-direction: column; gap: 10px; padding: 10px 12px; }
+.flow-new-field { display: flex; flex-direction: column; gap: 4px; font-size: 0.8rem; }
+.flow-new-field > span { color: var(--body-muted); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.03em; }
+.flow-new-rows .input { width: 100%; padding: 6px 8px; }
+
+.flow-ref-card { margin-bottom: 28px; }
+.flow-ref-head { display: flex; align-items: baseline; gap: 10px; }
+.flow-ref-title { margin: 0; font-size: 16px; }
+.flow-ref-dir { margin: 6px 0 10px; font-size: 13px; color: var(--muted, #6e6e73); word-break: break-all; }
+.flow-ref-empty { font-size: 13px; color: var(--muted, #6e6e73); padding: 8px 0; }
+.flow-ref-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.flow-ref-table th, .flow-ref-table td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line, #e5e5e7); vertical-align: top; }
+.flow-ref-table th { font-weight: 600; color: var(--muted, #6e6e73); font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+.flow-ref-path { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; color: #6e6e73; word-break: break-all; }

@@ -1,0 +1,23 @@
+[Unit]
+Description=SELP modeling methods static website
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/selp/websites/selp-modeling
+ExecStartPre=/usr/sbin/nginx -t -q -p /home/selp/websites/selp-modeling/ -c conf/nginx.conf -e logs/error.log
+ExecStart=/usr/sbin/nginx -p /home/selp/websites/selp-modeling/ -c conf/nginx.conf -e logs/error.log -g "daemon off;"
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGQUIT
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=10
+Nice=10
+CPUQuota=20%
+MemoryMax=64M
+TasksMax=16
+LimitNOFILE=4096
+NoNewPrivileges=true
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,103 @@
+:root {
+  color-scheme: light;
+
+  /* Semantic theme tokens, mapped to the base library in colors.css. */
+  --primary: var(--blue-600);
+  --primary-focus: var(--blue-400);
+  --primary-on-dark: var(--blue-300);
+  --ink: var(--gray-900);
+  --body: var(--gray-900);
+  --body-muted: var(--gray-500);
+  --divider-soft: var(--gray-100);
+  --hairline: var(--gray-200);
+  --canvas: var(--white);
+  --canvas-parchment: var(--gray-50);
+  --surface-card: var(--white);
+  --surface-elevated: var(--gray-25);
+  --success: var(--green-500);
+  --warning: var(--orange-500);
+  --danger: var(--red-500);
+  --info: var(--cyan-500);
+
+  /* Chart + soft-context semantics */
+  --chart-grid: var(--gray-100);
+  --chart-text: var(--gray-600);
+  --success-soft: #dcfce7;
+  --success-soft-fg: #166534;
+  --success-soft-border: #bbf7d0;
+  --warning-soft: #fef3c7;
+  --warning-soft-fg: #92400e;
+  --warning-soft-border: #fde68a;
+  --danger-soft: #fee2e2;
+  --danger-soft-fg: #991b1b;
+  --danger-soft-border: #fecaca;
+  --info-soft: #dbeafe;
+  --info-soft-fg: #1e40af;
+  --info-soft-border: #bfdbfe;
+
+  --replica-0: var(--blue-500);
+  --replica-1: var(--orange-500);
+  --replica-2: var(--green-500);
+  --replica-3: var(--purple-500);
+
+  --temp-280: var(--blue-500);
+  --temp-315: var(--cyan-500);
+  --temp-355: var(--orange-500);
+  --temp-400: var(--red-500);
+
+  --font-display: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "SF Mono", "Fira Code", monospace;
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 48px;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+/* Dark theme. `data-theme` is always set to a resolved value by the theme
+   module (and by an inline script in index.html before first paint), so dark
+   tokens live in one place. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --ink: var(--gray-50);
+  --body: var(--gray-50);
+  --body-muted: var(--gray-400);
+  --divider-soft: var(--gray-800);
+  --hairline: var(--gray-850);
+  --canvas: var(--gray-950);
+  --canvas-parchment: var(--black);
+  --surface-card: var(--gray-950);
+  --surface-elevated: var(--gray-975);
+
+  --chart-grid: var(--gray-800);
+  --chart-text: var(--gray-400);
+  --success-soft: #14532d;
+  --success-soft-fg: #86efac;
+  --success-soft-border: #166534;
+  --warning-soft: #78350f;
+  --warning-soft-fg: #fcd34d;
+  --warning-soft-border: #92400e;
+  --danger-soft: #7f1d1d;
+  --danger-soft-fg: #fca5a5;
+  --danger-soft-border: #991b1b;
+  --info-soft: #1e3a8a;
+  --info-soft-fg: #93c5fd;
+  --info-soft-border: #1e40af;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.45);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.5);
+}

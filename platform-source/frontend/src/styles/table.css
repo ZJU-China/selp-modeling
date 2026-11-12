@@ -1,0 +1,26 @@
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.data-table th {
+  text-align: left;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--canvas-parchment);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--body-muted);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.data-table td {
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--divider-soft);
+}
+
+.data-table tr:hover td {
+  background: var(--canvas-parchment);
+}

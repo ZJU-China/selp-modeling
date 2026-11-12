@@ -1,0 +1,41 @@
+{
+  "_comment": "flow_magnetomech: magnetomech composite with an editable applied-field profile. Two volume fractions are editable on the Parameters panel -- the polymer and the nanoparticles -- and water is the remainder (1 - their sum), so it is never stored and cannot drift out of sync. Only the nanoparticles are magnetic, so every magnetic term uses phi_nanoparticle alone while the polymer fraction scales the loaded-sample stiffness. See code/magnetomech/ and backend/tasktype/flow_magnetomech/.",
+  "remoteDir": "FILL-IN: not used (local compute task)",
+  "logPrefix": "magnetomech",
+  "process": {
+    "psPattern": "magnetomech",
+    "pgrepPattern": "magnetomech",
+    "freshnessMinutes": 5
+  },
+  "magnetomech": {
+    "modulusMode": "affine",
+    "modulusKpa": null,
+    "modulusPath": null
+  },
+  "composite": {
+    "species": {
+      "polymer": {
+        "phi": 0.62
+      },
+      "nanoparticle": {
+        "phi": 0.05
+      }
+    }
+  },
+  "particle": {
+    "phi": 0.05,
+    "diameterNm": 10.0,
+    "saturationAperM": 480000.0
+  },
+  "field": {
+    "mode": "uniform",
+    "maxT": 0.6,
+    "heightMm": 10.0,
+    "nPoints": 201,
+    "gradientDeltaT": 0.2,
+    "csvPath": null
+  },
+  "temperatureK": 310.0,
+  "coupling": 0.25,
+  "demagFactor": 0.3333333333333333
+}

@@ -1,0 +1,323 @@
+###############################################
+#
+# TIGER2-NAMD:
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# 
+# If you make use of this program please cite:
+#    Brown, A.H, Walsh, T.R; Comp. Phys. Comm. 2014
+# 
+################################################
+
+replicaBarrier
+
+proc rselect {{num_reps} {rid_baseline}} {
+   set svar [expr int($num_reps * rand())]
+   while {$svar == $rid_baseline || $svar == $num_reps} {
+   	set svar [expr int($num_reps * rand())]
+   }
+   return $svar
+}
+
+set nr [numReplicas]
+if { $num_replicas != $nr } {
+    error "restart with wrong number of replicas"
+}
+set r [myReplica]
+set replica_id $r
+
+if {[info exists restart_name]} { #restart
+  set restart_tcl [format "$restart_name.$replica_id.tcl" $replica_id]
+  source $restart_tcl
+  set restart_name [format $restart_name $replica_id]
+} else {
+  set i_job 0 
+  set i_run 0
+  set i_step 0
+  if {[info exists first_timestep]} {
+    set i_step $first_timestep
+  }
+
+  set replica(index) $r
+  set replica(loc) $r
+  set replica(base) 0
+  set replica(exchanges_attempted) 0
+  set replica(exchanges_accepted) 0
+
+ 
+}
+
+set job_output_root "$output_root.job$i_job"
+firsttimestep $i_step
+
+proc replica_temp { i } {
+  global num_replicas min_temp max_temp
+  return [format "%.2f" [expr ($min_temp * \
+         exp( log(1.0*$max_temp/$min_temp)*(1.0*$i/($num_replicas-1)) ) )]]
+}
+
+set replica(temperature) [replica_temp $replica(index)]
+
+
+
+proc save_callback {labels values} {
+  global saved_labels saved_values
+  set saved_labels $labels
+  set saved_values $values
+}
+callback save_callback
+
+proc save_array {} {
+  global saved_labels saved_values saved_array
+  foreach label $saved_labels value $saved_values {
+    set saved_array($label) $value
+  }
+}
+
+set NEWTEMP $replica(temperature)
+seed [expr int(0*srand(int(100000*rand()) + 100*$replica_id) + 100000*rand())]
+langevinTemp $NEWTEMP
+langevinPistonTemp $NEWTEMP
+outputname [format $job_output_root.$replica_id $replica_id]
+
+if {$i_run} { #restart
+  bincoordinates $restart_name.$replica_id.coor
+  binvelocities $restart_name.$replica_id.vel
+  extendedSystem $restart_name.$replica_id.xsc
+} else {
+  temperature $NEWTEMP
+  if {[info exists initial_coordinates]} {
+    bincoordinates $initial_coordinates
+  }
+}
+
+pwd
+source $namd_config_file
+
+#Set dcd output freq to something we can demux
+set total_steps [ expr $steps_sample + $steps_equil1 + $steps_equil2]
+set dcd_freq [ expr $total_steps * $runs_per_frame]
+dcdfreq $total_steps
+
+# Append when resuming so that an earlier history is not overwritten.
+set history_mode [expr {$i_run > 0 ? "a" : "w"}]
+set history_file [open [format "$job_output_root.$replica_id.history" $replica_id] $history_mode]
+fconfigure $history_file -buffering line
+
+while {$i_run < $num_runs} {
+
+puts "TIGER2: Running Equilibration"
+  run $steps_equil1
+  save_array
+  incr i_step $steps_equil1
+
+
+puts "TIGER2: Running Sampling period"
+  run $steps_sample
+  save_array
+  incr i_step $steps_sample
+
+puts "TIGER2: Scaling back temperatures"
+# Scale to baseline Temperature
+  rescalevels [expr sqrt(1.0*$min_temp/$replica(temperature))]
+#  temperature $min_temp
+  langevinTemp $min_temp
+  langevinPistonTemp $min_temp
+puts "TIGER2: Equilibrating before swap"
+#Equilibrate at baseline
+  run $steps_equil2
+  save_array
+  incr i_step $steps_equil2
+
+# Write out the temperature and potential energies for each replica
+  set TEMP $saved_array(TEMP)
+  set POTENTIAL [expr $saved_array(TOTAL) - $saved_array(KINETIC)]
+  puts $history_file "$i_step $replica(loc) $NEWTEMP $TEMP $POTENTIAL"
+
+#Everything wait here before moving on to attempting the swap 
+  replicaBarrier
+
+# The baseline replica handles all of the swaps
+ if {$replica(index) == $replica(base)} {
+  
+
+  # Choose a replica to attempt to exchange with.
+   set rid [rselect $num_replicas $replica(index)]
+   puts " TIGER2: $replica(index) has chosen $rid to swap with."
+
+
+ # Get all potentials
+ set pots($replica(index))  $POTENTIAL
+  for {set i 0} {$i < $num_replicas} {incr i} {
+	 if {$i != $replica(index)} {
+		#Build up a look up table for the potentials.
+		 set pots($i) [replicaRecv $i]
+		set revpots($pots($i)) $i	
+	 }
+ }
+
+
+ #Get all Temps
+ set temps($replica(index)) $TEMP
+ for {set i 0} {$i < $num_replicas} {incr i} {
+	 if {$i != $replica(index)} {
+		 set temps($i) [replicaRecv $i]
+	 }
+ }
+
+ set locations(0) $replica(index)
+ set locrev($replica(index)) 0
+ for {set i 0} {$i < $num_replicas} {incr i } {
+	if {$i != $replica(index)} {
+		set x [replicaRecv $i]
+		set locations($x) $i
+		set locrev($i) $x
+	}
+ }	
+
+  #Calculate the exchage between the base line and the chosen replica
+  array set sorted {}
+  set temp $TEMP
+  set pot2 $pots($rid)
+  set temp2 $temps($rid)
+  set BOLTZMAN 0.001987191
+  set dbeta [expr ((1.0/$temp) - (1.0/$temp2)) / $BOLTZMAN]
+  set pot $POTENTIAL
+  #calculate the energy required for the swap
+  set delta [expr $dbeta * ($pot2 - $pot)]
+  set doswap [expr $delta < 0. || exp(-1. * $delta) > rand()]
+  incr replica(exchanges_attempted)
+  if {$doswap == 1} {
+	#If the swap was accepted swap replicas and added them into the sorted list
+  	puts "TIGER2: We are swapping $replica(index) with $rid"
+	 set sorted($replica(index)) $locrev($rid);
+	set sorted($rid) 0;
+	set new_base $rid;
+	incr replica(exchanges_accepted)
+  } else {
+  	#Swap rejected, all replicas are to be sorted
+       set sorted($replica(index)) 0
+       set new_base $replica(index)
+  }
+
+# sort Other replicas;
+
+  set x [list]
+  foreach {k v} [array get pots] {
+  	if { ($k == $replica(index)) || ($doswap == 1 && $rid == $k) } {
+	} else {
+	lappend x [list $k $v]
+	}
+  }
+  set others_sort [lsort -real -increasing -index 1 $x]
+ 
+  #build a list of the replicas to be sorted		  
+  set reps_avail [list]
+  for {set i 0} {$i < [llength $others_sort]} {incr i} {
+  	lappend reps_avail [lindex [lindex $others_sort $i] 0]
+  }
+ 
+#Build a list of the locations free 
+ set locs_avail [list]
+ for {set i 0} {$i < $num_replicas} {incr i} {
+ 	if { ($doswap == 1 && $locations($i) == $rid) || $i == 0 } {
+	} else {
+		lappend locs_avail $i
+	}
+ }
+
+  
+  	
+
+#Put the replicas to be sorted in the correct location based on their PE
+  for {set i 0 } {$i < [llength $reps_avail]} {incr i} {
+	      set x [lindex $reps_avail $i]
+	      set y [lindex $locs_avail $i]
+	      set sorted($x) $y
+		puts "$x = $y"
+	
+  }
+
+  #Wait here for everyone before sending out the new data
+  replicaBarrier
+ # Go round each replica sending it's new position and where the new basline temperature is
+  for {set i 0} {$i <$num_replicas} {incr i} {
+  	if {$i != $replica(index)} {
+		replicaSend $sorted($i) $i
+		replicaSend $new_base $i
+	} else {
+		set replica(loc) $sorted($i)
+		set replica(base) $new_base
+	}
+
+  }
+  set replica(loc) $sorted($replica(index));
+  set replica(base) $new_base
+# puts "TIGER2:  $replica(index) is now $replica(loc) and $replica(base) is the basline replica now"
+
+
+
+ } else {
+	replicaSend $POTENTIAL $replica(base) 
+	replicaSend $TEMP $replica(base)
+	replicaSend $replica(loc) $replica(base)
+
+	replicaBarrier
+   	#Where am I in the order now?
+	set newloc [replicaRecv $replica(base)]
+	#Who's the new base line?	
+	set newbase [replicaRecv $replica(base)]	
+
+	# Save the new locations to my data structure
+
+	set replica(base) $newbase
+	set replica(loc) $newloc
+
+   }
+   #Wait for everyone here
+   replicaBarrier
+
+   #Set new temperatures
+   		   
+  rescalevels [expr sqrt(1.0*$replica(temperature)/$min_temp)]
+   set replica(temperature) [replica_temp $replica(loc)]
+   set NEWTEMP $replica(temperature)
+   langevinTemp $NEWTEMP
+   langevinPistonTemp $NEWTEMP
+
+  incr i_run
+
+  ###### Write out Restart file ######
+  if {$i_run % ($runs_per_frame * $frames_per_restart) == 0 || $i_run == $num_runs} {
+  	puts "TIGER2: Writing Restart files"
+	set restart_name  "$job_output_root.restart$i_run"
+	output [format $restart_name.$replica_id $replica(index)]
+	set rfile [open [ format "$restart_name.$replica_id.tcl" $replica_id] "w"]
+	puts $rfile [list array set replica [ array get replica]]
+	puts $rfile [list set i_job [expr $i_job + 1]]
+	puts $rfile [list set i_run $i_run]
+	puts $rfile [ list set i_step $i_step]
+	puts $rfile [ list set restart_name $restart_name]
+	close $rfile
+	if {$i_run != ($runs_per_frame * $frames_per_restart) && [info exists old_restart_name]} {
+		foreach suffix {tcl coor xsc vel} {
+			file delete -force "$old_restart_name.$replica_id.$suffix"
+		}
+	}
+	set old_restart_name $restart_name
+ }
+	
+
+
+ }
+
+replicaBarrier
+if {$replica(exchanges_attempted) > 0} {
+  set ex [expr {double($replica(exchanges_accepted)) / $replica(exchanges_attempted)}]
+} else {
+  set ex 0.0
+}
+
+puts "EX_ratio $replica(index) $ex"

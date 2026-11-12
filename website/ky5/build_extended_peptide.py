@@ -1,0 +1,26 @@
+from BuildStructure import placePeptide
+import chimera
+
+
+TAG = "KLGYIEFYKVEK"
+LINKER = "GGGGSGGGGSGGGGS"
+SELP_2KY5 = (
+    "GKGVPGVGVPGVGVPGVGVPGYGVPGVGVPGVGVPGVGVPGRGDSGAGAGSGAGAGS"
+    "GKGVPGVGVPGVGVPGVGVPGYGVPGVGVPGVGVPGVGVPGRGDSGAGAGSGAGAGS"
+    "GKGVPGVGVPGVGVPGVGVPGYGVPGVGVPGVGVPGVGVPGRGDSGAGAGSGAGAGS"
+    "GKGVPGVGVPGVGVPGVGVPGYGVPGVGVPGVGVPGVGVPGRGDSGAGAGSGAGAGS"
+    "GKGVPGVGVPGVGVPGVGVPGYGVPGVGVPGVGVPGVGVPGRGDSGAGAGSGAGAGS"
+)
+SEQUENCE = TAG + LINKER + SELP_2KY5 + LINKER + TAG
+
+if len(SELP_2KY5) != 285:
+    raise ValueError("Unexpected 2KY5 length: %d" % len(SELP_2KY5))
+if len(SEQUENCE) != 339:
+    raise ValueError("Unexpected construct length: %d" % len(SEQUENCE))
+
+phi_psis = [(-180.0, 180.0)] * len(SEQUENCE)
+placePeptide(SEQUENCE, phi_psis, model="2KY5_snoopytag", chainID="A")
+chimera.runCommand("write format pdb 0 2KY5_snoopytag.pdb")
+print("BUILT_SEQUENCE_LENGTH %d" % len(SEQUENCE))
+print("BUILT_SEQUENCE %s" % SEQUENCE)
+chimera.runCommand("stop")

@@ -1,0 +1,21 @@
+# MD Python 脚本依赖
+# 安装: conda activate igem2026 && pip install -r requirements.txt
+
+# 核心依赖
+numpy>=2.4.0
+pandas>=2.3.0
+matplotlib>=3.10.0
+scipy>=1.17.0
+
+# 分析工具
+MDAnalysis>=2.10.0
+scikit-learn>=1.9.0
+
+# 可视化
+seaborn>=0.13.0
+
+# 已通过 conda 预装（无需 pip 安装）
+# mdtraj>=1.11.0
+# nglview>=3.1.0
+# biopython>=1.87
+# jupyterlab>=4.5.0

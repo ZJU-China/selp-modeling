@@ -1,0 +1,31 @@
+{
+  "_comment": "Magnetomech (GROMACS CG modulus -> field deformation). Reads the CG-derived Young's modulus and computes the deformation of a magnetic-nanoparticle-loaded SELP sample under an applied magnetic field. See code/magnetomech/ and backend/tasktype/magnetomech/. Modulus: 'modulusMode' = affine(default)/phantom/scanlan_affine/explicit; when 'explicit', set 'modulusKpa'. Leave 'modulusPath' null to auto-use the CG handoff summary.",
+  "remoteDir": "FILL-IN: not used (local compute task)",
+  "logPrefix": "magnetomech",
+  "process": {
+    "psPattern": "magnetomech",
+    "pgrepPattern": "magnetomech",
+    "freshnessMinutes": 5
+  },
+  "magnetomech": {
+    "modulusMode": "affine",
+    "modulusKpa": null,
+    "modulusPath": null
+  },
+  "particle": {
+    "phi": 0.05,
+    "diameterNm": 10.0,
+    "saturationAperM": 4.8e5
+  },
+  "field": {
+    "mode": "uniform",
+    "maxT": 0.6,
+    "heightMm": 10.0,
+    "nPoints": 201,
+    "gradientDeltaT": 0.2,
+    "csvPath": null
+  },
+  "temperatureK": 310.0,
+  "coupling": 0.25,
+  "demagFactor": 0.3333333333333333
+}

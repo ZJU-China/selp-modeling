@@ -1,0 +1,35 @@
+                      :-) GROMACS - gmx mdrun, 2026.1 (-:
+
+Executable:   /opt/gromacs/bin/gmx
+Data prefix:  /opt/gromacs
+Working dir:  /home/selp/CG_2KY5_batch_crosslinks_20261006/joint_stability_both_to4ns_20261013/2KY5_C_relax4000
+Command line:
+  gmx mdrun -deffnm md -ntmpi 1 -ntomp 4 -nb gpu -bonded cpu -pin off -cpi /home/selp/CG_2KY5_batch_crosslinks_20261006/joint_stability_both_to4ns_20261013/2KY5_C_relax3500/md.cpt -noappend -update cpu -pme cpu
+
+Reading file md.tpr, VERSION 2026.1 (single precision)
+Can not increase nstlist because verlet-buffer-tolerance is not set or used
+Update groups can not be used for this system because atoms that are (in)directly constrained together are interdispersed with other atoms
+
+1 GPU selected for this run.
+Mapping of GPU IDs to the 1 GPU task in the 1 rank on this node:
+  PP:0
+PP tasks will do non-perturbed short-ranged interactions on the GPU
+PP task will update and constrain coordinates on the CPU
+Using 1 MPI thread
+Using 4 OpenMP threads 
+
+starting mdrun '2KY5 target 100 mg per mL initial precursor'
+4447520 steps,   8895.0 ps (continuing from step 4197520,   8395.0 ps).
+
+Writing final coordinates.
+
+NOTE: 20 % of the run time was spent in pair search,
+      you might want to increase nstlist (this has no effect on accuracy)
+
+               Core t (s)   Wall t (s)        (%)
+       Time:     2545.551      636.390      400.0
+                 (ns/day)    (hour/ns)    (ms/step)  (Matom*steps/s) 
+Performance:       67.883        0.354        2.546           53.410 
+
+GROMACS reminds you: "Kissing You is Like Kissing Gravel" (Throwing Muses)
+

@@ -1,0 +1,287 @@
+#!/usr/bin/env python3
+"""
+flow_gromacs_cg -- crosslinked Martini CG network + deformation run as one task.
+
+This merges the `tiger2_dcd_to_gromacs_cg_pdb` transition task into the
+gromacs_cg MD task, for the same reason flow_tiger2 merges seq_to_pdb into
+tiger2: as two flow steps the pair did not actually resolve. The annotation and
+CG-input readers look in `<task>/input/`, while flow linking exposes a
+predecessor's files at `<task>/input/flow-<prevId>/` -- one directory too deep --
+and gromacs_cg's upload path does not descend into `flow-*`. As one task the
+inputs are written where the runner and the viewer both look.
+
+What this task generates, from the Parameters panel:
+
+  input/cg_input.mdp        GROMACS run input at the requested temperature
+                            (ref-t), reusing the transition task's mdp writer
+  input/strain_windows.txt  axial Hencky strains sampled along each axis by
+                            the uniaxial deformation windows
+  input/network_params.json the crosslink count / chain count that the periodic
+                            network is expected to carry
+
+What it does not generate: the CG topology itself -- bead coordinates and the
+crosslink pair list. Those come out of the CG handoff package
+(CG_platform_handoff_20260907: map_aa_to_cg.py -> generate_32chain_candidates.py
+-> prepare_network20_gromacs.py), which is a separate preparation step. This
+task records the requested crosslink density in network_params.json so the
+topology can be prepared to match, and `synthesize` reports that pairing rather
+than pretending it rebuilt a topology it cannot.
+
+gromacs_cg runs under SLURM on the cluster, so its start/restart deliberately
+report that instead of launching. This task regenerates the run inputs first,
+so editing the parameters and hitting Restart refreshes what the next sbatch
+submission will consume, and then passes the command through unchanged.
+
+Usage mirrors gromacs_cg/main.py:
+
+    flow_gromacs_cg/main.py <command> --task-config CFG --host H --user U ... \\
+                              --local-dir DIR
+    flow_gromacs_cg/main.py synthesize --local-dir DIR [--task-config CFG]
+
+`synthesize` writes the three files above and stops, so the inputs can be
+generated and inspected without touching the cluster.
+"""
+
+import argparse
+import importlib.util
+import json
+import os
+import subprocess
+import sys
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+TASKTYPE_DIR = os.path.dirname(HERE)
+GROMACS_MAIN = os.path.join(TASKTYPE_DIR, "gromacs_cg", "main.py")
+TRANSITION_GEN = os.path.join(TASKTYPE_DIR, "tiger2_dcd_to_gromacs_cg_pdb", "generate.py")
+
+DEFAULT_AXES = ("x", "y", "z")
+
+DEFAULT_NETWORK = {
+    "nChains": 32,
+    "nCrosslinks": 44,
+    "temperatureK": 310.0,
+    "strains": [0.05, 0.10],
+    "beadsPerChain": 964,
+    "seeds": [11, 12, 13, 14, 15, 16, 17, 18],
+}
+
+
+def load_transition_gen():
+    """Import the transition task's generator so the mdp template stays in one
+    place instead of being forked (and drifting) into this task type."""
+    spec = importlib.util.spec_from_file_location("tiger2_cg_generate", TRANSITION_GEN)
+    if spec is None or spec.loader is None:
+        raise RuntimeError("cannot import CG transition generator at %s" % TRANSITION_GEN)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def read_config(path):
+    if not path:
+        return {}
+    try:
+        with open(path) as f:
+            return json.load(f) or {}
+    except Exception:
+        return {}
+
+
+def pick(default, *values):
+    """First of `values` that is neither None nor blank, coerced to the type of
+    `default`. Returning the default's type (rather than Optional) keeps the
+    call sites' int()/float() conversions honest instead of silently turning a
+    missing value into None."""
+    for v in values:
+        if v is not None and str(v).strip() != "":
+            return type(default)(v)
+    return default
+
+
+def as_float_list(value, fallback):
+    if isinstance(value, (list, tuple)):
+        out = [float(v) for v in value]
+    else:
+        out = [float(p) for p in str(value).split(",") if str(p).strip()]
+    return out or list(fallback)
+
+
+def as_int_list(value, fallback):
+    if isinstance(value, (list, tuple)):
+        out = [int(v) for v in value]
+    else:
+        out = [int(p) for p in str(value).split(",") if str(p).strip()]
+    return out or list(fallback)
+
+
+def write_strain_windows(path, axes, strains):
+    """The uniaxial deformation sweep: every requested strain along every axis.
+
+    The generated CG driver enumerates these as
+        STRAINS=(...); AXES=(x y z)
+    so this manifest is what ties the Parameters panel's Stretch field to that
+    enumeration instead of leaving the values hardcoded in the driver.
+    """
+    lines = [
+        "# Uniaxial deformation windows, generated by the flow_gromacs_cg task.",
+        "# Hencky strain per axis: the box is scaled by exp(strain) along the axis.",
+        "# Consume as: STRAINS=(%s); AXES=(%s)"
+        % (" ".join(str(s) for s in strains), " ".join(axes)),
+        "",
+        "AXES = %s" % " ".join(axes),
+        "STRAINS = %s" % " ".join(str(s) for s in strains),
+        "",
+    ]
+    for axis in axes:
+        for strain in strains:
+            lines.append("%s %.4f" % (axis, strain))
+    lines.append("")
+    with open(path, "w") as f:
+        f.write("\n".join(lines))
+    return len(axes) * len(strains)
+
+
+def synthesize(local_dir, config):
+    """Write the CG run inputs into this task's own input/. Returns a result
+    dict; never raises for user-fixable input, so the caller can report a
+    precise message."""
+    gen = load_transition_gen()
+
+    input_dir = os.path.join(local_dir, "input")
+    os.makedirs(input_dir, exist_ok=True)
+
+    defaults = config.get("defaults") or {}
+    gromacs_cfg = config.get("gromacs") or {}
+
+    protein = str(pick("cg_network", config.get("protein"), defaults.get("protein"))).strip()
+
+    n_chains = pick(DEFAULT_NETWORK["nChains"], config.get("nChains"), defaults.get("numChains"))
+    n_crosslinks = pick(DEFAULT_NETWORK["nCrosslinks"], config.get("nCrosslinks"))
+    temperature_k = pick(
+        DEFAULT_NETWORK["temperatureK"],
+        config.get("temperatureK"),
+        defaults.get("tempMin"),
+    )
+    strains = as_float_list(
+        config.get("strains") or DEFAULT_NETWORK["strains"],
+        DEFAULT_NETWORK["strains"],
+    )
+    beads_per_chain = pick(DEFAULT_NETWORK["beadsPerChain"], config.get("beadsPerChain"))
+    seeds = as_int_list(config.get("seeds") or DEFAULT_NETWORK["seeds"], DEFAULT_NETWORK["seeds"])
+    axes = tuple(config.get("axes") or DEFAULT_AXES)
+
+    if temperature_k <= 0:
+        return {
+            "ok": False,
+            "stage": "temperature",
+            "error": "Temperature must be greater than 0 K.",
+        }
+    if n_chains < 1:
+        return {"ok": False, "stage": "network", "error": "Chains must be at least 1."}
+    if n_crosslinks < 0:
+        return {"ok": False, "stage": "network", "error": "Crosslinks cannot be negative."}
+
+    # mdp -- ref-t is the thermostat the run is held at.
+    mdp_rel = os.path.join("input", "cg_input.mdp")
+    gen.write_mdp(os.path.join(local_dir, mdp_rel), temperature_k)
+
+    windows_rel = os.path.join("input", "strain_windows.txt")
+    n_windows = write_strain_windows(os.path.join(local_dir, windows_rel), axes, strains)
+
+    network = {
+        "protein": protein,
+        "nChains": n_chains,
+        "nCrosslinks": n_crosslinks,
+        "crosslinksPerChain": round(n_crosslinks / n_chains, 4) if n_chains else 0,
+        "beadsPerChain": beads_per_chain,
+        "temperatureK": temperature_k,
+        "strains": strains,
+        "axes": list(axes),
+        "seeds": seeds,
+    }
+    network_rel = os.path.join("input", "network_params.json")
+    with open(os.path.join(local_dir, network_rel), "w") as f:
+        json.dump(network, f, indent=2)
+        f.write("\n")
+
+    return {
+        "ok": True,
+        "protein": protein,
+        "mdp": mdp_rel,
+        "strainWindows": windows_rel,
+        "windows": n_windows,
+        "networkParams": network_rel,
+        "network": network,
+        "temperatureK": temperature_k,
+        "plannedNs": gromacs_cfg.get("plannedNs"),
+        "topologyNote": (
+            "Bead coordinates and the crosslink pair list are produced by the CG "
+            "handoff package, not by this task. network_params.json records the "
+            "requested crosslink density so the topology can be prepared to match."
+        ),
+    }
+
+
+def build_arg_parser():
+    # Mirror gromacs_cg's CLI (its parse_known_args) so delegation passes
+    # argv through untouched. --host/--user are required by gromacs_cg but not
+    # here, so synthesize can run without a cluster connection.
+    p = argparse.ArgumentParser(description="flow_gromacs_cg: crosslinked CG run")
+    p.add_argument("command", nargs="?", default="status", choices=[
+        "synthesize",
+        # pause/continue are handled by gromacs_cg/main.py, which this wrapper
+        # delegates to verbatim; listed here so argparse does not reject them.
+        "start", "stop", "restart", "status", "pause", "continue",
+        "checkpoint", "progress",
+        "monitor", "route", "log-paths", "structure", "cluster",
+        "gen-trajectory", "convergence-check",
+    ])
+    p.add_argument("--host", default=None)
+    p.add_argument("--port", type=int, default=22)
+    p.add_argument("--user", default=None)
+    p.add_argument("--key", default=None)
+    p.add_argument("--password", default=None)
+    p.add_argument("--local-dir", default=None)
+    p.add_argument("--task-config", default=None)
+    p.add_argument("--remote-dir", default=None)
+    p.add_argument("--log-prefix", default=None)
+    p.add_argument("--num-replicas", type=int, default=None)
+    p.add_argument("--steps-per-cycle", type=int, default=None)
+    p.add_argument("--total-cycles", type=float, default=None)
+
+    # Route args (shared)
+    p.add_argument("--route", default=None)
+    p.add_argument("--sub", default=None)
+    p.add_argument("--path", default=None)
+    p.add_argument("--content", default=None)
+    p.add_argument("--cmd", default=None)
+    p.add_argument("--timeout", type=int, default=None)
+    return p
+
+
+def main():
+    args = build_arg_parser().parse_args()
+    config = read_config(args.task_config)
+    local_dir = args.local_dir or os.getcwd()
+
+    if args.command == "synthesize":
+        result = synthesize(local_dir, config)
+        print(json.dumps(result))
+        return 0 if result.get("ok") else 1
+
+    if args.command in ("start", "restart"):
+        # Rebuild the run inputs from the current parameters before handing the
+        # command on, so editing Crosslinks/Temperature/Stretch and restarting
+        # regenerates what the next SLURM submission will read. gromacs_cg then
+        # reports that launch itself is an sbatch on the cluster.
+        result = synthesize(local_dir, config)
+        if not result.get("ok"):
+            print(json.dumps(result))
+            return 1
+        print(json.dumps({"ok": True, "synthesized": result}), file=sys.stderr)
+
+    return subprocess.call([sys.executable, GROMACS_MAIN] + sys.argv[1:])
+
+
+if __name__ == "__main__":
+    sys.exit(main())

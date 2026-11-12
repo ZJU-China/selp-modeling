@@ -1,0 +1,1842 @@
+Charm++: standalone mode (not using charmrun)
+Charm++> Running in Multicore mode: 12 threads (PEs)
+Charm++> Using recursive bisection (scheme 3) for topology aware partitions
+Converse/Charm++ Commit ID: 
+CharmLB> Load balancer assumes all CPUs are same.
+Charm++> Running on 1 hosts (1 sockets x 8 cores x 2 PUs = 16-way SMP)
+Charm++> cpu topology info is gathered in 0.000 seconds.
+CharmLB> Load balancing instrumentation for communication is off.
+Info: NAMD 3.0.2 for Linux-x86_64-multicore
+Info: 
+Info: Please visit http://www.ks.uiuc.edu/Research/namd/
+Info: for updates, documentation, and support information.
+Info: 
+Info: Please cite Phillips et al., J. Chem. Phys. 153:044130 (2020) doi:10.1063/5.0014475
+Info: in all publications reporting results obtained with NAMD.
+Info: 
+Info: Based on Charm++/Converse 80000 for multicore-linux-x86_64-gcc
+Info: Built Wed Aug 27 15:39:24 CDT 2025 by dhardy on athine.ks.uiuc.edu
+Info: 1 NAMD  3.0.2  Linux-x86_64-multicore  12    iGEMServer  igem
+Info: Running on 12 processors, 1 nodes, 1 physical nodes.
+Info: CPU topology information available.
+Info: Charm++/Converse parallel runtime startup completed at 0.00208054 s
+CkLoopLib is used in SMP with simple dynamic scheduling (converse-level notification)
+Info: 816.293 MB of memory in use based on /proc/self/stat
+Info: Configuration file is 04_gbis_eq_050fs.conf
+Info: Working in the current directory /home/selp/igem-2026/FAMD/2KY5_snoopytag
+TCL: Suspending until startup complete.
+Info: SIMULATION PARAMETERS:
+Info: TIMESTEP               0.5
+Info: NUMBER OF STEPS        0
+Info: STEPS PER CYCLE        20
+Info: LOAD BALANCER  Centralized
+Info: LOAD BALANCING STRATEGY  New Load Balancers -- DEFAULT
+Info: LDB PERIOD             4000 steps
+Info: FIRST LDB TIMESTEP     100
+Info: LAST LDB TIMESTEP     -1
+Info: LDB BACKGROUND SCALING 1
+Info: HOM BACKGROUND SCALING 1
+Info: MIN ATOMS PER PATCH    40
+Info: EMPTY PATCH LOAD       40 ATOMS
+Info: VELOCITY FILE          equil/03_gbis_warm_025fs.vel
+Info: CENTER OF MASS MOVING INITIALLY? NO
+Info: DIELECTRIC             1
+Info: EXCLUDE                SCALED ONE-FOUR
+Info: 1-4 ELECTROSTATICS SCALED BY 1
+Info: MODIFIED 1-4 VDW PARAMETERS WILL BE USED
+Info: DCD FILENAME           equil/04_gbis_eq_050fs.dcd
+Info: DCD FREQUENCY          2000
+Info: DCD FIRST STEP         2000
+Info: NO EXTENDED SYSTEM TRAJECTORY OUTPUT
+Info: NO VELOCITY DCD OUTPUT
+Info: NO FORCE DCD OUTPUT
+Info: OUTPUT FILENAME        equil/04_gbis_eq_050fs
+Info: BINARY OUTPUT FILES WILL BE USED
+Info: RESTART FILENAME       equil/04_gbis_eq_050fs.restart
+Info: RESTART FREQUENCY      10000
+Info: BINARY RESTART FILES WILL BE USED
+Info: SWITCHING ACTIVE
+Info: SWITCHING ON           15
+Info: SWITCHING OFF          16
+Info: PAIRLIST DISTANCE      18
+Info: PAIRLIST SHRINK RATE   0.01
+Info: PAIRLIST GROW RATE     0.01
+Info: PAIRLIST TRIGGER       0.3
+Info: PAIRLISTS PER CYCLE    2
+Info: PAIRLISTS ENABLED
+Info: MARGIN                 10
+Warning: MARGIN IS UNUSUALLY LARGE AND WILL LOWER PERFORMANCE
+Warning: MARGIN INCREASED PATCH VOLUME BY A FACTOR OF 3.29335
+Info: HYDROGEN GROUP CUTOFF  2.5
+Info: PATCH DIMENSION        30.5
+Info: ENERGY OUTPUT STEPS    200
+Info: ENERGY EVALUATION STEPS    200
+Info: OUTPUT ENERGY PRECISION 4
+Info: CROSSTERM ENERGY INCLUDED IN DIHEDRAL
+Info: TIMING OUTPUT STEPS    5000
+Info: GBIS GENERALIZED BORN IMPLICIT SOLVENT ACTIVE
+Info: GBIS SOLVENT DIELECTRIC: 78.5
+Info: GBIS PROTEIN DIELECTRIC: 1
+Info: GBIS COULOMB RADIUS OFFSET: 0.09 Ang
+Info: GBIS ION CONCENTRATION: 0.15 M
+Info: GBIS DEBYE SCREENING LENGTH: 7.87861 Ang
+Info: GBIS DELTA: 1
+Info: GBIS BETA: 0.8
+Info: GBIS GAMMA: 4.85
+Info: GBIS BORN RADIUS CUTOFF: 15 Ang
+Info: GBIS MAX BORN RADIUS: 30 Ang
+Info: SASA SURFACE TENSION: 0.005 kcal/mol/Ang^2
+Info: LANGEVIN DYNAMICS ACTIVE
+Info: LANGEVIN TEMPERATURE   280
+Info: LANGEVIN USING BBK INTEGRATOR
+Info: LANGEVIN DAMPING COEFFICIENT IS 10 INVERSE PS
+Info: LANGEVIN DYNAMICS APPLIED TO HYDROGENS
+Info: FULL ELECTROSTATIC EVALUATION FREQUENCY      1
+Info: USING VERLET I (r-RESPA) MTS SCHEME.
+Info: C1 SPLITTING OF LONG RANGE ELECTROSTATICS
+Info: PLACING ATOMS IN PATCHES BY HYDROGEN GROUPS
+Info: RANDOM NUMBER SEED     1785836364
+Info: USE HYDROGEN BONDS?    NO
+Info: COORDINATE PDB         2KY5_snoopytag_hmr.pdb
+Info: STRUCTURE FILE         2KY5_snoopytag_hmr.psf
+Info: PARAMETER file: CHARMM format! 
+Info: PARAMETERS             toppar/par_all36m_prot.prm
+Info: USING ARITHMETIC MEAN TO COMBINE L-J SIGMA PARAMETERS
+Info: BINARY COORDINATES     equil/03_gbis_warm_025fs.coor
+Info: SUMMARY OF PARAMETERS:
+Info: 132 BONDS
+Info: 370 ANGLES
+Info: 720 DIHEDRAL
+Info: 35 IMPROPER
+Info: 6 CROSSTERM
+Info: 54 VDW
+Info: 1 VDW_PAIRS
+Info: 0 NBTHOLE_PAIRS
+Info: TIME FOR READING PSF FILE: 0.0451631
+Info: Reading pdb file 2KY5_snoopytag_hmr.pdb
+Info: TIME FOR READING PDB FILE: 0.00193744
+Info: 
+Info: ****************************
+Info: STRUCTURE SUMMARY:
+Info: 3955 ATOMS
+Info: 4005 BONDS
+Info: 7308 ANGLES
+Info: 10601 DIHEDRALS
+Info: 701 IMPROPERS
+Info: 337 CROSSTERMS
+Info: 0 EXCLUSIONS
+Info: 11865 DEGREES OF FREEDOM
+Info: 1987 HYDROGEN GROUPS
+Info: 4 ATOMS IN LARGEST HYDROGEN GROUP
+Info: 1987 MIGRATION GROUPS
+Info: 4 ATOMS IN LARGEST MIGRATION GROUP
+Info: TOTAL MASS = 28125.6 amu
+Info: TOTAL CHARGE = 7 e
+Info: *****************************
+Info: Reading from binary file equil/03_gbis_warm_025fs.coor
+Info: 
+Info: Entering startup at 0.0565431 s, 165.212 MB of memory in use
+Info: Startup phase 0 took 3.8882e-05 s, 165.212 MB of memory in use
+Info: ADDED 21681 IMPLICIT EXCLUSIONS
+Info: Startup phase 1 took 0.00156288 s, 165.212 MB of memory in use
+Info: NONBONDED TABLE R-SQUARED SPACING: 0.0625
+Info: NONBONDED TABLE SIZE: 833 POINTS
+Info: ABSOLUTE IMPRECISION IN FAST TABLE ENERGY: 1.69407e-21 AT 15.998
+Info: RELATIVE IMPRECISION IN FAST TABLE ENERGY: 1.15453e-16 AT 15.998
+Info: ABSOLUTE IMPRECISION IN FAST TABLE FORCE: 8.47033e-22 AT 15.998
+Info: RELATIVE IMPRECISION IN FAST TABLE FORCE: 1.14081e-16 AT 15.998
+Info: INCONSISTENCY IN FAST TABLE ENERGY VS FORCE: 0.000290362 AT 0.251946
+Info: INCONSISTENCY IN VDWA TABLE ENERGY VS FORCE: 0.0167626 AT 14.9979
+Info: INCONSISTENCY IN VDWB TABLE ENERGY VS FORCE: 0.0678971 AT 14.9979
+Info: Startup phase 2 took 0.000190447 s, 165.212 MB of memory in use
+Info: Startup phase 3 took 2.8784e-05 s, 165.212 MB of memory in use
+Info: Startup phase 4 took 4.5646e-05 s, 165.212 MB of memory in use
+Info: Startup phase 5 took 2.4887e-05 s, 165.212 MB of memory in use
+Info: ORIGINAL ATOMS MINMAX IS -511.961 -333.343 -8.88392  519.029 331.287 9.087
+Info: ADJUSTED ATOMS MINMAX IS -525.769 -328.471 -3.57844  520.181 331.189 3.60786
+Info: PATCH GRID IS 14 BY 7 BY 1
+Info: PATCH GRID IS 1-AWAY BY 1-AWAY BY 1-AWAY
+Info: Reading from binary file equil/03_gbis_warm_025fs.vel
+Info: REMOVING COM VELOCITY 0.0764811 -0.0600339 -0.00348488
+Info: LARGEST PATCH (0) HAS 1296 ATOMS
+Info: TORUS A SIZE 1 USING 0
+Info: TORUS B SIZE 1 USING 0
+Info: TORUS C SIZE 1 USING 0
+Info: TORUS MINIMAL MESH SIZE IS 1 BY 1 BY 1
+Info: Placed 100% of base nodes on same physical node as patch
+Info: Startup phase 6 took 0.00111576 s, 165.212 MB of memory in use
+Info: Startup phase 7 took 2.7862e-05 s, 165.212 MB of memory in use
+Info: Startup phase 8 took 2.4857e-05 s, 165.212 MB of memory in use
+Info: Startup phase 9 took 2.5027e-05 s, 165.212 MB of memory in use
+Info: Startup phase 10 took 3.1248e-05 s, 165.212 MB of memory in use
+Info: Startup phase 11 took 0.000100098 s, 165.212 MB of memory in use
+LDB: Central LB being created...
+Info: Startup phase 12 took 6.7857e-05 s, 165.212 MB of memory in use
+Info: CREATING 1077 COMPUTE OBJECTS
+Info: useSync: 0 useProxySync: 0
+Info: Startup phase 13 took 0.000668935 s, 165.212 MB of memory in use
+Info: Startup phase 14 took 4.0366e-05 s, 165.212 MB of memory in use
+Info: Startup phase 15 took 4.792e-05 s, 165.212 MB of memory in use
+Info: Finished startup at 0.0605845 s, 165.212 MB of memory in use
+
+TCL: Running for 100000 steps
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:       0      1640.7166      2232.1074      2180.1520       126.0699          -1344.7423      -132.0247         0.0000         0.0000      3348.7494           8051.0282       284.0569      4702.2789      8054.0901       284.0569
+
+LDB: ============= START OF LOAD BALANCING ============== 0.339403
+LDB: ============== END OF LOAD BALANCING =============== 0.339453
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 0.339512
+LDB: ============= START OF LOAD BALANCING ============== 1.38277
+LDB: 378 computes have load of zero
+LDB: Largest compute 526 load 0.571292 is 297.3% of average load 0.192170
+LDB: Average compute 0.003383 is 1.8% of average load 0.192170
+LDB: Partitioning computes with target load 0.019217
+LDB: Increased migratable compute count from 639 to 678
+LDB: Largest unpartitionable compute is 0.026618
+LDB: ============== END OF LOAD BALANCING =============== 1.38299
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 1.38319
+Info: Initial time: 12 CPUs 0.0131878 s/step 0.305274 days/ns 165.212 MB memory
+LDB: ============= START OF LOAD BALANCING ============== 1.62095
+LDB: ============== END OF LOAD BALANCING =============== 1.62099
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 1.62104
+LDB: ============= START OF LOAD BALANCING ============== 2.575
+LDB: 378 computes have load of zero
+LDB: Largest compute 1108 load 0.055092 is 30.1% of average load 0.182731
+LDB: Average compute 0.003037 is 1.7% of average load 0.182731
+LDB: TIME 2.57515 LOAD: AVG 0.182731 MAX 0.953959  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 2.57527 LOAD: AVG 0.182731 MAX 0.219273  PROXIES: TOTAL 95 MAXPE 9 MAXPATCH 5 TorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 2.57542
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 2.5757
+Info: Initial time: 12 CPUs 0.0118358 s/step 0.273977 days/ns 165.212 MB memory
+ENERGY:     200      1614.5913      2309.9391      2206.3157       138.3425          -1335.3660      -100.5074         0.0000         0.0000      3286.1656           8119.4810       278.7482      4833.3153      8122.0737       283.4974
+
+LDB: ============= START OF LOAD BALANCING ============== 2.95885
+LDB: 378 computes have load of zero
+LDB: Largest compute 1109 load 0.069647 is 27.1% of average load 0.256962
+LDB: Average compute 0.004268 is 1.7% of average load 0.256962
+LDB: TIME 2.95899 LOAD: AVG 0.256962 MAX 0.341916  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 2.95906 LOAD: AVG 0.256962 MAX 0.341916  PROXIES: TOTAL 95 MAXPE 9 MAXPATCH 5 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 2.9593 LOAD: AVG 0.256962 MAX 0.268537  PROXIES: TOTAL 128 MAXPE 20 MAXPATCH 7 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 2.95939
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 2.96043
+Info: Initial time: 12 CPUs 0.00382338 s/step 0.0885041 days/ns 165.212 MB memory
+LDB: ============= START OF LOAD BALANCING ============== 3.30877
+LDB: 378 computes have load of zero
+LDB: Largest compute 1108 load 0.091893 is 34.5% of average load 0.266012
+LDB: Average compute 0.004394 is 1.7% of average load 0.266012
+LDB: TIME 3.30894 LOAD: AVG 0.266012 MAX 0.348101  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 3.30904 LOAD: AVG 0.266012 MAX 0.348101  PROXIES: TOTAL 128 MAXPE 20 MAXPATCH 7 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 3.30914 LOAD: AVG 0.266012 MAX 0.285636  PROXIES: TOTAL 132 MAXPE 20 MAXPATCH 8 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 3.30922
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 3.30942
+Info: Benchmark time: 12 CPUs 0.00348119 s/step 0.0805832 days/ns 165.212 MB memory
+ENERGY:     400      1553.8986      2279.4818      2181.0614       130.6438          -1302.1521      -116.2544         0.0000         0.0000      3266.3179           7992.9971       277.0646      4726.6792      7997.5988       279.6837
+
+Info: Benchmark time: 12 CPUs 0.00343344 s/step 0.0794777 days/ns 165.212 MB memory
+Info: Benchmark time: 12 CPUs 0.00342178 s/step 0.0792079 days/ns 165.212 MB memory
+ENERGY:     600      1560.5120      2327.6688      2159.7915       115.8103          -1318.7900      -110.4729         0.0000         0.0000      3280.8875           8015.4071       278.3005      4734.5196      8020.9962       278.3646
+
+Info: Benchmark time: 12 CPUs 0.00342246 s/step 0.0792237 days/ns 165.212 MB memory
+Info: Benchmark time: 12 CPUs 0.00342478 s/step 0.0792774 days/ns 165.212 MB memory
+ENERGY:     800      1535.8465      2375.1847      2173.3355       127.8786          -1338.2275       -90.1147         0.0000         0.0000      3291.3159           8075.2189       279.1851      4783.9031      8077.0594       279.0634
+
+Info: Benchmark time: 12 CPUs 0.00369783 s/step 0.085598 days/ns 165.212 MB memory
+ENERGY:    1000      1597.7497      2307.2251      2138.7081       129.2036          -1336.7375      -101.6712         0.0000         0.0000      3304.0253           8038.5030       280.2632      4734.4777      8036.4847       280.7923
+
+ENERGY:    1200      1667.9338      2413.6890      2146.8666       128.9613          -1369.3512      -122.1159         0.0000         0.0000      3298.0391           8164.0227       279.7554      4865.9835      8170.9411       283.1834
+
+ENERGY:    1400      1565.7824      2382.1786      2184.6978       114.4733          -1347.0142      -111.7284         0.0000         0.0000      3319.9076           8108.2970       281.6104      4788.3894      8106.8885       282.6124
+
+ENERGY:    1600      1532.8552      2314.5398      2165.0140       139.5944          -1322.7886       -75.3557         0.0000         0.0000      3298.8129           8052.6720       279.8210      4753.8590      8057.2703       282.4371
+
+ENERGY:    1800      1593.7121      2321.7580      2162.0866       130.0252          -1319.8542       -95.5463         0.0000         0.0000      3358.1308           8150.3122       284.8526      4792.1815      8157.1405       281.6218
+
+OPENING COORDINATE DCD FILE
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 2000
+The last position output (seq=2000) takes 0.000 seconds, 165.212 MB of memory in use
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:    2000      1542.9362      2322.6875      2163.6340       128.2232          -1308.1028       -82.1898         0.0000         0.0000      3334.3444           8101.5328       282.8350      4767.1884      8100.4566       282.8746
+
+ENERGY:    2200      1583.5686      2299.3134      2159.5939       128.4018          -1321.5089      -117.0350         0.0000         0.0000      3315.4077           8047.7414       281.2287      4732.3337      8053.8571       280.5910
+
+ENERGY:    2400      1583.4883      2291.0551      2168.9983       128.3566          -1327.1836      -107.2014         0.0000         0.0000      3275.7932           8013.3067       277.8684      4737.5135      8017.4838       279.9941
+
+ENERGY:    2600      1577.3004      2293.5244      2155.8452       129.7240          -1328.8109      -141.0266         0.0000         0.0000      3335.3843           8021.9406       282.9232      4686.5563      8023.4483       278.4119
+
+ENERGY:    2800      1559.1252      2288.3323      2177.8332       120.7197          -1324.8370      -129.2235         0.0000         0.0000      3349.4920           8041.4418       284.1199      4691.9499      8042.9890       282.5298
+
+ENERGY:    3000      1572.3043      2312.4877      2153.0698       127.5016          -1336.7372      -136.7019         0.0000         0.0000      3293.9394           7985.8637       279.4076      4691.9243      7989.3439       276.7467
+
+ENERGY:    3200      1578.5314      2332.4799      2148.7578       119.2024          -1332.3385      -107.8682         0.0000         0.0000      3275.6994           8014.4642       277.8604      4738.7648      8017.0962       279.4780
+
+ENERGY:    3400      1572.1991      2303.0974      2163.0197       120.3770          -1340.4429      -108.4656         0.0000         0.0000      3318.6017           8028.3864       281.4996      4709.7846      8033.6073       278.6418
+
+ENERGY:    3600      1584.5627      2354.9113      2172.8267       124.0200          -1336.2840      -111.2859         0.0000         0.0000      3258.1294           8046.8802       276.3700      4788.7508      8051.8683       281.2545
+
+ENERGY:    3800      1552.7219      2277.6420      2172.3981       120.8474          -1332.4688      -100.2071         0.0000         0.0000      3296.2824           7987.2159       279.6064      4690.9335      7987.2900       278.7083
+
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:    4000      1602.8216      2301.4996      2181.1872       114.4419          -1317.8957      -142.5899         0.0000         0.0000      3280.3113           8019.7760       278.2516      4739.4648      8022.5320       279.3011
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 4000
+The last position output (seq=4000) takes 0.000 seconds, 165.212 MB of memory in use
+ENERGY:    4200      1525.3828      2311.0807      2184.9897       139.7118          -1362.6169      -119.4769         0.0000         0.0000      3321.7320           8000.8032       281.7651      4679.0712      8006.2087       279.1381
+
+LDB: ============= START OF LOAD BALANCING ============== 17.4703
+LDB: ============== END OF LOAD BALANCING =============== 17.4703
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 17.4704
+LDB: ============= START OF LOAD BALANCING ============== 17.8421
+LDB: 378 computes have load of zero
+LDB: Largest compute 1111 load 0.091494 is 34.1% of average load 0.268521
+LDB: Average compute 0.004407 is 1.6% of average load 0.268521
+LDB: TIME 17.8423 LOAD: AVG 0.268521 MAX 0.325446  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 17.8424 LOAD: AVG 0.268521 MAX 0.325446  PROXIES: TOTAL 131 MAXPE 20 MAXPATCH 8 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 17.8433 LOAD: AVG 0.268521 MAX 0.290336  PROXIES: TOTAL 124 MAXPE 19 MAXPATCH 8 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 17.8435
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 17.8438
+ENERGY:    4400      1569.7231      2341.6685      2145.2558       124.2670          -1347.9898      -121.5588         0.0000         0.0000      3233.0625           7944.4283       274.2438      4711.3657      7944.9215       278.6888
+
+ENERGY:    4600      1515.1221      2343.6954      2152.2419       127.8820          -1348.4883       -94.3166         0.0000         0.0000      3294.3510           7990.4875       279.4425      4696.1365      7992.0435       277.5302
+
+ENERGY:    4800      1541.9803      2256.7073      2159.1449       127.9790          -1340.9335       -96.4660         0.0000         0.0000      3255.7286           7904.1406       276.1664      4648.4120      7907.4957       275.7686
+
+TIMING: 5000  CPU: 19.8158, 0.00395981/step  Wall: 19.8496, 0.00396657/step, 0.104673 hours remaining, 165.211849 MB of memory in use.
+PERFORMANCE: 5000  averaging 10.891 ns/day, 0.00396657 sec/step with standard deviation 0
+ENERGY:    5000      1601.2965      2291.4867      2134.7415       126.7709          -1332.9790       -85.4140         0.0000         0.0000      3309.2894           8045.1921       280.7097      4735.9026      8051.8351       278.5029
+
+ENERGY:    5200      1528.0336      2365.2871      2149.3755       112.4325          -1313.4738      -110.7184         0.0000         0.0000      3315.6982           8046.6347       281.2533      4730.9365      8045.3076       281.0246
+
+ENERGY:    5400      1547.4226      2342.8856      2159.6874       120.5949          -1321.4623      -125.2203         0.0000         0.0000      3284.3268           8008.2346       278.5922      4723.9079      8011.2807       279.3052
+
+ENERGY:    5600      1537.0698      2279.7786      2165.8969       124.3930          -1293.1066      -101.1139         0.0000         0.0000      3373.5027           8086.4204       286.1566      4712.9177      8090.5362       279.8863
+
+ENERGY:    5800      1532.0554      2369.0250      2150.9257       118.1010          -1361.3813      -126.1497         0.0000         0.0000      3274.4413           7957.0174       277.7537      4682.5761      7954.6748       280.5761
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 6000
+The last position output (seq=6000) takes 0.000 seconds, 165.212 MB of memory in use
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:    6000      1537.8616      2328.9141      2168.0643       127.0955          -1335.4176       -97.3055         0.0000         0.0000      3285.3035           8014.5157       278.6751      4729.2122      8021.5013       278.5050
+
+ENERGY:    6200      1563.9712      2317.2844      2147.3306       133.1765          -1334.4506      -140.1969         0.0000         0.0000      3289.9955           7977.1108       279.0731      4687.1153      7975.3981       278.9035
+
+ENERGY:    6400      1601.0051      2366.7515      2137.3382       117.9888          -1347.0546      -138.1890         0.0000         0.0000      3225.4100           7963.2499       273.5946      4737.8399      7966.5357       277.2075
+
+ENERGY:    6600      1532.1932      2309.9708      2162.2224       135.0632          -1325.8850      -102.8490         0.0000         0.0000      3275.7386           7986.4541       277.8637      4710.7155      7991.9672       278.0057
+
+ENERGY:    6800      1575.6919      2265.3537      2192.8728       118.4482          -1325.0619       -98.1589         0.0000         0.0000      3283.1872           8012.3331       278.4956      4729.1458      8015.6528       278.7575
+
+ENERGY:    7000      1588.2529      2294.4817      2171.2807       122.0823          -1312.0444      -133.5512         0.0000         0.0000      3287.7776           8018.2795       278.8849      4730.5020      8020.7671       281.3290
+
+ENERGY:    7200      1545.9635      2300.2426      2177.3301       130.2130          -1300.8550      -124.1413         0.0000         0.0000      3301.4015           8030.1543       280.0406      4728.7528      8033.9460       283.0794
+
+ENERGY:    7400      1517.4777      2295.9836      2146.4019       118.7849          -1325.5794       -94.8972         0.0000         0.0000      3290.5876           7948.7592       279.1233      4658.1716      7953.8862       277.3625
+
+ENERGY:    7600      1532.3544      2296.2550      2146.9311       117.7707          -1291.5469      -118.3530         0.0000         0.0000      3202.2526           7885.6638       271.6303      4683.4112      7889.6642       276.0124
+
+ENERGY:    7800      1578.2968      2288.7155      2143.4761       132.4910          -1332.0772      -115.1208         0.0000         0.0000      3262.3146           7958.0961       276.7251      4695.7815      7964.8104       276.2092
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 8000
+The last position output (seq=8000) takes 0.000 seconds, 165.212 MB of memory in use
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:    8000      1553.9500      2330.9543      2166.0709       127.2022          -1348.7612      -128.4786         0.0000         0.0000      3298.1353           7999.0729       279.7635      4700.9376      7999.1398       278.7754
+
+ENERGY:    8200      1575.3097      2326.7233      2162.0475       126.9572          -1319.7993      -104.9152         0.0000         0.0000      3269.1282           8035.4515       277.3030      4766.3233      8035.3599       279.5652
+
+LDB: ============= START OF LOAD BALANCING ============== 39.7953
+LDB: ============== END OF LOAD BALANCING =============== 39.7953
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 39.7954
+LDB: ============= START OF LOAD BALANCING ============== 40.151
+LDB: 373 computes have load of zero
+LDB: Largest compute 1108 load 0.091979 is 34.9% of average load 0.263732
+LDB: Average compute 0.004312 is 1.6% of average load 0.263732
+LDB: TIME 40.1512 LOAD: AVG 0.263732 MAX 0.316671  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 40.1513 LOAD: AVG 0.263732 MAX 0.316671  PROXIES: TOTAL 125 MAXPE 19 MAXPATCH 8 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 40.1515 LOAD: AVG 0.263732 MAX 0.291694  PROXIES: TOTAL 124 MAXPE 18 MAXPATCH 8 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 40.1516
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 40.1517
+ENERGY:    8400      1575.6242      2328.6165      2170.2731       127.7175          -1354.7500      -113.0460         0.0000         0.0000      3283.1848           8017.6201       278.4954      4734.4353      8019.5879       280.4149
+
+ENERGY:    8600      1592.3369      2300.2672      2134.1077       143.0873          -1319.2184      -122.1893         0.0000         0.0000      3345.0929           8073.4845       283.7467      4728.3916      8073.5564       281.2061
+
+ENERGY:    8800      1531.2734      2305.9505      2152.7233       123.0197          -1342.4915      -119.3973         0.0000         0.0000      3357.2017           8008.2799       284.7738      4651.0782      8016.1700       280.2491
+
+ENERGY:    9000      1587.7465      2346.8096      2157.1401       122.8824          -1315.7649      -118.5910         0.0000         0.0000      3265.8740           8046.0968       277.0270      4780.2227      8052.5739       280.8418
+
+ENERGY:    9200      1522.0874      2306.1262      2157.3878       122.6415          -1297.0206      -105.9347         0.0000         0.0000      3232.1525           7937.4401       274.1666      4705.2876      7937.3300       278.0504
+
+ENERGY:    9400      1562.7772      2302.7638      2146.0065       117.5548          -1313.4829      -117.9716         0.0000         0.0000      3267.9189           7965.5667       277.2004      4697.6479      7973.4757       277.1598
+
+ENERGY:    9600      1562.4757      2315.4773      2189.6154       132.3568          -1356.7087      -130.2663         0.0000         0.0000      3232.4441           7945.3944       274.1913      4712.9503      7946.1011       278.0551
+
+ENERGY:    9800      1588.4198      2314.5842      2159.1047       120.1254          -1337.6692       -90.3086         0.0000         0.0000      3339.9047           8094.1610       283.3066      4754.2563      8095.4436       276.3826
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 10000
+WRITING COORDINATES TO RESTART FILE AT STEP 10000
+FINISHED WRITING RESTART COORDINATES
+The last position output (seq=10000) takes 0.000 seconds, 165.212 MB of memory in use
+WRITING VELOCITIES TO RESTART FILE AT STEP 10000
+FINISHED WRITING RESTART VELOCITIES
+The last velocity output (seq=10000) takes 0.000 seconds, 165.212 MB of memory in use
+TIMING: 10000  CPU: 43.4994, 0.00473672/step  Wall: 45.4304, 0.00511615/step, 0.127904 hours remaining, 165.211849 MB of memory in use.
+PERFORMANCE: 10000  averaging 9.51257 ns/day, 0.00454136 sec/step with standard deviation 0.000812876
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   10000      1625.5887      2304.9006      2172.2572       125.2678          -1321.3655       -96.9475         0.0000         0.0000      3244.4927           8054.1940       275.2133      4809.7013      8056.8015       279.5247
+
+WRITING EXTENDED SYSTEM TO RESTART FILE AT STEP 10000
+ENERGY:   10200      1532.1831      2318.5210      2163.9935       128.4579          -1360.0244       -71.3788         0.0000         0.0000      3332.7720           8044.5243       282.7016      4711.7524      8048.8203       278.5496
+
+ENERGY:   10400      1540.6416      2344.6860      2178.7038       124.8415          -1344.8157      -139.9499         0.0000         0.0000      3296.6422           8000.7496       279.6369      4704.1073      7998.1315       280.0990
+
+ENERGY:   10600      1604.7712      2304.8521      2147.3810       130.6062          -1338.0271      -134.9182         0.0000         0.0000      3341.3729           8056.0379       283.4312      4714.6651      8055.2910       280.0999
+
+ENERGY:   10800      1603.6791      2320.2549      2140.4758       129.3144          -1337.4584      -122.7010         0.0000         0.0000      3258.8441           7992.4089       276.4307      4733.5647      7994.5260       277.7404
+
+ENERGY:   11000      1603.4078      2325.7518      2160.1515       127.0383          -1332.1640      -114.1652         0.0000         0.0000      3283.2755           8053.2957       278.5031      4770.0202      8058.6750       279.2323
+
+ENERGY:   11200      1582.0064      2370.1092      2125.4295       140.6751          -1374.1274      -113.3883         0.0000         0.0000      3277.4951           8008.1995       278.0127      4730.7044      8016.8419       279.9687
+
+ENERGY:   11400      1601.6096      2346.3417      2144.3966       134.1625          -1364.6596      -122.9090         0.0000         0.0000      3344.9559           8083.8977       283.7351      4738.9417      8085.1044       279.3081
+
+ENERGY:   11600      1567.0153      2386.0569      2161.8175       130.4048          -1371.3122      -109.5685         0.0000         0.0000      3315.1111           8079.5249       281.2035      4764.4138      8081.9690       281.0888
+
+ENERGY:   11800      1587.1100      2325.6438      2156.0790       128.9426          -1366.4940      -108.6529         0.0000         0.0000      3293.8797           8016.5083       279.4026      4722.6286      8021.9317       280.0795
+
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   12000      1531.9661      2376.0449      2135.0828       116.0287          -1339.3796      -114.9811         0.0000         0.0000      3279.6573           7984.4190       278.1961      4704.7617      7990.9874       278.9498
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 12000
+The last position output (seq=12000) takes 0.000 seconds, 165.212 MB of memory in use
+ENERGY:   12200      1530.4808      2321.3117      2134.8400       125.0983          -1334.8048      -135.1183         0.0000         0.0000      3371.4432           8013.2508       285.9819      4641.8076      8017.3310       282.0024
+
+LDB: ============= START OF LOAD BALANCING ============== 53.4283
+LDB: ============== END OF LOAD BALANCING =============== 53.4284
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 53.4284
+LDB: ============= START OF LOAD BALANCING ============== 53.7734
+LDB: 373 computes have load of zero
+LDB: Largest compute 1111 load 0.089740 is 34.1% of average load 0.263452
+LDB: Average compute 0.004308 is 1.6% of average load 0.263452
+LDB: TIME 53.7736 LOAD: AVG 0.263452 MAX 0.301868  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 53.7738 LOAD: AVG 0.263452 MAX 0.301868  PROXIES: TOTAL 124 MAXPE 18 MAXPATCH 8 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 53.7741 LOAD: AVG 0.263452 MAX 0.28949  PROXIES: TOTAL 123 MAXPE 18 MAXPATCH 8 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 53.7742
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 53.7778
+ENERGY:   12400      1537.4380      2389.2520      2125.1866       132.3387          -1346.3777      -104.6953         0.0000         0.0000      3288.6050           8021.7473       278.9551      4733.1423      8028.4785       281.2435
+
+ENERGY:   12600      1565.4041      2300.5885      2154.5400       123.3784          -1346.0600       -97.0353         0.0000         0.0000      3318.5418           8019.3575       281.4945      4700.8157      8021.1749       281.0001
+
+ENERGY:   12800      1563.5301      2310.9221      2154.7565       125.1926          -1335.7719      -113.8620         0.0000         0.0000      3268.7459           7973.5133       277.2706      4704.7674      7976.3907       277.8441
+
+ENERGY:   13000      1595.9619      2343.3683      2142.8671       139.2430          -1341.1367      -107.6066         0.0000         0.0000      3186.2360           7958.9330       270.2717      4772.6971      7960.0325       279.0218
+
+ENERGY:   13200      1623.9012      2276.3941      2155.8759       132.1122          -1359.9902      -105.3003         0.0000         0.0000      3310.7841           8033.7770       280.8365      4722.9929      8039.6044       279.0851
+
+ENERGY:   13400      1572.2688      2286.7410      2168.3556       134.2014          -1333.0626      -100.5672         0.0000         0.0000      3285.7308           8013.6678       278.7113      4727.9370      8016.7159       279.4419
+
+ENERGY:   13600      1528.6286      2356.5173      2176.0761       124.7472          -1348.6221       -80.2854         0.0000         0.0000      3321.8184           8078.8801       281.7724      4757.0618      8078.4786       282.1946
+
+ENERGY:   13800      1560.8741      2320.2389      2179.4111       112.7447          -1343.7902      -117.0170         0.0000         0.0000      3348.4094           8060.8711       284.0280      4712.4617      8067.1262       279.1618
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 14000
+The last position output (seq=14000) takes 0.000 seconds, 165.212 MB of memory in use
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   14000      1559.5040      2382.7210      2174.7371       138.6626          -1342.1283      -118.4036         0.0000         0.0000      3346.3218           8141.4145       283.8509      4795.0927      8143.5467       281.9947
+
+ENERGY:   14200      1629.1940      2325.4862      2160.6126       125.2031          -1341.8737      -135.5327         0.0000         0.0000      3380.2730           8143.3625       286.7308      4763.0895      8149.4238       285.7221
+
+ENERGY:   14400      1564.0231      2336.2037      2142.2690       129.9395          -1347.6890      -107.5960         0.0000         0.0000      3359.0476           8076.1979       284.9304      4717.1503      8078.6194       282.3014
+
+ENERGY:   14600      1518.0098      2274.7540      2185.1255       124.7110          -1347.4894       -72.5706         0.0000         0.0000      3346.7270           8029.2673       283.8853      4682.5403      8027.2765       279.5464
+
+ENERGY:   14800      1548.5764      2295.0040      2157.6013       128.1228          -1312.4183      -103.6673         0.0000         0.0000      3310.0905           8023.3094       280.7776      4713.2188      8021.3889       281.8387
+
+TIMING: 15000  CPU: 60.7503, 0.00345018/step  Wall: 62.6931, 0.00345254/step, 0.0815183 hours remaining, 165.211849 MB of memory in use.
+PERFORMANCE: 15000  averaging 10.3388 ns/day, 0.00417842 sec/step with standard deviation 0.000851797
+ENERGY:   15000      1566.8520      2393.9195      2146.3397       118.7870          -1321.9525       -95.5742         0.0000         0.0000      3355.6294           8164.0010       284.6405      4808.3716      8164.7273       283.3189
+
+ENERGY:   15200      1595.4756      2315.5027      2124.6910       123.2358          -1353.5199      -109.9580         0.0000         0.0000      3360.8566           8056.2838       285.0839      4695.4272      8064.6655       283.3678
+
+ENERGY:   15400      1613.1798      2347.9734      2146.7451       134.7031          -1362.5334      -112.6270         0.0000         0.0000      3301.4468           8068.8877       280.0444      4767.4410      8071.6809       280.1059
+
+ENERGY:   15600      1592.0486      2307.5760      2173.3066       129.3250          -1349.4860       -90.9437         0.0000         0.0000      3293.9417           8055.7682       279.4078      4761.8265      8058.8079       280.4785
+
+ENERGY:   15800      1561.3623      2398.4767      2173.6428       137.1026          -1330.0893      -113.4035         0.0000         0.0000      3340.4570           8167.5486       283.3535      4827.0916      8171.6849       284.0632
+
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   16000      1537.6544      2356.6272      2175.2982       139.2998          -1326.0978      -126.7845         0.0000         0.0000      3317.4149           8073.4123       281.3989      4755.9974      8069.1336       284.4199
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 16000
+The last position output (seq=16000) takes 0.000 seconds, 165.212 MB of memory in use
+ENERGY:   16200      1568.5985      2365.0401      2158.0644       122.8555          -1318.9750      -110.7293         0.0000         0.0000      3342.0714           8126.9257       283.4904      4784.8543      8128.1498       281.5704
+
+LDB: ============= START OF LOAD BALANCING ============== 67.3343
+LDB: ============== END OF LOAD BALANCING =============== 67.3343
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 67.3344
+LDB: ============= START OF LOAD BALANCING ============== 67.6853
+LDB: 378 computes have load of zero
+LDB: Largest compute 1109 load 0.087243 is 31.9% of average load 0.273648
+LDB: Average compute 0.004504 is 1.6% of average load 0.273648
+LDB: TIME 67.6856 LOAD: AVG 0.273648 MAX 0.342384  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 67.6857 LOAD: AVG 0.273648 MAX 0.342384  PROXIES: TOTAL 123 MAXPE 18 MAXPATCH 8 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 67.6858 LOAD: AVG 0.273648 MAX 0.290786  PROXIES: TOTAL 128 MAXPE 19 MAXPATCH 8 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 67.6859
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 67.6861
+ENERGY:   16400      1584.7383      2399.2253      2176.6977       124.0532          -1351.2828      -110.0298         0.0000         0.0000      3348.5572           8171.9591       284.0406      4823.4019      8177.0410       284.0837
+
+ENERGY:   16600      1578.5499      2381.3364      2167.4903       121.3708          -1348.3074      -151.4468         0.0000         0.0000      3367.5060           8116.4992       285.6479      4748.9932      8118.8418       284.2261
+
+ENERGY:   16800      1561.5117      2318.3761      2178.4646       126.7234          -1326.7907      -110.3863         0.0000         0.0000      3300.2974           8048.1962       279.9469      4747.8988      8053.7927       282.5365
+
+ENERGY:   17000      1545.9442      2190.8019      2174.4636       121.4298          -1311.3087       -99.9006         0.0000         0.0000      3300.8166           7922.2468       279.9910      4621.4302      7933.1563       281.6503
+
+ENERGY:   17200      1583.9380      2306.3813      2192.7522       130.7023          -1341.7575      -130.1013         0.0000         0.0000      3245.2856           7987.2007       275.2806      4741.9151      7988.8348       278.5774
+
+ENERGY:   17400      1564.7933      2314.9111      2166.0036       125.9880          -1321.4669      -136.4231         0.0000         0.0000      3298.5076           8012.3135       279.7951      4713.8059      8014.1862       277.7555
+
+ENERGY:   17600      1532.2120      2322.4696      2167.0858       129.7281          -1307.3476      -126.7207         0.0000         0.0000      3360.4589           8077.8861       285.0501      4717.4272      8085.0136       282.1803
+
+ENERGY:   17800      1562.3887      2342.5117      2172.8909       122.0966          -1350.5739      -120.3235         0.0000         0.0000      3236.6047           7965.5952       274.5442      4728.9905      7969.5290       279.8755
+
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   18000      1555.4112      2321.0147      2154.2220       127.0456          -1352.3177      -108.2126         0.0000         0.0000      3335.0275           8032.1905       282.8929      4697.1631      8034.6004       279.7351
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 18000
+The last position output (seq=18000) takes 0.000 seconds, 165.212 MB of memory in use
+ENERGY:   18200      1566.3700      2311.3606      2173.9060       130.0589          -1350.6271      -132.3925         0.0000         0.0000      3339.0112           8037.6872       283.2308      4698.6760      8044.3338       282.4144
+
+ENERGY:   18400      1518.2837      2314.4111      2150.5818       126.4299          -1320.4965      -100.4264         0.0000         0.0000      3286.6810           7975.4645       278.7919      4688.7836      7981.6087       279.1564
+
+ENERGY:   18600      1604.1559      2347.5539      2132.3875       114.1345          -1316.2425      -110.9148         0.0000         0.0000      3231.3196           8002.3941       274.0959      4771.0744      8006.0958       279.6699
+
+ENERGY:   18800      1539.5319      2332.2703      2162.6167       145.7305          -1324.6599       -85.3208         0.0000         0.0000      3302.9640           8073.1326       280.1731      4770.1686      8071.3661       279.6762
+
+ENERGY:   19000      1491.7451      2286.5539      2158.9881       108.8596          -1311.1560      -112.5052         0.0000         0.0000      3264.4836           7886.9691       276.9090      4622.4855      7892.5883       278.5094
+
+ENERGY:   19200      1573.6158      2354.9809      2117.6957       128.8090          -1339.8529       -91.5505         0.0000         0.0000      3349.1605           8092.8586       284.0917      4743.6981      8097.0052       281.2258
+
+ENERGY:   19400      1583.8811      2343.9031      2153.3802       128.9224          -1331.1235      -113.7341         0.0000         0.0000      3336.0611           8101.2903       282.9806      4765.2293      8103.0623       282.1142
+
+ENERGY:   19600      1566.0592      2319.5045      2122.8056       117.2170          -1341.7936       -63.2233         0.0000         0.0000      3290.6210           8011.1904       279.1261      4720.5695      8009.0406       282.6323
+
+ENERGY:   19800      1544.5372      2347.3759      2157.0482       130.7785          -1298.8398      -134.7383         0.0000         0.0000      3281.5936           8027.7553       278.3604      4746.1617      8033.3670       281.2599
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 20000
+WRITING COORDINATES TO RESTART FILE AT STEP 20000
+FINISHED WRITING RESTART COORDINATES
+The last position output (seq=20000) takes 0.000 seconds, 165.212 MB of memory in use
+WRITING VELOCITIES TO RESTART FILE AT STEP 20000
+FINISHED WRITING RESTART VELOCITIES
+The last velocity output (seq=20000) takes 0.000 seconds, 165.212 MB of memory in use
+TIMING: 20000  CPU: 83.5237, 0.00455469/step  Wall: 88.537, 0.00516879/step, 0.114862 hours remaining, 165.211849 MB of memory in use.
+PERFORMANCE: 20000  averaging 9.76048 ns/day, 0.00442601 sec/step with standard deviation 0.000853765
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   20000      1492.3550      2310.1616      2145.6841       129.1844          -1308.5705      -124.0492         0.0000         0.0000      3280.1467           7924.9120       278.2377      4644.7653      7924.9231       278.2509
+
+WRITING EXTENDED SYSTEM TO RESTART FILE AT STEP 20000
+ENERGY:   20200      1547.2176      2303.8839      2169.6588       129.4002          -1353.7505      -122.6764         0.0000         0.0000      3325.4403           7999.1739       282.0797      4673.7336      7999.5755       280.5565
+
+LDB: ============= START OF LOAD BALANCING ============== 89.6036
+LDB: ============== END OF LOAD BALANCING =============== 89.6036
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 89.6037
+LDB: ============= START OF LOAD BALANCING ============== 89.9369
+LDB: 378 computes have load of zero
+LDB: Largest compute 1115 load 0.089101 is 33.8% of average load 0.263936
+LDB: Average compute 0.004348 is 1.6% of average load 0.263936
+LDB: TIME 89.9371 LOAD: AVG 0.263936 MAX 0.328284  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 89.9372 LOAD: AVG 0.263936 MAX 0.328284  PROXIES: TOTAL 128 MAXPE 19 MAXPATCH 8 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 89.9377 LOAD: AVG 0.263936 MAX 0.28602  PROXIES: TOTAL 133 MAXPE 19 MAXPATCH 8 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 89.9378
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 89.9387
+ENERGY:   20400      1570.9291      2298.8110      2167.4168       131.1520          -1322.8787      -114.8141         0.0000         0.0000      3335.8173           8066.4335       282.9599      4730.6162      8077.1855       278.4214
+
+ENERGY:   20600      1568.6277      2299.3855      2171.2425       135.6760          -1318.5553      -108.6874         0.0000         0.0000      3241.9116           7989.6006       274.9944      4747.6890      7993.1465       279.1872
+
+ENERGY:   20800      1554.1723      2330.0402      2162.6141       127.7098          -1331.0098      -103.5045         0.0000         0.0000      3357.6606           8097.6828       284.8128      4740.0221      8098.6282       280.2299
+
+ENERGY:   21000      1548.9312      2302.9456      2183.8247       120.1789          -1321.8360       -85.6454         0.0000         0.0000      3269.0981           8017.4970       277.3005      4748.3990      8021.0250       282.9683
+
+ENERGY:   21200      1588.5951      2325.6708      2157.0966       115.9413          -1322.0952      -125.0152         0.0000         0.0000      3267.2290           8007.4222       277.1419      4740.1933      8010.0574       278.5177
+
+ENERGY:   21400      1519.7413      2284.3239      2167.8002       119.8421          -1298.8189      -109.7038         0.0000         0.0000      3309.0826           7992.2673       280.6921      4683.1847      7993.6963       278.4773
+
+ENERGY:   21600      1593.8627      2256.7728      2141.7699       138.0410          -1322.1492      -108.1870         0.0000         0.0000      3215.8639           7915.9741       272.7849      4700.1102      7921.6210       277.8928
+
+ENERGY:   21800      1553.7552      2285.6210      2135.5516       135.2054          -1325.8129      -114.7298         0.0000         0.0000      3245.2086           7914.7991       275.2740      4669.5905      7918.9023       275.6157
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 22000
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   22000      1501.1504      2281.5541      2114.3780       139.6368          -1325.4860      -103.2747         0.0000         0.0000      3356.2634           7964.2220       284.6942      4607.9587      7969.0014       277.0128
+
+ENERGY:   22200      1513.3236      2324.8684      2141.5913       114.4234          -1318.9831      -106.5163         0.0000         0.0000      3270.8984           7939.6055       277.4532      4668.7071      7945.8898       277.3189
+
+ENERGY:   22400      1556.1363      2211.5970      2154.3896       111.1450          -1323.6070      -137.0882         0.0000         0.0000      3320.6497           7893.2223       281.6733      4572.5727      7896.5814       276.4085
+
+ENERGY:   22600      1530.5075      2366.6147      2135.8440       126.1857          -1348.0060      -109.7829         0.0000         0.0000      3275.1307           7976.4936       277.8122      4701.3629      7980.5364       278.0030
+
+ENERGY:   22800      1559.9314      2365.9604      2156.6169       124.7779          -1339.0921      -104.5541         0.0000         0.0000      3343.5536           8107.1940       283.6161      4763.6404      8110.8483       281.4041
+
+ENERGY:   23000      1541.7945      2240.6163      2140.4342       144.2266          -1297.7848      -129.9087         0.0000         0.0000      3341.1316           7980.5097       283.4107      4639.3781      7984.7053       281.6028
+
+ENERGY:   23200      1556.4930      2308.7535      2172.8513       139.3048          -1323.2795      -110.9575         0.0000         0.0000      3289.3301           8032.4957       279.0166      4743.1655      8032.1616       278.4784
+
+ENERGY:   23400      1603.6605      2353.3041      2140.0713       132.3585          -1329.0481      -137.1508         0.0000         0.0000      3372.0605           8135.2561       286.0342      4763.1956      8142.1720       283.2676
+
+ENERGY:   23600      1552.1985      2263.4631      2165.0270       129.9816          -1331.6674      -131.1199         0.0000         0.0000      3347.4697           7995.3527       283.9483      4647.8830      8002.7666       280.5893
+
+ENERGY:   23800      1561.2213      2305.0659      2167.4406       122.4019          -1307.2805      -110.5534         0.0000         0.0000      3269.8831           8008.1789       277.3671      4738.2958      8011.7801       280.5764
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 24000
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   24000      1520.3628      2297.6593      2173.7520       131.8959          -1309.2609      -121.1743         0.0000         0.0000      3325.2889           8018.5237       282.0668      4693.2348      8020.6987       279.5675
+
+ENERGY:   24200      1555.3215      2275.3975      2185.2910       134.9491          -1318.9627      -108.7222         0.0000         0.0000      3325.6548           8048.9292       282.0979      4723.2743      8049.7782       279.6728
+
+LDB: ============= START OF LOAD BALANCING ============== 102.926
+LDB: ============== END OF LOAD BALANCING =============== 102.926
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 102.926
+LDB: ============= START OF LOAD BALANCING ============== 103.26
+LDB: 378 computes have load of zero
+LDB: Largest compute 1115 load 0.090430 is 35.0% of average load 0.258461
+LDB: Average compute 0.004247 is 1.6% of average load 0.258461
+LDB: TIME 103.26 LOAD: AVG 0.258461 MAX 0.282307  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 103.261 LOAD: AVG 0.258461 MAX 0.282307  PROXIES: TOTAL 133 MAXPE 19 MAXPATCH 8 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 103.261 LOAD: AVG 0.258461 MAX 0.2759  PROXIES: TOTAL 136 MAXPE 19 MAXPATCH 10 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 103.261
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 103.261
+ENERGY:   24400      1543.9556      2277.9542      2171.6364       131.4615          -1323.6921      -131.4884         0.0000         0.0000      3177.5634           7847.3906       269.5361      4669.8272      7852.2997       278.8110
+
+ENERGY:   24600      1535.2871      2308.2093      2168.3572       136.5899          -1357.6128      -119.2895         0.0000         0.0000      3246.4147           7917.9559       275.3764      4671.5412      7914.4367       273.5426
+
+ENERGY:   24800      1529.2281      2267.4551      2143.7782       129.0728          -1305.4691      -114.2781         0.0000         0.0000      3234.3288           7884.1157       274.3512      4649.7869      7886.9642       274.7853
+
+TIMING: 25000  CPU: 99.9535, 0.00328595/step  Wall: 104.979, 0.00328838/step, 0.0685079 hours remaining, 165.211849 MB of memory in use.
+PERFORMANCE: 25000  averaging 10.2894 ns/day, 0.00419849 sec/step with standard deviation 0.000897512
+ENERGY:   25000      1533.9858      2285.8434      2151.2378       122.2689          -1309.7876      -102.0675         0.0000         0.0000      3368.9066           8050.3875       285.7667      4681.4809      8056.3866       279.2551
+
+ENERGY:   25200      1541.3631      2277.8604      2146.7631       131.8948          -1287.4759      -115.7788         0.0000         0.0000      3262.7703           7957.3970       276.7637      4694.6266      7962.9607       280.8726
+
+ENERGY:   25400      1572.6677      2288.8536      2134.1636       123.3267          -1321.7275      -112.6798         0.0000         0.0000      3266.4421           7951.0466       277.0752      4684.6044      7956.9227       278.7288
+
+ENERGY:   25600      1520.0161      2322.4194      2142.3518       140.5115          -1340.8573      -119.1808         0.0000         0.0000      3294.3406           7959.6012       279.4417      4665.2606      7962.6674       278.4556
+
+ENERGY:   25800      1601.0349      2361.5512      2148.9197       132.9200          -1350.2566      -139.3320         0.0000         0.0000      3312.0061           8066.8433       280.9401      4754.8373      8064.5605       278.9751
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 26000
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   26000      1560.2701      2338.4529      2146.2349       133.4423          -1346.5826      -115.7651         0.0000         0.0000      3325.6315           8041.6840       282.0959      4716.0525      8042.9605       282.9161
+
+ENERGY:   26200      1600.7811      2299.7198      2146.9864       130.0254          -1338.8992      -139.1504         0.0000         0.0000      3337.1336           8036.5968       283.0716      4699.4632      8036.6278       280.5591
+
+ENERGY:   26400      1583.9653      2347.2574      2148.0042       127.0070          -1333.0929       -93.0051         0.0000         0.0000      3263.7898           8043.9257       276.8502      4780.1359      8047.4141       282.8473
+
+ENERGY:   26600      1596.2895      2352.1085      2152.0122       116.9239          -1330.8248      -130.3837         0.0000         0.0000      3378.8650           8134.9906       286.6114      4756.1257      8134.4347       281.8087
+
+ENERGY:   26800      1562.6600      2326.3883      2146.9951       113.4673          -1343.9965       -79.4783         0.0000         0.0000      3370.1254           8096.1614       285.8701      4726.0359      8098.7159       285.0643
+
+ENERGY:   27000      1574.3170      2339.0211      2147.0990       132.0897          -1299.5975      -104.5110         0.0000         0.0000      3383.5145           8171.9327       287.0058      4788.4183      8175.3943       286.7383
+
+ENERGY:   27200      1589.8878      2308.8050      2165.9824       130.9896          -1333.3784      -101.2243         0.0000         0.0000      3279.0466           8040.1087       278.1443      4761.0621      8039.2827       282.1992
+
+ENERGY:   27400      1510.2214      2252.1554      2172.7388       120.2316          -1337.8025       -99.7886         0.0000         0.0000      3347.9451           7965.7012       283.9886      4617.7560      7965.4136       280.8693
+
+ENERGY:   27600      1539.6612      2328.4183      2165.5734       126.8959          -1314.8542      -113.8821         0.0000         0.0000      3261.5221           7993.3346       276.6578      4731.8125      7987.6303       278.8808
+
+ENERGY:   27800      1504.5027      2305.8725      2175.1477       130.9663          -1279.4108      -102.3942         0.0000         0.0000      3327.5898           8062.2739       282.2620      4734.6841      8070.6981       281.4789
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 28000
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   28000      1553.9562      2297.6093      2168.6499       130.7341          -1302.7290      -115.2677         0.0000         0.0000      3362.6220           8095.5748       285.2336      4732.9528      8096.6647       283.9998
+
+ENERGY:   28200      1530.5817      2336.3634      2139.9831       138.0841          -1307.8260      -121.2846         0.0000         0.0000      3211.9789           7927.8806       272.4553      4715.9016      7933.2354       277.5498
+
+LDB: ============= START OF LOAD BALANCING ============== 115.081
+LDB: ============== END OF LOAD BALANCING =============== 115.081
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 115.081
+LDB: ============= START OF LOAD BALANCING ============== 115.429
+LDB: 378 computes have load of zero
+LDB: Largest compute 1115 load 0.090811 is 35.2% of average load 0.257841
+LDB: Average compute 0.004222 is 1.6% of average load 0.257841
+LDB: TIME 115.429 LOAD: AVG 0.257841 MAX 0.348002  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 115.429 LOAD: AVG 0.257841 MAX 0.348002  PROXIES: TOTAL 136 MAXPE 19 MAXPATCH 10 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 115.43 LOAD: AVG 0.257841 MAX 0.267078  PROXIES: TOTAL 142 MAXPE 17 MAXPATCH 10 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 115.43
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 115.431
+ENERGY:   28400      1536.5004      2291.5897      2150.9086       134.0254          -1307.8402      -127.9683         0.0000         0.0000      3312.4402           7989.6558       280.9769      4677.2156      7992.5380       278.4408
+
+ENERGY:   28600      1580.0915      2293.5298      2155.3527       117.3990          -1358.0268      -111.8112         0.0000         0.0000      3297.4667           7974.0016       279.7068      4676.5349      7973.8257       280.1227
+
+ENERGY:   28800      1573.4223      2308.3016      2157.7732       125.4920          -1360.3141      -117.6177         0.0000         0.0000      3239.7000           7926.7574       274.8068      4687.0574      7929.0190       277.9871
+
+ENERGY:   29000      1512.4853      2359.5983      2144.3804       121.0273          -1324.9756      -124.6481         0.0000         0.0000      3355.3125           8043.1802       284.6136      4687.8676      8044.5512       280.1423
+
+ENERGY:   29200      1548.1535      2341.4915      2164.9701       131.8841          -1341.0484      -101.0403         0.0000         0.0000      3298.5321           8042.9426       279.7972      4744.4105      8046.9474       280.3858
+
+ENERGY:   29400      1577.8279      2364.5634      2119.8043       125.8613          -1327.3460      -129.5779         0.0000         0.0000      3326.3852           8057.5181       282.1598      4731.1330      8060.1868       282.5083
+
+ENERGY:   29600      1516.4177      2350.6183      2133.9928       136.8197          -1323.6983      -102.9102         0.0000         0.0000      3361.5419           8072.7820       285.1420      4711.2400      8077.7862       281.6134
+
+ENERGY:   29800      1584.3140      2306.2088      2179.8942       129.1690          -1323.5287      -110.2877         0.0000         0.0000      3286.0032           8051.7728       278.7344      4765.7696      8060.6355       284.0419
+
+TIMING: 30000  CPU: 115.338, 0.00307682/step  Wall: 120.367, 0.00307771/step, 0.0598444 hours remaining, 165.211849 MB of memory in use.
+PERFORMANCE: 30000  averaging 10.7685 ns/day, 0.00401169 sec/step with standard deviation 0.000924001
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   30000      1553.3014      2317.9858      2165.9074       120.9921          -1316.3901      -122.9931         0.0000         0.0000      3324.1461           8042.9496       281.9699      4718.8035      8048.1123       278.5830
+
+WRITING EXTENDED SYSTEM TO RESTART FILE AT STEP 30000
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 30000
+WRITING COORDINATES TO RESTART FILE AT STEP 30000
+FINISHED WRITING RESTART COORDINATES
+WRITING VELOCITIES TO RESTART FILE AT STEP 30000
+FINISHED WRITING RESTART VELOCITIES
+The last velocity output (seq=30000) takes 0.000 seconds, 165.212 MB of memory in use
+ENERGY:   30200      1550.9649      2357.6418      2138.0080       119.1841          -1320.9278      -146.5898         0.0000         0.0000      3354.1401           8052.4212       284.5141      4698.2811      8047.9253       281.7411
+
+ENERGY:   30400      1554.8257      2364.5337      2163.4696       137.0760          -1338.0981       -94.9987         0.0000         0.0000      3295.3485           8082.1567       279.5271      4786.8082      8085.1936       281.7555
+
+ENERGY:   30600      1659.5646      2357.8930      2162.2337       121.1453          -1349.9267      -130.9220         0.0000         0.0000      3298.7244           8118.7124       279.8135      4819.9880      8122.6519       282.2637
+
+ENERGY:   30800      1540.3625      2338.4868      2142.7890       128.8283          -1332.4596      -101.0580         0.0000         0.0000      3419.2826           8136.2316       290.0398      4716.9490      8139.1449       284.4114
+
+ENERGY:   31000      1535.3490      2341.1455      2144.5897       131.7494          -1342.8303      -107.6205         0.0000         0.0000      3315.3287           8017.7115       281.2220      4702.3828      8020.1904       282.0732
+
+ENERGY:   31200      1561.9564      2341.4096      2125.5175       116.6884          -1315.3430       -94.3263         0.0000         0.0000      3380.8959           8116.7986       286.7837      4735.9027      8123.1395       281.3205
+
+ENERGY:   31400      1587.1054      2320.5703      2146.3700       123.6425          -1322.2627      -120.9127         0.0000         0.0000      3336.8802           8071.3929       283.0501      4734.5128      8081.5702       282.8346
+
+ENERGY:   31600      1532.2673      2340.3079      2139.2399       130.2485          -1323.8996      -104.3097         0.0000         0.0000      3277.6553           7991.5095       278.0263      4713.8542      8000.4552       280.8348
+
+ENERGY:   31800      1518.3532      2307.8486      2137.8905       140.6770          -1342.4236       -88.6095         0.0000         0.0000      3294.5135           7968.2498       279.4563      4673.7363      7970.8752       278.0263
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 32000
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   32000      1538.5235      2367.0825      2127.4206       124.2249          -1326.0038      -120.6089         0.0000         0.0000      3333.2282           8043.8670       282.7403      4710.6388      8045.2701       278.5658
+
+ENERGY:   32200      1584.6707      2262.1974      2128.1215       126.4937          -1319.2303       -94.8970         0.0000         0.0000      3335.7530           8023.1089       282.9544      4687.3559      8027.4324       281.3973
+
+LDB: ============= START OF LOAD BALANCING ============== 127.797
+LDB: ============== END OF LOAD BALANCING =============== 127.797
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 127.797
+LDB: ============= START OF LOAD BALANCING ============== 128.122
+LDB: 378 computes have load of zero
+LDB: Largest compute 1109 load 0.092393 is 34.5% of average load 0.267665
+LDB: Average compute 0.004387 is 1.6% of average load 0.267665
+LDB: TIME 128.122 LOAD: AVG 0.267665 MAX 0.324944  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 128.122 LOAD: AVG 0.267665 MAX 0.324944  PROXIES: TOTAL 142 MAXPE 17 MAXPATCH 10 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 128.123 LOAD: AVG 0.267665 MAX 0.273993  PROXIES: TOTAL 141 MAXPE 21 MAXPATCH 10 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 128.124
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 128.124
+ENERGY:   32400      1570.7344      2364.6164      2146.9098       115.4410          -1327.3029      -106.2347         0.0000         0.0000      3285.7710           8049.9350       278.7147      4764.1640      8053.6038       279.4667
+
+ENERGY:   32600      1515.1886      2269.5116      2168.0804       130.4376          -1320.4417      -125.2577         0.0000         0.0000      3307.2029           7944.7218       280.5327      4637.5189      7944.5708       278.2227
+
+ENERGY:   32800      1506.2411      2352.3421      2168.3002       118.7353          -1321.4304      -120.2762         0.0000         0.0000      3274.3246           7978.2367       277.7438      4703.9121      7981.1661       279.4749
+
+ENERGY:   33000      1577.3771      2305.4396      2154.5420       122.3922          -1323.3114      -121.9131         0.0000         0.0000      3292.8815           8007.4080       279.3179      4714.5265      8008.8931       280.7814
+
+ENERGY:   33200      1613.9306      2357.4061      2148.3975       129.6071          -1367.2086       -99.3481         0.0000         0.0000      3313.9106           8096.6953       281.1017      4782.7847      8096.8041       279.3305
+
+ENERGY:   33400      1548.7955      2355.7884      2145.5449       117.0191          -1360.2070      -129.9512         0.0000         0.0000      3321.8328           7998.8225       281.7737      4676.9897      8004.3686       280.6538
+
+ENERGY:   33600      1569.0770      2321.9243      2139.8324       128.4568          -1348.0215      -133.7479         0.0000         0.0000      3296.7860           7974.3070       279.6491      4677.5210      7972.1414       278.6359
+
+ENERGY:   33800      1565.4257      2336.8254      2119.0224       124.3487          -1345.9641      -133.1444         0.0000         0.0000      3333.1082           7999.6220       282.7301      4666.5139      8003.8631       279.9439
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 34000
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   34000      1572.1534      2319.1230      2117.5888       132.6397          -1330.0822      -117.7950         0.0000         0.0000      3268.9901           7962.6177       277.2913      4693.6277      7966.2918       278.8092
+
+ENERGY:   34200      1541.1095      2337.3766      2132.9249       133.4766          -1319.2562       -94.4071         0.0000         0.0000      3305.7857           8037.0100       280.4125      4731.2243      8037.9042       279.2707
+
+ENERGY:   34400      1568.3043      2312.7604      2129.9546       127.3007          -1352.5957      -104.3515         0.0000         0.0000      3311.5091           7992.8819       280.8980      4681.3728      7998.7217       279.6655
+
+ENERGY:   34600      1593.7749      2387.1404      2153.9007       129.7121          -1334.2261      -129.7915         0.0000         0.0000      3310.0223           8110.5328       280.7718      4800.5105      8113.3421       278.0028
+
+ENERGY:   34800      1551.3801      2341.2733      2158.5587       120.7436          -1331.8464       -97.9730         0.0000         0.0000      3209.5379           7951.6743       272.2483      4742.1364      7959.5847       281.6838
+
+TIMING: 35000  CPU: 130.911, 0.00311467/step  Wall: 135.941, 0.00311465/step, 0.0562367 hours remaining, 165.211849 MB of memory in use.
+PERFORMANCE: 35000  averaging 11.1239 ns/day, 0.00388354 sec/step with standard deviation 0.000909085
+ENERGY:   35000      1597.4237      2236.2719      2150.4493       125.4116          -1335.0004       -79.6640         0.0000         0.0000      3329.5854           8024.4776       282.4313      4694.8922      8027.7103       278.0081
+
+ENERGY:   35200      1590.6071      2346.0165      2156.6206       113.7746          -1348.9619      -120.3348         0.0000         0.0000      3324.8250           8062.5472       282.0275      4737.7222      8064.4607       281.2710
+
+ENERGY:   35400      1578.0929      2335.8551      2162.8656       133.1177          -1317.5054      -133.5137         0.0000         0.0000      3364.0174           8122.9296       285.3520      4758.9122      8123.1562       281.2699
+
+ENERGY:   35600      1566.2551      2345.0460      2136.5853       125.6190          -1321.0551      -108.6319         0.0000         0.0000      3327.1365           8070.9550       282.2236      4743.8185      8071.7335       282.5779
+
+ENERGY:   35800      1595.4432      2344.3737      2120.2534       127.7618          -1353.4268      -101.0094         0.0000         0.0000      3295.7183           8029.1142       279.5585      4733.3959      8031.8538       281.0214
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 36000
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   36000      1578.3452      2339.9728      2145.4153       126.3714          -1363.7205       -97.2555         0.0000         0.0000      3314.6654           8043.7942       281.1657      4729.1288      8049.2209       281.2569
+
+ENERGY:   36200      1532.4626      2357.0651      2149.1488       121.8668          -1332.0377      -128.6592         0.0000         0.0000      3232.8230           7932.6693       274.2234      4699.8464      7934.5122       278.1819
+
+LDB: ============= START OF LOAD BALANCING ============== 139.909
+LDB: ============== END OF LOAD BALANCING =============== 139.909
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 139.91
+LDB: ============= START OF LOAD BALANCING ============== 140.211
+LDB: 378 computes have load of zero
+LDB: Largest compute 1109 load 0.089895 is 34.4% of average load 0.261537
+LDB: Average compute 0.004295 is 1.6% of average load 0.261537
+LDB: TIME 140.211 LOAD: AVG 0.261537 MAX 0.280861  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 140.211 LOAD: AVG 0.261537 MAX 0.280861  PROXIES: TOTAL 141 MAXPE 21 MAXPATCH 10 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 140.211 LOAD: AVG 0.261537 MAX 0.273065  PROXIES: TOTAL 148 MAXPE 21 MAXPATCH 10 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 140.212
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 140.212
+ENERGY:   36400      1527.6644      2302.8563      2125.1468       124.3271          -1327.0018      -127.0614         0.0000         0.0000      3254.7935           7880.7249       276.0871      4625.9314      7887.5042       274.6739
+
+ENERGY:   36600      1605.3761      2263.1853      2140.2722       137.6180          -1331.5252      -115.4645         0.0000         0.0000      3219.5441           7919.0059       273.0971      4699.4618      7926.0805       273.8910
+
+ENERGY:   36800      1550.0781      2364.1464      2123.5133       134.8528          -1359.2336      -126.5556         0.0000         0.0000      3311.5745           7998.3760       280.9035      4686.8015      8004.4507       277.7238
+
+ENERGY:   37000      1461.2762      2343.5340      2137.3350       127.6061          -1330.0250      -144.5039         0.0000         0.0000      3283.5538           7878.7760       278.5267      4595.2223      7878.2407       278.8198
+
+ENERGY:   37200      1562.4709      2319.4196      2135.7864       121.2856          -1313.3973      -119.4302         0.0000         0.0000      3309.3765           8015.5116       280.7171      4706.1351      8016.0827       279.1908
+
+ENERGY:   37400      1528.8186      2302.2607      2125.5088       124.7031          -1320.7241      -118.1702         0.0000         0.0000      3318.7076           7961.1046       281.5086      4642.3970      7964.9438       277.8284
+
+ENERGY:   37600      1558.0610      2337.7817      2119.8277       131.4567          -1351.3026      -119.0829         0.0000         0.0000      3317.1552           7993.8968       281.3769      4676.7416      7998.7941       279.2604
+
+ENERGY:   37800      1617.3594      2304.3391      2134.6141       126.7290          -1324.0906      -130.9840         0.0000         0.0000      3349.3403           8077.3074       284.1070      4727.9671      8077.5387       280.0042
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 38000
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   38000      1579.5222      2319.5292      2151.5085       136.2719          -1319.1580      -141.4526         0.0000         0.0000      3270.2907           7996.5119       277.4016      4726.2213      7997.0819       281.6987
+
+ENERGY:   38200      1584.7145      2310.4746      2127.3673       137.4318          -1327.8576      -114.3467         0.0000         0.0000      3239.2487           7957.0326       274.7685      4717.7839      7960.8867       278.2238
+
+ENERGY:   38400      1559.8714      2242.9435      2114.1492       121.4261          -1313.8321      -142.2948         0.0000         0.0000      3315.1310           7897.3942       281.2052      4582.2632      7901.4562       277.3292
+
+ENERGY:   38600      1577.5901      2296.8078      2142.9054       122.6554          -1342.7725      -133.6203         0.0000         0.0000      3274.2629           7937.8288       277.7386      4663.5659      7940.9228       278.3223
+
+ENERGY:   38800      1571.6521      2370.0293      2111.4104       120.0809          -1318.0957      -115.7792         0.0000         0.0000      3341.0316           8080.3294       283.4022      4739.2978      8080.7834       281.5197
+
+ENERGY:   39000      1620.7135      2377.8961      2125.8846       123.7383          -1357.2441       -97.7734         0.0000         0.0000      3309.2707           8102.4858       280.7081      4793.2151      8108.0770       280.4380
+
+ENERGY:   39200      1533.4840      2423.2369      2140.6905       125.1970          -1367.5754       -86.7188         0.0000         0.0000      3311.6046           8079.9187       280.9061      4768.3141      8079.8526       281.6003
+
+ENERGY:   39400      1540.5514      2392.4188      2155.2971       133.4504          -1326.7187      -130.5115         0.0000         0.0000      3316.2618           8080.7494       281.3011      4764.4876      8086.7470       280.6020
+
+ENERGY:   39600      1526.8888      2352.7387      2152.1579       128.2468          -1333.4560      -128.5462         0.0000         0.0000      3279.4185           7977.4485       278.1759      4698.0300      7977.2560       282.1441
+
+ENERGY:   39800      1606.1108      2302.0920      2142.7868       131.6359          -1315.6253      -127.5260         0.0000         0.0000      3279.0258           8018.4999       278.1426      4739.4741      8019.7662       280.2337
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 40000
+WRITING COORDINATES TO RESTART FILE AT STEP 40000
+FINISHED WRITING RESTART COORDINATES
+WRITING VELOCITIES TO RESTART FILE AT STEP 40000
+FINISHED WRITING RESTART VELOCITIES
+The last velocity output (seq=40000) takes 0.000 seconds, 165.212 MB of memory in use
+TIMING: 40000  CPU: 146.079, 0.00303369/step  Wall: 151.11, 0.00303379/step, 0.0505632 hours remaining, 165.211849 MB of memory in use.
+PERFORMANCE: 40000  averaging 11.4367 ns/day, 0.00377732 sec/step with standard deviation 0.000893663
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   40000      1602.3914      2359.9027      2111.4358       139.2343          -1343.5804      -132.7969         0.0000         0.0000      3292.5171           8029.1041       279.2870      4736.5869      8029.2462       280.8396
+
+WRITING EXTENDED SYSTEM TO RESTART FILE AT STEP 40000
+ENERGY:   40200      1596.2440      2387.2194      2174.0232       137.0291          -1345.8874      -141.0903         0.0000         0.0000      3365.7633           8173.3014       285.5001      4807.5380      8173.2854       283.5995
+
+LDB: ============= START OF LOAD BALANCING ============== 152.09
+LDB: ============== END OF LOAD BALANCING =============== 152.091
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 152.091
+LDB: ============= START OF LOAD BALANCING ============== 152.393
+LDB: 378 computes have load of zero
+LDB: Largest compute 1109 load 0.089962 is 34.4% of average load 0.261400
+LDB: Average compute 0.004290 is 1.6% of average load 0.261400
+LDB: TIME 152.393 LOAD: AVG 0.2614 MAX 0.273986  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 152.393 LOAD: AVG 0.2614 MAX 0.273986  PROXIES: TOTAL 148 MAXPE 21 MAXPATCH 10 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 152.393 LOAD: AVG 0.2614 MAX 0.273986  PROXIES: TOTAL 148 MAXPE 21 MAXPATCH 10 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 152.393
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 152.393
+ENERGY:   40400      1601.6864      2338.9057      2166.0144       124.6838          -1334.6929       -94.9791         0.0000         0.0000      3230.9939           8032.6121       274.0683      4801.6182      8037.8207       283.4482
+
+ENERGY:   40600      1570.5070      2333.3248      2157.7029       130.6768          -1310.5505      -130.9755         0.0000         0.0000      3347.6768           8098.3623       283.9659      4750.6854      8100.6352       280.7548
+
+ENERGY:   40800      1595.3164      2332.4562      2176.4902       121.6254          -1340.9313      -114.7806         0.0000         0.0000      3323.0953           8093.2716       281.8808      4770.1763      8100.1148       283.9088
+
+ENERGY:   41000      1531.2969      2355.6337      2151.0049       123.7872          -1323.1833      -127.3643         0.0000         0.0000      3314.7987           8025.9738       281.1770      4711.1752      8030.6475       282.5760
+
+ENERGY:   41200      1552.4149      2347.3591      2149.4410       122.7488          -1340.5229      -103.1029         0.0000         0.0000      3324.8773           8053.2152       282.0319      4728.3379      8053.8105       280.5087
+
+ENERGY:   41400      1581.2344      2353.4103      2158.9805       107.2379          -1371.1574      -131.2984         0.0000         0.0000      3331.3841           8029.7914       282.5839      4698.4073      8034.3819       281.1901
+
+ENERGY:   41600      1589.4070      2399.6299      2115.1713       140.7563          -1349.4636      -119.0821         0.0000         0.0000      3280.9883           8057.4071       278.3090      4776.4189      8059.3622       280.6927
+
+ENERGY:   41800      1581.9122      2347.3630      2143.7267       134.7972          -1369.9660      -118.4731         0.0000         0.0000      3285.1450           8004.5048       278.6616      4719.3599      8014.0065       281.1631
+
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   42000      1574.0285      2313.7382      2158.0841       136.4348          -1347.5688      -125.2962         0.0000         0.0000      3317.6166           8027.0372       281.4160      4709.4207      8030.8716       279.9325
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 42000
+ENERGY:   42200      1577.3318      2353.3678      2144.6105       120.9913          -1329.4543      -143.0430         0.0000         0.0000      3302.5253           8026.3294       280.1359      4723.8041      8028.9754       281.9005
+
+ENERGY:   42400      1551.6272      2337.3456      2158.8410       133.3151          -1303.9486      -102.3847         0.0000         0.0000      3401.8243           8176.6201       288.5589      4774.7957      8182.3810       283.3296
+
+ENERGY:   42600      1567.5525      2271.9924      2185.1833       140.6696          -1321.8773      -109.9364         0.0000         0.0000      3374.3164           8107.9004       286.2256      4733.5841      8114.9916       285.0033
+
+ENERGY:   42800      1524.6901      2358.5506      2136.5289       122.6790          -1341.2249      -116.0537         0.0000         0.0000      3327.5693           8012.7393       282.2603      4685.1699      8013.5059       283.1431
+
+ENERGY:   43000      1542.0754      2344.4314      2157.6170       134.0762          -1349.3928      -116.8692         0.0000         0.0000      3236.4788           7948.4167       274.5335      4711.9379      7953.1547       277.9750
+
+ENERGY:   43200      1539.0723      2321.9118      2094.5390       130.6671          -1347.4085      -120.6678         0.0000         0.0000      3258.2276           7876.3416       276.3784      4618.1140      7877.0425       276.2583
+
+ENERGY:   43400      1553.5680      2313.0730      2116.9790       141.7791          -1351.2281      -117.5293         0.0000         0.0000      3297.6246           7954.2664       279.7202      4656.6418      7957.1158       277.1549
+
+ENERGY:   43600      1600.1007      2384.8707      2139.7598       135.5356          -1397.4837      -124.1619         0.0000         0.0000      3216.5457           7955.1670       272.8427      4738.6213      7962.8471       278.1003
+
+ENERGY:   43800      1613.4195      2342.4981      2141.8279       131.5118          -1357.5858      -105.6997         0.0000         0.0000      3277.5083           8043.4800       278.0139      4765.9717      8045.9132       278.6100
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 44000
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   44000      1551.2368      2273.0982      2121.1818       127.3545          -1341.2607      -135.3397         0.0000         0.0000      3274.7053           7870.9760       277.7761      4596.2708      7877.2310       278.8420
+
+ENERGY:   44200      1600.9647      2327.6171      2146.1037       120.1429          -1354.3542       -97.1037         0.0000         0.0000      3299.0954           8042.4659       279.8450      4743.3706      8046.3606       278.9090
+
+LDB: ============= START OF LOAD BALANCING ============== 166.098
+LDB: ============== END OF LOAD BALANCING =============== 166.098
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 166.098
+LDB: ============= START OF LOAD BALANCING ============== 166.445
+LDB: 378 computes have load of zero
+LDB: Largest compute 1107 load 0.089964 is 33.3% of average load 0.269774
+LDB: Average compute 0.004409 is 1.6% of average load 0.269774
+LDB: TIME 166.449 LOAD: AVG 0.269774 MAX 0.340889  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 166.449 LOAD: AVG 0.269774 MAX 0.340889  PROXIES: TOTAL 149 MAXPE 21 MAXPATCH 10 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 166.45 LOAD: AVG 0.269774 MAX 0.279555  PROXIES: TOTAL 152 MAXPE 20 MAXPATCH 10 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 166.45
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 166.451
+ENERGY:   44400      1560.9799      2351.1572      2151.1522       118.7133          -1322.0844      -136.6678         0.0000         0.0000      3279.8741           8003.1245       278.2145      4723.2504      8007.9248       280.8593
+
+ENERGY:   44600      1607.7255      2293.0559      2175.8000       121.6405          -1344.9280      -127.9326         0.0000         0.0000      3307.9715           8033.3329       280.5979      4725.3615      8032.6922       280.7885
+
+ENERGY:   44800      1569.0017      2337.2140      2141.8243       136.8888          -1322.8471      -118.8913         0.0000         0.0000      3274.0294           8017.2197       277.7188      4743.1904      8015.7913       279.2445
+
+TIMING: 45000  CPU: 163.451, 0.00347427/step  Wall: 168.487, 0.00347547/step, 0.0530975 hours remaining, 165.211849 MB of memory in use.
+PERFORMANCE: 45000  averaging 11.5391 ns/day, 0.00374378 sec/step with standard deviation 0.000841979
+ENERGY:   45000      1540.1912      2264.7247      2160.7331       125.0890          -1335.5998      -101.5204         0.0000         0.0000      3289.8128           7943.4306       279.0576      4653.6178      7942.2490       277.6387
+
+ENERGY:   45200      1608.7411      2356.5666      2143.5495       119.0728          -1329.1177      -135.2782         0.0000         0.0000      3319.5785           8083.1126       281.5825      4763.5340      8083.8930       278.3101
+
+ENERGY:   45400      1638.2479      2244.5349      2168.9338       135.5118          -1323.4188      -104.8233         0.0000         0.0000      3329.4364           8088.4228       282.4186      4758.9864      8089.8966       282.6736
+
+ENERGY:   45600      1587.2622      2305.1180      2169.2810       126.5044          -1330.2724      -122.0837         0.0000         0.0000      3274.2332           8010.0428       277.7360      4735.8096      8010.2402       281.8550
+
+ENERGY:   45800      1567.2480      2350.6804      2128.4942       122.1490          -1355.2950      -120.8840         0.0000         0.0000      3351.4459           8043.8385       284.2856      4692.3926      8048.1401       281.3739
+
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   46000      1579.8992      2327.5757      2146.2305       119.4168          -1363.0523      -125.8505         0.0000         0.0000      3350.1742           8034.3936       284.1777      4684.2194      8036.2769       282.7627
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 46000
+ENERGY:   46200      1552.4721      2344.5113      2138.3680       133.7321          -1358.7316      -113.3790         0.0000         0.0000      3296.1866           7993.1594       279.5982      4696.9728      7996.5822       279.3454
+
+ENERGY:   46400      1578.9998      2352.8339      2161.8031       125.4760          -1319.4337      -122.3977         0.0000         0.0000      3296.1672           8073.4486       279.5966      4777.2813      8077.5734       278.3926
+
+ENERGY:   46600      1577.6487      2298.6192      2159.0952       133.3902          -1334.0457      -123.4506         0.0000         0.0000      3282.7828           7994.0397       278.4613      4711.2569      8000.6219       280.8610
+
+ENERGY:   46800      1572.9395      2313.7188      2128.2682       122.9007          -1314.9096      -120.6453         0.0000         0.0000      3362.0667           8064.3391       285.1865      4702.2723      8072.9206       280.1446
+
+ENERGY:   47000      1548.2733      2372.1651      2163.3026       120.8945          -1339.7856      -116.6989         0.0000         0.0000      3271.8631           8020.0140       277.5350      4748.1509      8017.1299       280.7515
+
+ENERGY:   47200      1569.4919      2425.0910      2150.6592       133.5320          -1359.1019      -109.2458         0.0000         0.0000      3277.3966           8087.8230       278.0044      4810.4264      8090.4571       280.6740
+
+ENERGY:   47400      1557.2531      2372.6387      2160.4249       129.1532          -1334.4274      -127.8881         0.0000         0.0000      3331.2448           8088.3993       282.5720      4757.1545      8090.0896       281.9977
+
+ENERGY:   47600      1580.9746      2403.2768      2139.6328       127.5323          -1358.1224      -141.6248         0.0000         0.0000      3316.1227           8067.7920       281.2893      4751.6693      8075.2674       282.6895
+
+ENERGY:   47800      1555.4590      2360.3109      2138.1715       127.1730          -1352.8387       -96.3428         0.0000         0.0000      3300.2166           8032.1496       279.9401      4731.9329      8037.5350       283.1892
+
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   48000      1584.2796      2277.5395      2151.0048       119.6424          -1336.7373      -123.4033         0.0000         0.0000      3302.0795           7974.4054       280.0981      4672.3258      7978.0984       279.7161
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 48000
+ENERGY:   48200      1537.5743      2311.3061      2132.8189       125.2526          -1339.0155       -89.3854         0.0000         0.0000      3290.2443           7968.7953       279.0942      4678.5510      7976.2846       276.6502
+
+LDB: ============= START OF LOAD BALANCING ============== 180.214
+LDB: ============== END OF LOAD BALANCING =============== 180.214
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 180.214
+LDB: ============= START OF LOAD BALANCING ============== 180.57
+LDB: 378 computes have load of zero
+LDB: Largest compute 1108 load 0.088037 is 32.7% of average load 0.269047
+LDB: Average compute 0.004415 is 1.6% of average load 0.269047
+LDB: TIME 180.57 LOAD: AVG 0.269047 MAX 0.355724  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 180.57 LOAD: AVG 0.269047 MAX 0.355724  PROXIES: TOTAL 151 MAXPE 20 MAXPATCH 10 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 180.57 LOAD: AVG 0.269047 MAX 0.280033  PROXIES: TOTAL 147 MAXPE 21 MAXPATCH 9 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 180.571
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 180.571
+ENERGY:   48400      1542.7381      2333.2930      2132.3691       123.6708          -1326.5611       -85.7067         0.0000         0.0000      3205.3507           7925.1539       271.8931      4719.8032      7926.9322       277.6495
+
+ENERGY:   48600      1606.9939      2360.3515      2139.0069       124.0884          -1368.4242      -126.9868         0.0000         0.0000      3305.0444           8040.0738       280.3496      4735.0294      8040.3819       278.4986
+
+ENERGY:   48800      1586.6751      2397.3587      2126.7472       123.4339          -1360.9984      -123.2027         0.0000         0.0000      3282.8071           8032.8208       278.4633      4750.0138      8035.4542       281.1384
+
+ENERGY:   49000      1550.2043      2415.4224      2133.3782       136.2503          -1335.8075      -131.0924         0.0000         0.0000      3326.5621           8094.9174       282.1748      4768.3553      8097.9909       282.0634
+
+ENERGY:   49200      1589.5844      2279.7659      2164.1228       130.9556          -1357.0786      -113.0393         0.0000         0.0000      3293.5416           7987.8524       279.3739      4694.3108      7990.4970       279.9651
+
+ENERGY:   49400      1511.6965      2343.2244      2136.4852       131.1212          -1347.6412      -107.2112         0.0000         0.0000      3325.9382           7993.6129       282.1219      4667.6748      7993.2197       276.8414
+
+ENERGY:   49600      1574.9875      2312.3256      2159.4468       134.8978          -1333.9809      -134.5980         0.0000         0.0000      3289.9880           8003.0668       279.0724      4713.0788      8008.0650       278.9164
+
+ENERGY:   49800      1618.4506      2344.8000      2146.8844       134.2176          -1343.7442       -89.5130         0.0000         0.0000      3283.6178           8094.7133       278.5321      4811.0954      8094.0497       281.8476
+
+TIMING: 50000  CPU: 180.508, 0.00341146/step  Wall: 185.564, 0.00341545/step, 0.0474368 hours remaining, 165.211849 MB of memory in use.
+PERFORMANCE: 50000  averaging 11.6412 ns/day, 0.00371095 sec/step with standard deviation 0.000800586
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   50000      1583.7984      2269.0173      2174.4037       132.2559          -1317.9841      -116.5301         0.0000         0.0000      3299.0959           8024.0570       279.8450      4724.9610      8028.3072       281.7995
+
+WRITING EXTENDED SYSTEM TO RESTART FILE AT STEP 50000
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 50000
+WRITING COORDINATES TO RESTART FILE AT STEP 50000
+FINISHED WRITING RESTART COORDINATES
+WRITING VELOCITIES TO RESTART FILE AT STEP 50000
+FINISHED WRITING RESTART VELOCITIES
+The last velocity output (seq=50000) takes 0.000 seconds, 165.212 MB of memory in use
+ENERGY:   50200      1514.3255      2356.0405      2144.0069       116.8883          -1326.3810       -98.6139         0.0000         0.0000      3276.1655           7982.4319       277.9000      4706.2663      7983.3320       278.7868
+
+ENERGY:   50400      1533.6074      2349.4694      2143.4216       116.9193          -1343.5105      -123.8755         0.0000         0.0000      3203.8885           7879.9201       271.7691      4676.0317      7882.4241       279.9510
+
+ENERGY:   50600      1511.9644      2384.8688      2131.7792       122.7479          -1319.5760      -116.6057         0.0000         0.0000      3218.4982           7933.6767       273.0083      4715.1784      7934.3845       275.6814
+
+ENERGY:   50800      1491.8584      2339.0554      2128.3849       134.4866          -1335.4493      -117.1868         0.0000         0.0000      3323.7007           7964.8499       281.9321      4641.1491      7966.2523       277.5210
+
+ENERGY:   51000      1545.2564      2342.9343      2120.2938       112.9495          -1338.8518      -109.2866         0.0000         0.0000      3356.9997           8030.2954       284.7567      4673.2957      8030.4481       279.7950
+
+ENERGY:   51200      1592.0272      2353.6793      2110.4271       125.0769          -1323.1053      -115.0372         0.0000         0.0000      3251.1759           7994.2440       275.7802      4743.0681      7993.8433       278.7468
+
+ENERGY:   51400      1591.2704      2343.7246      2142.0605       132.7019          -1358.7225      -147.9190         0.0000         0.0000      3293.0182           7996.1342       279.3295      4703.1160      8002.2974       279.9032
+
+ENERGY:   51600      1566.4474      2339.1802      2155.4218       128.8850          -1325.9859      -119.7084         0.0000         0.0000      3356.5144           8100.7545       284.7155      4744.2401      8107.7531       281.6761
+
+ENERGY:   51800      1611.2492      2350.8457      2137.0062       139.2757          -1338.2278      -100.9923         0.0000         0.0000      3237.1437           8036.3003       274.5899      4799.1566      8041.0452       280.6498
+
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   52000      1570.4405      2387.4518      2154.1997       133.9801          -1338.0367      -141.5210         0.0000         0.0000      3300.4721           8066.9864       279.9618      4766.5143      8071.9725       282.5076
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 52000
+ENERGY:   52200      1624.8267      2359.4713      2126.7811       127.6199          -1316.7302      -111.6309         0.0000         0.0000      3387.3890           8197.7270       287.3345      4810.3380      8202.1172       284.3828
+
+LDB: ============= START OF LOAD BALANCING ============== 193.013
+LDB: ============== END OF LOAD BALANCING =============== 193.013
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 193.013
+LDB: ============= START OF LOAD BALANCING ============== 193.348
+LDB: 378 computes have load of zero
+LDB: Largest compute 1108 load 0.088640 is 33.6% of average load 0.263527
+LDB: Average compute 0.004328 is 1.6% of average load 0.263527
+LDB: TIME 193.348 LOAD: AVG 0.263527 MAX 0.319168  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 193.348 LOAD: AVG 0.263527 MAX 0.319168  PROXIES: TOTAL 147 MAXPE 21 MAXPATCH 9 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 193.349 LOAD: AVG 0.263527 MAX 0.273985  PROXIES: TOTAL 146 MAXPE 25 MAXPATCH 9 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 193.349
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 193.367
+ENERGY:   52400      1642.0035      2394.9601      2140.4788       133.5926          -1354.0731      -131.9638         0.0000         0.0000      3363.1062           8188.1042       285.2747      4824.9980      8186.7366       291.3242
+
+ENERGY:   52600      1571.6967      2354.4343      2131.0799       127.1635          -1350.3620      -138.9226         0.0000         0.0000      3225.8459           7920.9356       273.6316      4695.0897      7926.4359       282.1022
+
+ENERGY:   52800      1541.0474      2384.7154      2139.3398       128.2911          -1340.9568      -148.4154         0.0000         0.0000      3287.2303           7991.2518       278.8385      4704.0215      7995.6662       278.6273
+
+ENERGY:   53000      1516.2627      2300.4884      2145.9324       135.3720          -1356.8819       -77.8817         0.0000         0.0000      3302.1409           7965.4328       280.1033      4663.2919      7969.2390       276.3833
+
+ENERGY:   53200      1551.5575      2343.6494      2125.5941       133.5585          -1330.4078      -132.6770         0.0000         0.0000      3300.6399           7991.9146       279.9760      4691.2747      7995.3514       277.8717
+
+ENERGY:   53400      1500.5912      2355.9286      2142.2923       128.8193          -1340.6461       -80.5376         0.0000         0.0000      3365.8666           8072.3143       285.5088      4706.4477      8074.3093       280.3983
+
+ENERGY:   53600      1532.5019      2303.6483      2118.6240       121.5262          -1331.4715      -127.8805         0.0000         0.0000      3289.9080           7906.8565       279.0657      4616.9485      7907.8710       279.4160
+
+ENERGY:   53800      1556.4981      2352.7088      2157.1695       136.4593          -1335.6341      -116.9527         0.0000         0.0000      3293.1217           8043.3705       279.3383      4750.2489      8046.1339       280.3357
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 54000
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   54000      1570.0095      2295.1890      2143.9347       112.5733          -1337.4963      -119.0684         0.0000         0.0000      3282.8238           7947.9657       278.4647      4665.1419      7953.8072       278.9886
+
+ENERGY:   54200      1537.4390      2313.2726      2130.1429       144.2478          -1364.4316       -87.2068         0.0000         0.0000      3265.8565           7939.3203       277.0255      4673.4638      7942.3116       279.1951
+
+ENERGY:   54400      1560.8949      2339.6330      2142.3765       120.7329          -1358.3390      -107.7008         0.0000         0.0000      3333.7180           8031.3156       282.7818      4697.5976      8035.4228       279.4676
+
+ENERGY:   54600      1519.7374      2372.6614      2128.2092       127.4480          -1344.4710      -103.1722         0.0000         0.0000      3318.7027           8019.1155       281.5082      4700.4128      8022.5736       279.5864
+
+ENERGY:   54800      1474.5793      2351.2611      2173.8329       139.4543          -1309.2745      -116.9879         0.0000         0.0000      3319.8632           8032.7283       281.6066      4712.8651      8037.3956       280.0844
+
+TIMING: 55000  CPU: 196.019, 0.00310226/step  Wall: 201.096, 0.00310627/step, 0.0388284 hours remaining, 165.211849 MB of memory in use.
+PERFORMANCE: 55000  averaging 11.8163 ns/day, 0.00365598 sec/step with standard deviation 0.000781079
+ENERGY:   55000      1592.5351      2356.6947      2112.3095       133.3221          -1341.0436      -114.9244         0.0000         0.0000      3347.4133           8086.3067       283.9435      4738.8934      8087.5359       280.4270
+
+ENERGY:   55200      1524.1441      2331.8700      2137.5830       123.7932          -1308.0508      -114.5225         0.0000         0.0000      3294.2873           7989.1044       279.4371      4694.8171      7989.2484       281.0394
+
+ENERGY:   55400      1601.5613      2302.8350      2082.5676       133.6101          -1324.4417       -94.8418         0.0000         0.0000      3279.3331           7980.6238       278.1686      4701.2906      7982.5558       278.1539
+
+ENERGY:   55600      1621.5304      2379.7188      2121.2183       126.0567          -1362.4793      -114.5486         0.0000         0.0000      3263.6311           8035.1275       276.8367      4771.4964      8040.8629       279.7861
+
+ENERGY:   55800      1548.4580      2404.7103      2114.4582       118.0377          -1353.2317      -123.2789         0.0000         0.0000      3307.4204           8016.5741       280.5511      4709.1537      8022.2080       278.1430
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 56000
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   56000      1556.9368      2344.1554      2132.1253       114.3709          -1341.0281      -115.4811         0.0000         0.0000      3275.8440           7966.9232       277.8727      4691.0792      7970.1747       280.2083
+
+ENERGY:   56200      1540.8526      2291.3157      2170.5588       127.4120          -1320.6922       -87.2110         0.0000         0.0000      3334.3498           8056.5857       282.8354      4722.2360      8056.8092       278.6097
+
+LDB: ============= START OF LOAD BALANCING ============== 205.066
+LDB: ============== END OF LOAD BALANCING =============== 205.066
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 205.066
+LDB: ============= START OF LOAD BALANCING ============== 205.386
+LDB: 378 computes have load of zero
+LDB: Largest compute 1108 load 0.089298 is 33.7% of average load 0.265078
+LDB: Average compute 0.004353 is 1.6% of average load 0.265078
+LDB: TIME 205.386 LOAD: AVG 0.265078 MAX 0.304098  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 205.386 LOAD: AVG 0.265078 MAX 0.304098  PROXIES: TOTAL 146 MAXPE 25 MAXPATCH 9 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 205.387 LOAD: AVG 0.265078 MAX 0.276816  PROXIES: TOTAL 139 MAXPE 22 MAXPATCH 9 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 205.387
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 205.387
+ENERGY:   56400      1586.2625      2350.0664      2150.8500       137.2067          -1354.9763       -86.5710         0.0000         0.0000      3296.4714           8079.3097       279.6224      4782.8383      8078.7260       281.9003
+
+ENERGY:   56600      1534.0931      2315.0496      2132.1444       129.5118          -1326.8618       -98.0007         0.0000         0.0000      3321.1657           8007.1022       281.7171      4685.9365      8008.5876       280.9121
+
+ENERGY:   56800      1579.1962      2342.2839      2124.9566       126.1191          -1360.1425      -114.1171         0.0000         0.0000      3304.8512           8003.1474       280.3332      4698.2962      8007.6412       279.8740
+
+ENERGY:   57000      1570.5235      2360.2592      2114.1098       133.6388          -1342.7244       -96.1968         0.0000         0.0000      3269.2455           8008.8555       277.3130      4739.6101      8013.5831       279.6239
+
+ENERGY:   57200      1578.6501      2343.7577      2121.0117       128.1718          -1357.5473      -122.6662         0.0000         0.0000      3286.6199           7977.9976       278.7867      4691.3777      7983.1395       278.5710
+
+ENERGY:   57400      1518.7290      2307.4583      2116.6505       125.5267          -1317.5004      -119.2396         0.0000         0.0000      3296.7954           7928.4200       279.6499      4631.6246      7934.4555       277.9413
+
+ENERGY:   57600      1539.1034      2292.9818      2132.3481       120.9430          -1326.7624       -96.8902         0.0000         0.0000      3325.3578           7987.0814       282.0727      4661.7236      7984.6399       277.4907
+
+ENERGY:   57800      1558.0378      2281.3146      2119.8731       138.0056          -1322.0179       -90.4214         0.0000         0.0000      3288.7511           7973.5429       278.9675      4684.7918      7979.9642       278.1262
+
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   58000      1618.2421      2381.8896      2138.3090       115.9205          -1375.3150      -105.8035         0.0000         0.0000      3327.2450           8100.4876       282.2328      4773.2426      8101.9096       280.8621
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 58000
+ENERGY:   58200      1576.8845      2313.5569      2130.5140       135.2531          -1313.1632      -115.9692         0.0000         0.0000      3277.2642           8004.3403       277.9931      4727.0761      8000.9670       281.5935
+
+ENERGY:   58400      1547.0399      2313.2026      2110.8984       128.1502          -1342.4727      -113.6974         0.0000         0.0000      3358.5113           8001.6324       284.8849      4643.1211      8009.0312       280.8500
+
+ENERGY:   58600      1568.9982      2419.9750      2101.3671       128.5017          -1350.6868      -105.1647         0.0000         0.0000      3262.5323           8025.5227       276.7435      4762.9904      8027.0081       278.9492
+
+ENERGY:   58800      1587.2404      2310.2473      2139.2367       128.3014          -1326.1396      -135.1525         0.0000         0.0000      3368.3140           8072.0477       285.7164      4703.7337      8069.2684       281.5974
+
+ENERGY:   59000      1547.7023      2366.1998      2129.1110       125.1472          -1381.9194      -108.3218         0.0000         0.0000      3336.2690           8014.1881       282.9982      4677.9191      8011.6998       282.4703
+
+ENERGY:   59200      1522.4139      2327.1907      2117.0918       129.9531          -1353.8411      -108.8867         0.0000         0.0000      3364.9580           7998.8796       285.4318      4633.9217      8005.6814       279.3673
+
+ENERGY:   59400      1561.9941      2326.8320      2148.8086       130.0186          -1334.9629      -121.7109         0.0000         0.0000      3247.5657           7958.5452       275.4740      4710.9795      7962.7613       279.4612
+
+ENERGY:   59600      1572.7483      2282.2464      2134.2939       120.2948          -1346.6858       -74.2908         0.0000         0.0000      3303.9190           7992.5258       280.2541      4688.6068      7995.3878       279.8210
+
+ENERGY:   59800      1599.1008      2354.6363      2118.4005       134.4658          -1330.3022      -134.8040         0.0000         0.0000      3287.7087           8029.2059       278.8791      4741.4972      8029.4665       279.9422
+
+TIMING: 60000  CPU: 211.961, 0.00318825/step  Wall: 217.04, 0.00318886/step, 0.0354318 hours remaining, 165.211849 MB of memory in use.
+PERFORMANCE: 60000  averaging 11.9434 ns/day, 0.00361705 sec/step with standard deviation 0.000756839
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   60000      1581.0145      2406.4204      2096.6321       106.3349          -1347.6608      -128.4473         0.0000         0.0000      3325.0303           8039.3241       282.0449      4714.2937      8042.3155       281.5094
+
+WRITING EXTENDED SYSTEM TO RESTART FILE AT STEP 60000
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 60000
+WRITING COORDINATES TO RESTART FILE AT STEP 60000
+FINISHED WRITING RESTART COORDINATES
+WRITING VELOCITIES TO RESTART FILE AT STEP 60000
+FINISHED WRITING RESTART VELOCITIES
+ENERGY:   60200      1554.0682      2354.1668      2105.2042       125.6830          -1348.1847       -74.5125         0.0000         0.0000      3316.1193           8032.5443       281.2890      4716.4250      8030.3142       283.1619
+
+LDB: ============= START OF LOAD BALANCING ============== 218.093
+LDB: ============== END OF LOAD BALANCING =============== 218.093
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 218.093
+LDB: ============= START OF LOAD BALANCING ============== 218.425
+LDB: 378 computes have load of zero
+LDB: Largest compute 1108 load 0.090550 is 34.9% of average load 0.259529
+LDB: Average compute 0.004271 is 1.6% of average load 0.259529
+LDB: TIME 218.425 LOAD: AVG 0.259529 MAX 0.271267  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 218.425 LOAD: AVG 0.259529 MAX 0.271267  PROXIES: TOTAL 139 MAXPE 22 MAXPATCH 9 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 218.425 LOAD: AVG 0.259529 MAX 0.267038  PROXIES: TOTAL 144 MAXPE 24 MAXPATCH 9 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 218.425
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 218.426
+ENERGY:   60400      1559.6828      2273.4080      2124.8968       121.8829          -1345.5685      -109.5543         0.0000         0.0000      3296.9787           7921.7264       279.6654      4624.7477      7921.5728       279.8479
+
+ENERGY:   60600      1598.8032      2334.9769      2112.9028       121.9149          -1351.4873      -115.3720         0.0000         0.0000      3242.3361           7944.0745       275.0304      4701.7384      7949.9373       277.7334
+
+ENERGY:   60800      1511.0312      2365.2345      2108.8562       129.2954          -1347.9901       -99.3606         0.0000         0.0000      3305.3771           7972.4437       280.3778      4667.0666      7974.0369       277.2772
+
+ENERGY:   61000      1546.3287      2359.0647      2111.2256       124.6088          -1316.0123      -107.0156         0.0000         0.0000      3281.1943           7999.3942       278.3265      4718.1999      8003.2283       279.5783
+
+ENERGY:   61200      1569.6093      2313.4418      2119.3312       121.3081          -1334.1892      -111.1251         0.0000         0.0000      3230.2880           7908.6641       274.0084      4678.3760      7911.0294       279.3077
+
+ENERGY:   61400      1549.2900      2269.6992      2145.8485       134.3736          -1341.8093      -116.1807         0.0000         0.0000      3237.9945           7879.2159       274.6621      4641.2213      7881.7105       278.0561
+
+ENERGY:   61600      1522.6190      2322.4203      2116.9582       120.2615          -1343.1861      -135.1678         0.0000         0.0000      3291.7187           7895.6238       279.2193      4603.9051      7898.0815       275.5939
+
+ENERGY:   61800      1530.1754      2286.8731      2122.4529       124.2604          -1326.0006       -84.1354         0.0000         0.0000      3331.7446           7985.3703       282.6144      4653.6257      7986.3373       278.8358
+
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   62000      1545.6338      2321.3193      2127.6946       125.5933          -1325.8381      -110.2323         0.0000         0.0000      3281.5428           7965.7134       278.3561      4684.1706      7970.5829       281.3957
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 62000
+ENERGY:   62200      1558.0342      2309.0514      2116.0413       118.7574          -1350.8451       -90.0855         0.0000         0.0000      3387.0510           8048.0047       287.3058      4660.9537      8052.3462       278.7449
+
+ENERGY:   62400      1591.9273      2339.3508      2122.6285       140.1168          -1330.6351      -146.6716         0.0000         0.0000      3314.2611           8030.9779       281.1314      4716.7168      8034.0693       282.9039
+
+ENERGY:   62600      1575.8522      2261.2650      2143.5871       123.1351          -1336.8377      -110.7906         0.0000         0.0000      3351.8982           8008.1092       284.3240      4656.2110      8009.3119       282.3015
+
+ENERGY:   62800      1548.1344      2285.9543      2138.3078       129.3343          -1318.8051       -99.0968         0.0000         0.0000      3217.5141           7901.3431       272.9249      4683.8290      7901.1377       280.2292
+
+ENERGY:   63000      1584.4043      2344.4878      2117.8763       123.2092          -1337.5722       -92.5678         0.0000         0.0000      3280.2390           8020.0766       278.2455      4739.8376      8023.2012       278.3873
+
+ENERGY:   63200      1548.5189      2272.6683      2135.4474       130.1096          -1301.3584       -89.5896         0.0000         0.0000      3257.6454           7953.4417       276.3290      4695.7962      7955.0331       280.0646
+
+ENERGY:   63400      1557.5784      2376.0496      2130.4729       138.7578          -1351.1937      -114.4297         0.0000         0.0000      3233.5519           7970.7872       274.2853      4737.2354      7969.9497       281.9321
+
+ENERGY:   63600      1549.2158      2360.5108      2107.9229       127.0095          -1325.3549      -117.9579         0.0000         0.0000      3298.1544           7999.5007       279.7652      4701.3462      8001.3551       278.6227
+
+ENERGY:   63800      1536.9103      2384.8059      2122.2813       141.1823          -1338.6605      -133.5165         0.0000         0.0000      3329.2746           8042.2774       282.4049      4713.0029      8044.6438       280.6000
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 64000
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   64000      1583.6353      2323.6773      2139.3059       118.4185          -1299.0717      -119.2639         0.0000         0.0000      3355.6306           8102.3321       284.6406      4746.7015      8103.2724       285.0630
+
+ENERGY:   64200      1579.2960      2323.5911      2105.8136       131.2339          -1344.3014      -112.7041         0.0000         0.0000      3284.3625           7967.2916       278.5953      4682.9291      7970.9212       281.9216
+
+LDB: ============= START OF LOAD BALANCING ============== 231.215
+LDB: ============== END OF LOAD BALANCING =============== 231.215
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 231.215
+LDB: ============= START OF LOAD BALANCING ============== 231.558
+LDB: 378 computes have load of zero
+LDB: Largest compute 1107 load 0.093514 is 34.8% of average load 0.268694
+LDB: Average compute 0.004413 is 1.6% of average load 0.268694
+LDB: TIME 231.558 LOAD: AVG 0.268694 MAX 0.34267  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 231.558 LOAD: AVG 0.268694 MAX 0.34267  PROXIES: TOTAL 145 MAXPE 24 MAXPATCH 9 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 231.559 LOAD: AVG 0.268694 MAX 0.284698  PROXIES: TOTAL 137 MAXPE 24 MAXPATCH 9 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 231.559
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 231.56
+ENERGY:   64400      1535.7833      2252.8344      2125.3197       120.8335          -1338.7732       -82.8898         0.0000         0.0000      3286.1014           7899.2092       278.7428      4613.1078      7904.1052       278.0983
+
+ENERGY:   64600      1546.7270      2337.1279      2125.0046       125.0022          -1326.3111      -102.8660         0.0000         0.0000      3272.8951           7977.5797       277.6225      4704.6846      7979.1996       279.0698
+
+ENERGY:   64800      1558.1713      2336.1217      2112.5721       133.0862          -1331.2764      -106.6857         0.0000         0.0000      3296.0274           7998.0165       279.5847      4701.9891      8003.5545       282.7339
+
+TIMING: 65000  CPU: 228.331, 0.00327404/step  Wall: 233.416, 0.00327522/step, 0.0318424 hours remaining, 165.211849 MB of memory in use.
+PERFORMANCE: 65000  averaging 12.0309 ns/day, 0.00359076 sec/step with standard deviation 0.000730794
+ENERGY:   65000      1590.6664      2306.2211      2115.0183       122.4555          -1338.1765       -89.0705         0.0000         0.0000      3200.0013           7907.1156       271.4393      4707.1143      7907.9274       277.3255
+
+ENERGY:   65200      1546.2043      2356.9835      2128.3469       116.9490          -1337.9227      -111.2637         0.0000         0.0000      3311.5642           8010.8615       280.9026      4699.2974      8017.2466       280.5989
+
+ENERGY:   65400      1601.4076      2257.0597      2132.0194       116.5053          -1345.6899      -112.1854         0.0000         0.0000      3342.1277           7991.2444       283.4952      4649.1167      7992.8840       281.4833
+
+ENERGY:   65600      1554.3197      2338.4912      2110.6596       119.6160          -1326.9961       -91.6744         0.0000         0.0000      3364.6987           8069.1148       285.4098      4704.4161      8068.7468       283.6435
+
+ENERGY:   65800      1580.6823      2314.3792      2124.9664       121.4918          -1324.9277      -119.5973         0.0000         0.0000      3251.9007           7948.8954       275.8417      4696.9947      7954.5231       281.5538
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 66000
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   66000      1571.3662      2276.7229      2143.4072       125.9740          -1315.0031      -136.2087         0.0000         0.0000      3262.6621           7928.9206       276.7545      4666.2585      7933.0519       277.0499
+
+ENERGY:   66200      1504.3926      2356.6828      2117.1531       134.0106          -1329.7211       -93.8916         0.0000         0.0000      3217.4755           7906.1018       272.9216      4688.6263      7912.5620       277.2420
+
+ENERGY:   66400      1520.9899      2313.2080      2144.0596       120.7404          -1337.4953      -104.1419         0.0000         0.0000      3295.1335           7952.4943       279.5089      4657.3607      7957.8966       274.8099
+
+ENERGY:   66600      1531.8788      2265.9182      2135.8638       128.0373          -1340.6296      -118.2830         0.0000         0.0000      3313.8427           7916.6281       281.0959      4602.7854      7919.3412       278.0965
+
+ENERGY:   66800      1537.7557      2273.5520      2129.9686       116.7453          -1337.8866      -112.8013         0.0000         0.0000      3405.2649           8012.5987       288.8508      4607.3337      8019.4947       279.2669
+
+ENERGY:   67000      1560.9662      2298.5364      2130.1224       122.4122          -1334.5134      -121.5992         0.0000         0.0000      3231.7633           7887.6878       274.1335      4655.9245      7891.7399       280.3860
+
+ENERGY:   67200      1541.2015      2263.7068      2131.8546       131.0013          -1282.3407      -107.1470         0.0000         0.0000      3206.1002           7884.3767       271.9567      4678.2765      7880.2124       276.5931
+
+ENERGY:   67400      1563.6032      2302.7344      2121.1475       131.1627          -1312.3890      -122.6079         0.0000         0.0000      3303.0811           7986.7320       280.1831      4683.6509      7984.9607       277.1107
+
+ENERGY:   67600      1498.3930      2331.9683      2167.7725       135.4210          -1322.9569      -100.5433         0.0000         0.0000      3289.5308           7999.5853       279.0337      4710.0545      8004.4677       280.1926
+
+ENERGY:   67800      1551.8551      2303.7089      2170.4578       114.6507          -1336.2653       -93.0754         0.0000         0.0000      3349.6937           8061.0255       284.1370      4711.3318      8068.1441       282.2917
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 68000
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   68000      1524.3460      2327.5506      2127.0162       124.0227          -1337.3094      -100.9004         0.0000         0.0000      3393.5466           8058.2724       287.8568      4664.7258      8059.2450       283.4932
+
+ENERGY:   68200      1578.4918      2284.8709      2152.4400       138.7328          -1360.4182      -105.6452         0.0000         0.0000      3274.1756           7962.6477       277.7312      4688.4720      7965.4246       280.0113
+
+LDB: ============= START OF LOAD BALANCING ============== 244.051
+LDB: ============== END OF LOAD BALANCING =============== 244.051
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 244.051
+LDB: ============= START OF LOAD BALANCING ============== 244.369
+LDB: 373 computes have load of zero
+LDB: Largest compute 1107 load 0.092016 is 34.3% of average load 0.268064
+LDB: Average compute 0.004382 is 1.6% of average load 0.268064
+LDB: TIME 244.369 LOAD: AVG 0.268064 MAX 0.280991  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 244.369 LOAD: AVG 0.268064 MAX 0.280991  PROXIES: TOTAL 137 MAXPE 24 MAXPATCH 9 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 244.369 LOAD: AVG 0.268064 MAX 0.280991  PROXIES: TOTAL 137 MAXPE 24 MAXPATCH 9 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 244.369
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 244.369
+ENERGY:   68400      1518.2154      2334.1873      2145.4481       129.4220          -1314.4297      -107.0764         0.0000         0.0000      3239.7796           7945.5463       274.8135      4705.7667      7948.5310       277.8787
+
+ENERGY:   68600      1528.3034      2329.2704      2139.3374       125.6918          -1299.5750       -94.2818         0.0000         0.0000      3308.0778           8036.8240       280.6069      4728.7462      8038.6249       279.9704
+
+ENERGY:   68800      1544.2885      2305.2373      2138.6542       120.0913          -1332.9507      -109.5180         0.0000         0.0000      3315.6502           7981.4528       281.2492      4665.8026      7983.4758       281.2294
+
+ENERGY:   69000      1555.6741      2305.4043      2125.1242       124.0296          -1314.5335      -119.1324         0.0000         0.0000      3251.9156           7928.4820       275.8430      4676.5664      7930.9331       278.7550
+
+ENERGY:   69200      1533.7255      2288.0812      2153.5370       130.0839          -1335.1327       -74.5027         0.0000         0.0000      3297.7228           7993.5149       279.7285      4695.7921      8000.0679       279.5120
+
+ENERGY:   69400      1565.9550      2330.2732      2141.1391       136.8420          -1339.2203      -131.4542         0.0000         0.0000      3280.7436           7984.2786       278.2883      4703.5350      7988.9392       279.1174
+
+ENERGY:   69600      1605.6096      2284.9615      2140.7272       133.8708          -1339.7596      -113.8660         0.0000         0.0000      3250.3076           7961.8511       275.7066      4711.5435      7964.9779       280.2285
+
+ENERGY:   69800      1481.1026      2320.7121      2148.3378       135.6170          -1316.2260       -93.4816         0.0000         0.0000      3326.4166           8002.4785       282.1625      4676.0619      8008.1135       280.4476
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 70000
+WRITING COORDINATES TO RESTART FILE AT STEP 70000
+FINISHED WRITING RESTART COORDINATES
+WRITING VELOCITIES TO RESTART FILE AT STEP 70000
+FINISHED WRITING RESTART VELOCITIES
+TIMING: 70000  CPU: 244.677, 0.00326925/step  Wall: 249.814, 0.00327964/step, 0.0273303 hours remaining, 165.211849 MB of memory in use.
+PERFORMANCE: 70000  averaging 12.1058 ns/day, 0.00356854 sec/step with standard deviation 0.000707031
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   70000      1525.8855      2346.5281      2138.5534       130.6085          -1319.4301       -72.6213         0.0000         0.0000      3247.9342           7997.4582       275.5052      4749.5241      8001.1029       279.2129
+
+WRITING EXTENDED SYSTEM TO RESTART FILE AT STEP 70000
+ENERGY:   70200      1589.5985      2332.3053      2135.4392       132.0829          -1337.7716      -108.7142         0.0000         0.0000      3209.2763           7952.2164       272.2261      4742.9401      7955.0863       277.9064
+
+ENERGY:   70400      1557.1091      2376.2883      2107.7988       125.6094          -1342.7973      -109.3969         0.0000         0.0000      3235.8806           7950.4920       274.4828      4714.6114      7953.8963       277.9398
+
+ENERGY:   70600      1577.6326      2313.4113      2151.0787       127.5316          -1337.1468       -86.7154         0.0000         0.0000      3330.3541           8076.1461       282.4965      4745.7920      8078.6062       279.1730
+
+ENERGY:   70800      1592.5116      2337.1956      2123.7606       129.1041          -1345.6445      -111.6105         0.0000         0.0000      3306.1041           8031.4210       280.4395      4725.3170      8035.6645       282.1702
+
+ENERGY:   71000      1546.3527      2332.7814      2159.9945       133.5180          -1350.0799      -117.6922         0.0000         0.0000      3291.1319           7996.0064       279.1695      4704.8745      7990.2207       280.2597
+
+ENERGY:   71200      1551.5383      2304.3969      2119.2810       126.0051          -1294.9484      -122.3938         0.0000         0.0000      3282.3568           7966.2359       278.4251      4683.8791      7973.8839       279.0480
+
+ENERGY:   71400      1551.9080      2271.1031      2103.8098       125.3931          -1339.4313       -99.3403         0.0000         0.0000      3250.7806           7864.2230       275.7467      4613.4424      7866.2308       278.0233
+
+ENERGY:   71600      1523.4632      2309.2106      2136.0087       130.5909          -1334.8263      -117.9004         0.0000         0.0000      3341.5906           7988.1372       283.4496      4646.5466      7990.2653       278.1875
+
+ENERGY:   71800      1522.6095      2339.4576      2131.4806       130.3795          -1308.2510      -107.5867         0.0000         0.0000      3280.8288           7988.9183       278.2955      4708.0895      7992.5218       278.7920
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 72000
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   72000      1596.7340      2302.5231      2120.7523       125.1543          -1348.0239      -122.6305         0.0000         0.0000      3329.0570           8003.5664       282.3865      4674.5094      8005.2138       279.4545
+
+ENERGY:   72200      1577.1158      2266.8721      2119.2478       120.7240          -1343.1205       -72.4765         0.0000         0.0000      3269.0484           7937.4112       277.2962      4668.3628      7939.5499       279.0737
+
+LDB: ============= START OF LOAD BALANCING ============== 257.875
+LDB: ============== END OF LOAD BALANCING =============== 257.875
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 257.875
+LDB: ============= START OF LOAD BALANCING ============== 258.246
+LDB: 373 computes have load of zero
+LDB: Largest compute 1109 load 0.089596 is 32.3% of average load 0.277019
+LDB: Average compute 0.004522 is 1.6% of average load 0.277019
+LDB: TIME 258.246 LOAD: AVG 0.277019 MAX 0.370525  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 258.246 LOAD: AVG 0.277019 MAX 0.370525  PROXIES: TOTAL 137 MAXPE 24 MAXPATCH 9 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 258.247 LOAD: AVG 0.277019 MAX 0.298064  PROXIES: TOTAL 132 MAXPE 22 MAXPATCH 9 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 258.247
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 258.247
+ENERGY:   72400      1559.9573      2415.8226      2162.3800       136.9432          -1347.8705      -119.4695         0.0000         0.0000      3242.5570           8050.3202       275.0491      4807.7632      8051.3400       278.6182
+
+ENERGY:   72600      1534.5701      2336.4077      2126.0007       112.6415          -1329.4678      -104.6743         0.0000         0.0000      3315.3220           7990.7999       281.2214      4675.4780      7992.0680       282.7197
+
+ENERGY:   72800      1533.4816      2300.9628      2132.0472       116.7373          -1328.1292      -109.9601         0.0000         0.0000      3343.9670           7989.1066       283.6512      4645.1396      7988.9789       279.6258
+
+ENERGY:   73000      1547.9430      2362.0908      2139.4131       122.2922          -1337.5021       -93.9376         0.0000         0.0000      3411.1059           8151.4053       289.3462      4740.2994      8147.9081       283.8599
+
+ENERGY:   73200      1531.6557      2281.5721      2129.4590       135.8902          -1339.4470      -120.1687         0.0000         0.0000      3382.5324           8001.4937       286.9225      4618.9613      8003.1101       281.6600
+
+ENERGY:   73400      1523.1262      2296.7772      2129.2750       138.9314          -1317.9661       -99.4414         0.0000         0.0000      3349.9360           8020.6383       284.1575      4670.7023      8025.7499       281.5225
+
+ENERGY:   73600      1532.2059      2317.1577      2125.2911       137.8937          -1314.4027      -124.8396         0.0000         0.0000      3274.0663           7947.3723       277.7219      4673.3060      7952.5620       278.6235
+
+ENERGY:   73800      1536.5495      2312.2920      2127.1790       126.0932          -1311.3751       -95.6744         0.0000         0.0000      3297.2501           7992.3142       279.6885      4695.0641      7996.8810       281.8252
+
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   74000      1548.0319      2325.3162      2152.0169       115.8784          -1333.5907      -111.0616         0.0000         0.0000      3250.2503           7946.8413       275.7017      4696.5910      7948.8643       278.5327
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 74000
+ENERGY:   74200      1588.6723      2262.6228      2196.4336       121.3844          -1326.2183      -157.0236         0.0000         0.0000      3342.8809           8028.7521       283.5591      4685.8711      8032.9858       280.5591
+
+ENERGY:   74400      1523.3402      2339.0036      2169.4405       127.1290          -1309.0300      -101.2785         0.0000         0.0000      3291.5321           8040.1370       279.2034      4748.6049      8040.3480       281.4014
+
+ENERGY:   74600      1569.1036      2288.3750      2154.0046       116.7029          -1312.7100      -108.0458         0.0000         0.0000      3279.4303           7986.8605       278.1769      4707.4303      7989.0235       280.5789
+
+ENERGY:   74800      1510.7538      2347.9773      2132.7591       121.7088          -1322.1468       -90.2601         0.0000         0.0000      3338.5955           8039.3876       283.1956      4700.7921      8040.6599       279.6353
+
+TIMING: 75000  CPU: 261.27, 0.00331851/step  Wall: 266.449, 0.00332687/step, 0.0231033 hours remaining, 165.211849 MB of memory in use.
+PERFORMANCE: 75000  averaging 12.1607 ns/day, 0.00355242 sec/step with standard deviation 0.000684163
+ENERGY:   75000      1477.6862      2318.8864      2151.0604       125.8991          -1318.8698      -102.2278         0.0000         0.0000      3299.3679           7951.8023       279.8681      4652.4344      7957.1124       277.2961
+
+ENERGY:   75200      1528.1510      2374.5010      2141.1081       116.0578          -1340.1593      -106.7621         0.0000         0.0000      3326.2962           8039.1927       282.1523      4712.8964      8045.3891       281.3782
+
+ENERGY:   75400      1592.1019      2347.7965      2131.4077       126.7633          -1365.1139       -89.3441         0.0000         0.0000      3306.0970           8049.7085       280.4389      4743.6115      8049.4113       282.5956
+
+ENERGY:   75600      1572.3504      2351.7160      2107.6503       133.6237          -1343.1852       -79.0736         0.0000         0.0000      3329.5941           8072.6756       282.4320      4743.0815      8073.0823       284.8100
+
+ENERGY:   75800      1561.0730      2274.1326      2127.8646       130.2963          -1328.6171      -102.4441         0.0000         0.0000      3367.2277           8029.5330       285.6243      4662.3053      8035.0886       284.0634
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 76000
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   76000      1569.8735      2267.0590      2138.5816       126.7764          -1307.3922      -109.2633         0.0000         0.0000      3312.1259           7997.7610       280.9503      4685.6350      8003.5822       278.0239
+
+ENERGY:   76200      1523.6345      2351.4710      2131.8686       137.6573          -1324.6633       -92.1384         0.0000         0.0000      3305.7645           8033.5942       280.4107      4727.8297      8038.7544       280.2339
+
+LDB: ============= START OF LOAD BALANCING ============== 270.957
+LDB: ============== END OF LOAD BALANCING =============== 270.964
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 270.984
+LDB: ============= START OF LOAD BALANCING ============== 271.666
+LDB: 373 computes have load of zero
+LDB: Largest compute 1108 load 0.141255 is 45.1% of average load 0.313233
+LDB: Average compute 0.005091 is 1.6% of average load 0.313233
+LDB: TIME 271.666 LOAD: AVG 0.313233 MAX 0.40153  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 271.666 LOAD: AVG 0.313233 MAX 0.40153  PROXIES: TOTAL 132 MAXPE 22 MAXPATCH 9 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 271.667 LOAD: AVG 0.313233 MAX 0.320958  PROXIES: TOTAL 146 MAXPE 23 MAXPATCH 9 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 271.667
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 271.729
+ENERGY:   76400      1573.1904      2301.1517      2112.1279       123.8059          -1325.8927      -103.2331         0.0000         0.0000      3328.6560           8009.8061       282.3525      4681.1501      8008.5286       283.6113
+
+ENERGY:   76600      1556.6877      2306.5613      2144.3750       131.4251          -1299.7689      -122.4427         0.0000         0.0000      3308.6915           8025.5291       280.6590      4716.8375      8031.6516       280.4545
+
+ENERGY:   76800      1605.7207      2286.4110      2109.4645       135.4146          -1318.9683      -102.4933         0.0000         0.0000      3264.1920           7979.7412       276.8843      4715.5492      7980.8083       281.0940
+
+ENERGY:   77000      1571.8761      2405.6864      2109.9973       119.7749          -1332.3032      -128.9325         0.0000         0.0000      3275.1092           8021.2083       277.8104      4746.0991      8019.8728       279.9879
+
+ENERGY:   77200      1620.0058      2298.2144      2138.6255       129.5183          -1323.8426       -96.7314         0.0000         0.0000      3315.3012           8081.0912       281.2196      4765.7900      8083.7731       280.4133
+
+ENERGY:   77400      1541.0775      2281.5813      2140.7245       139.6795          -1322.8136      -113.8394         0.0000         0.0000      3320.0824           7986.4922       281.6252      4666.4098      7987.2642       282.6015
+
+ENERGY:   77600      1545.0420      2334.2719      2141.0638       133.3344          -1335.5666       -90.8733         0.0000         0.0000      3387.8096           8115.0819       287.3701      4727.2723      8115.3667       283.5675
+
+ENERGY:   77800      1629.1129      2330.3366      2138.7617       128.9542          -1345.9150       -95.0650         0.0000         0.0000      3324.2674           8110.4528       281.9802      4786.1854      8113.4822       283.8754
+
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   78000      1573.4344      2303.4313      2119.3335       125.3276          -1297.8896      -120.6130         0.0000         0.0000      3322.9724           8025.9967       281.8703      4703.0243      8031.4212       282.6262
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 78000
+ENERGY:   78200      1540.0334      2216.9811      2156.2759       117.2944          -1309.9019      -107.9499         0.0000         0.0000      3240.2648           7852.9979       274.8547      4612.7331      7859.8207       278.0556
+
+ENERGY:   78400      1523.3534      2322.0995      2125.3947       125.9093          -1297.9888      -126.2045         0.0000         0.0000      3259.3838           7931.9474       276.4764      4672.5636      7935.1361       277.5716
+
+ENERGY:   78600      1520.9141      2228.8047      2133.9735       130.2950          -1318.2498       -91.8533         0.0000         0.0000      3276.1400           7880.0242       277.8978      4603.8842      7879.3400       276.6902
+
+ENERGY:   78800      1539.6304      2299.9803      2102.8405       116.7049          -1319.1812       -95.7388         0.0000         0.0000      3274.9502           7919.1863       277.7969      4644.2362      7919.3126       277.4394
+
+ENERGY:   79000      1604.2348      2288.9263      2129.5453       113.6001          -1330.8535      -128.4788         0.0000         0.0000      3250.9142           7927.8885       275.7580      4676.9744      7934.1496       279.6850
+
+ENERGY:   79200      1578.6918      2316.5194      2110.3261       132.1486          -1353.3800      -108.6793         0.0000         0.0000      3258.5056           7934.1322       276.4020      4675.6267      7937.7884       277.5163
+
+ENERGY:   79400      1536.5527      2348.2171      2103.4896       131.3237          -1321.3020      -113.0721         0.0000         0.0000      3365.5807           8050.7895       285.4846      4685.2088      8055.1937       281.8133
+
+ENERGY:   79600      1560.4758      2284.3560      2145.3823       134.3289          -1294.9738      -104.4612         0.0000         0.0000      3307.8482           8032.9562       280.5874      4725.1080      8034.7502       284.5827
+
+ENERGY:   79800      1581.6015      2328.3334      2139.4519       139.9522          -1322.4280      -126.8320         0.0000         0.0000      3369.8157           8109.8946       285.8438      4740.0790      8115.5459       284.5572
+
+TIMING: 80000  CPU: 283.65, 0.00447612/step  Wall: 290.231, 0.00475638/step, 0.0264243 hours remaining, 165.211849 MB of memory in use.
+PERFORMANCE: 80000  averaging 11.9085 ns/day, 0.00362767 sec/step with standard deviation 0.00072627
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   80000      1570.7114      2323.8429      2107.0391       125.7246          -1332.9618      -120.2179         0.0000         0.0000      3321.1783           7995.3165       281.7182      4674.1381      8002.2836       282.3597
+
+WRITING EXTENDED SYSTEM TO RESTART FILE AT STEP 80000
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 80000
+WRITING COORDINATES TO RESTART FILE AT STEP 80000
+FINISHED WRITING RESTART COORDINATES
+WRITING VELOCITIES TO RESTART FILE AT STEP 80000
+FINISHED WRITING RESTART VELOCITIES
+ENERGY:   80200      1584.4039      2314.1292      2115.4945       128.0913          -1333.0494      -120.4824         0.0000         0.0000      3264.0767           7952.6638       276.8745      4688.5872      7954.2420       280.1322
+
+LDB: ============= START OF LOAD BALANCING ============== 291.278
+LDB: ============== END OF LOAD BALANCING =============== 291.278
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 291.278
+LDB: ============= START OF LOAD BALANCING ============== 291.608
+LDB: 378 computes have load of zero
+LDB: Largest compute 526 load 0.093799 is 35.2% of average load 0.266802
+LDB: Average compute 0.004383 is 1.6% of average load 0.266802
+LDB: TIME 291.608 LOAD: AVG 0.266802 MAX 0.318178  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 291.608 LOAD: AVG 0.266802 MAX 0.318178  PROXIES: TOTAL 145 MAXPE 22 MAXPATCH 9 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 291.609 LOAD: AVG 0.266802 MAX 0.280842  PROXIES: TOTAL 137 MAXPE 19 MAXPATCH 9 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 291.609
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 291.609
+ENERGY:   80400      1528.5794      2301.7316      2112.1906       116.5295          -1327.2785      -107.1889         0.0000         0.0000      3261.5210           7886.0848       276.6577      4624.5638      7890.4067       276.3758
+
+ENERGY:   80600      1544.7029      2330.4787      2138.9201       121.6370          -1322.3294      -158.5790         0.0000         0.0000      3313.9415           7968.7718       281.1043      4654.8303      7965.6008       277.9708
+
+ENERGY:   80800      1588.5225      2307.2289      2136.6162       131.7456          -1338.8592      -114.2904         0.0000         0.0000      3332.9249           8043.8883       282.7146      4710.9634      8049.6153       280.2417
+
+ENERGY:   81000      1531.7500      2356.0278      2121.7272       127.5318          -1329.2085      -109.2610         0.0000         0.0000      3315.3676           8013.9349       281.2253      4698.5673      8016.6165       279.2048
+
+ENERGY:   81200      1542.2657      2351.6165      2124.8783       117.1066          -1304.4555      -121.3824         0.0000         0.0000      3376.2834           8086.3125       286.3924      4710.0291      8089.9481       280.7681
+
+ENERGY:   81400      1550.7487      2288.2652      2104.5884       127.2529          -1320.6563      -112.6210         0.0000         0.0000      3312.0080           7949.5858       280.9403      4637.5779      7952.5966       281.4634
+
+ENERGY:   81600      1548.0177      2323.3372      2088.9320       129.4825          -1335.2504       -95.4203         0.0000         0.0000      3292.6926           7951.7913       279.3019      4659.0988      7952.4588       280.2049
+
+ENERGY:   81800      1530.9740      2301.3945      2122.0603       138.7402          -1290.4693      -117.1001         0.0000         0.0000      3285.6767           7971.2763       278.7067      4685.5997      7969.1299       278.7827
+
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   82000      1494.1550      2311.3199      2102.0706       137.1342          -1319.2963      -122.0888         0.0000         0.0000      3331.6461           7934.9407       282.6061      4603.2946      7937.5103       278.3571
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 82000
+ENERGY:   82200      1483.0560      2314.5091      2125.9297       123.1799          -1308.9141       -83.9717         0.0000         0.0000      3266.4586           7920.2477       277.0766      4653.7891      7924.6267       279.3209
+
+ENERGY:   82400      1585.2987      2281.1977      2107.8971       123.8886          -1330.9944       -83.7304         0.0000         0.0000      3268.2735           7951.8308       277.2305      4683.5573      7953.8775       278.6885
+
+ENERGY:   82600      1550.5570      2270.1383      2135.9482       137.3135          -1311.0359      -104.6080         0.0000         0.0000      3359.2324           8037.5456       284.9461      4678.3132      8035.2083       280.9556
+
+ENERGY:   82800      1593.7802      2371.6055      2119.7215       116.8107          -1323.4292      -116.9047         0.0000         0.0000      3280.8127           8042.3967       278.2942      4761.5840      8046.5755       279.9702
+
+ENERGY:   83000      1621.8424      2321.6789      2148.9808       117.6087          -1358.0902      -111.9713         0.0000         0.0000      3233.2100           7973.2594       274.2563      4740.0494      7971.2849       279.3482
+
+ENERGY:   83200      1565.1717      2332.6785      2112.0594       135.3964          -1309.9708       -98.5892         0.0000         0.0000      3301.3073           8038.0533       280.0326      4736.7460      8036.1945       280.8857
+
+ENERGY:   83400      1629.2827      2314.0632      2107.8152       130.1851          -1317.7901      -132.4248         0.0000         0.0000      3276.0688           8007.2002       277.8917      4731.1314      8015.8865       281.5772
+
+ENERGY:   83600      1572.3489      2316.7432      2108.8534       122.1678          -1320.0512       -99.5298         0.0000         0.0000      3314.9551           8015.4874       281.1903      4700.5323      8019.4754       278.6821
+
+ENERGY:   83800      1556.2332      2296.4230      2105.9941       134.2269          -1336.2546      -110.6569         0.0000         0.0000      3304.8702           7950.8360       280.3348      4645.9658      7957.4650       280.0864
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 84000
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   84000      1589.5119      2341.3128      2087.8999       131.2095          -1336.0602      -143.5874         0.0000         0.0000      3337.7564           8008.0429       283.1244      4670.2865      8010.3260       280.1641
+
+ENERGY:   84200      1548.2291      2326.5896      2130.0187       131.1868          -1325.5843      -118.3766         0.0000         0.0000      3310.0468           8002.1102       280.7739      4692.0634      7998.8699       281.7429
+
+LDB: ============= START OF LOAD BALANCING ============== 305.668
+LDB: ============== END OF LOAD BALANCING =============== 305.668
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 305.668
+LDB: ============= START OF LOAD BALANCING ============== 306.026
+LDB: 373 computes have load of zero
+LDB: Largest compute 1107 load 0.088346 is 33.2% of average load 0.266456
+LDB: Average compute 0.004344 is 1.6% of average load 0.266456
+LDB: TIME 306.026 LOAD: AVG 0.266456 MAX 0.345102  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 306.026 LOAD: AVG 0.266456 MAX 0.345102  PROXIES: TOTAL 138 MAXPE 20 MAXPATCH 9 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 306.026 LOAD: AVG 0.266456 MAX 0.273726  PROXIES: TOTAL 138 MAXPE 20 MAXPATCH 9 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 306.026
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 306.027
+ENERGY:   84400      1549.4913      2419.4758      2071.1477       130.5666          -1355.2472      -135.2786         0.0000         0.0000      3294.5216           7974.6771       279.4570      4680.1556      7977.6816       279.1567
+
+ENERGY:   84600      1539.0931      2351.1365      2105.1130       133.5265          -1323.1119      -106.8452         0.0000         0.0000      3245.3475           7944.2595       275.2858      4698.9120      7945.5393       279.0616
+
+ENERGY:   84800      1549.2851      2356.1534      2125.6589       138.9568          -1311.5225       -97.5538         0.0000         0.0000      3214.4944           7975.4722       272.6687      4760.9778      7976.4909       280.3249
+
+TIMING: 85000  CPU: 301.583, 0.00358665/step  Wall: 308.167, 0.00358737/step, 0.0149474 hours remaining, 165.211849 MB of memory in use.
+PERFORMANCE: 85000  averaging 11.9163 ns/day, 0.0036253 sec/step with standard deviation 0.000703276
+ENERGY:   85000      1534.7291      2340.5249      2115.3229       136.7546          -1349.6335       -87.1914         0.0000         0.0000      3251.5375           7942.0440       275.8109      4690.5065      7946.6941       277.9982
+
+ENERGY:   85200      1517.8804      2392.2911      2100.8716       130.5511          -1344.4005      -125.1873         0.0000         0.0000      3281.5969           7953.6031       278.3607      4672.0063      7961.7895       277.1592
+
+ENERGY:   85400      1514.7400      2336.2676      2101.0548       124.9482          -1326.6545      -113.2946         0.0000         0.0000      3271.4097           7908.4712       277.4965      4637.0615      7917.1133       276.5007
+
+ENERGY:   85600      1558.5628      2325.1297      2138.6184       125.6179          -1346.5191      -138.3186         0.0000         0.0000      3359.7791           8022.8702       284.9925      4663.0912      8024.8940       281.1653
+
+ENERGY:   85800      1575.2123      2303.2285      2093.7702       114.0021          -1361.8466      -114.3382         0.0000         0.0000      3348.1523           7958.1806       284.0062      4610.0283      7963.3539       279.8922
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 86000
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   86000      1565.2665      2341.8185      2112.8693       135.3788          -1347.5367      -101.6295         0.0000         0.0000      3211.2099           7917.3770       272.3901      4706.1670      7921.8555       280.4262
+
+ENERGY:   86200      1520.7598      2349.0188      2090.8511       118.7363          -1281.9188       -80.1433         0.0000         0.0000      3333.1091           8050.4129       282.7302      4717.3039      8052.9898       280.2703
+
+ENERGY:   86400      1550.2942      2348.9295      2154.4436       125.4433          -1320.2376      -106.0505         0.0000         0.0000      3262.2142           8015.0366       276.7165      4752.8225      8018.4037       280.9914
+
+ENERGY:   86600      1512.0423      2359.1175      2144.8480       130.7932          -1330.2866      -122.2454         0.0000         0.0000      3284.6136           7978.8826       278.6166      4694.2690      7986.1144       279.1081
+
+ENERGY:   86800      1548.2410      2367.5996      2123.0025       134.8991          -1298.2776      -121.0902         0.0000         0.0000      3264.9167           8019.2910       276.9458      4754.3743      8023.1029       281.7333
+
+ENERGY:   87000      1555.0155      2286.7845      2143.0777       129.8473          -1288.0231      -110.7328         0.0000         0.0000      3347.3364           8063.3056       283.9370      4715.9692      8065.0167       281.0323
+
+ENERGY:   87200      1510.3320      2294.9848      2118.1058       132.9849          -1285.8810      -105.9765         0.0000         0.0000      3373.0265           8037.5765       286.1162      4664.5500      8039.7746       283.2475
+
+ENERGY:   87400      1527.0467      2328.4874      2144.3790       122.4443          -1324.6925      -103.0601         0.0000         0.0000      3327.7634           8022.3683       282.2767      4694.6049      8024.5098       281.0106
+
+ENERGY:   87600      1517.9777      2345.7014      2140.6305       132.2978          -1321.4352      -113.1478         0.0000         0.0000      3305.4293           8007.4538       280.3822      4702.0244      8008.5087       282.5682
+
+ENERGY:   87800      1523.0567      2416.4237      2126.3533       127.0032          -1331.5492      -148.6965         0.0000         0.0000      3197.5831           7910.1743       271.2342      4712.5912      7912.3430       279.2055
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 88000
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   88000      1555.0351      2291.1562      2091.9106       124.9707          -1322.3768      -108.2181         0.0000         0.0000      3283.6295           7916.1072       278.5331      4632.4777      7915.7768       276.7197
+
+ENERGY:   88200      1566.8314      2210.5384      2139.7782       113.2415          -1316.9612      -105.0108         0.0000         0.0000      3330.0588           7938.4763       282.4714      4608.4175      7937.6803       278.7747
+
+LDB: ============= START OF LOAD BALANCING ============== 319.947
+LDB: ============== END OF LOAD BALANCING =============== 319.948
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 319.948
+LDB: ============= START OF LOAD BALANCING ============== 320.292
+LDB: 373 computes have load of zero
+LDB: Largest compute 1107 load 0.089805 is 32.6% of average load 0.275131
+LDB: Average compute 0.004494 is 1.6% of average load 0.275131
+LDB: TIME 320.293 LOAD: AVG 0.275131 MAX 0.344727  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 320.293 LOAD: AVG 0.275131 MAX 0.344727  PROXIES: TOTAL 138 MAXPE 20 MAXPATCH 9 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 320.294 LOAD: AVG 0.275131 MAX 0.282683  PROXIES: TOTAL 138 MAXPE 23 MAXPATCH 9 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 320.294
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 320.294
+ENERGY:   88400      1516.1213      2303.4267      2123.1175       119.9506          -1318.0901       -99.5654         0.0000         0.0000      3309.9041           7954.8646       280.7618      4644.9606      7958.5858       278.2883
+
+ENERGY:   88600      1589.9491      2282.0732      2143.7968       125.2351          -1337.5139      -137.5716         0.0000         0.0000      3292.0787           7958.0474       279.2498      4665.9687      7966.1730       276.7994
+
+ENERGY:   88800      1551.2771      2377.5256      2122.9232       133.2124          -1354.3001      -117.4583         0.0000         0.0000      3317.5581           8030.7379       281.4111      4713.1798      8038.3792       281.0064
+
+ENERGY:   89000      1537.1229      2419.4658      2110.0768       141.8932          -1344.1387      -130.8322         0.0000         0.0000      3331.0389           8064.6267       282.5546      4733.5878      8064.7985       280.6867
+
+ENERGY:   89200      1628.6431      2286.0411      2100.3514       117.8716          -1341.6278      -108.9691         0.0000         0.0000      3433.0073           8115.3176       291.2040      4682.3103      8117.0972       284.7364
+
+ENERGY:   89400      1561.5958      2353.3270      2110.5314       123.8240          -1343.9020       -94.4610         0.0000         0.0000      3287.3993           7998.3145       278.8529      4710.9153      8002.0802       282.0410
+
+ENERGY:   89600      1562.6833      2307.0532      2115.0499       121.8708          -1357.1410       -92.9435         0.0000         0.0000      3323.5283           7980.1010       281.9175      4656.5727      7978.0217       277.7334
+
+ENERGY:   89800      1496.8623      2367.1507      2112.8955       133.7264          -1336.7104      -112.1275         0.0000         0.0000      3257.8073           7919.6043       276.3427      4661.7970      7923.2960       279.4508
+
+TIMING: 90000  CPU: 325.226, 0.00472849/step  Wall: 334.122, 0.00519092/step, 0.0144192 hours remaining, 165.211849 MB of memory in use.
+PERFORMANCE: 90000  averaging 11.6371 ns/day, 0.00371228 sec/step with standard deviation 0.00077568
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   90000      1568.3362      2377.0635      2110.2902       127.2323          -1293.3158      -107.1994         0.0000         0.0000      3256.9798           8039.3868       276.2725      4782.4070      8043.9937       278.4483
+
+WRITING EXTENDED SYSTEM TO RESTART FILE AT STEP 90000
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 90000
+WRITING COORDINATES TO RESTART FILE AT STEP 90000
+FINISHED WRITING RESTART COORDINATES
+WRITING VELOCITIES TO RESTART FILE AT STEP 90000
+FINISHED WRITING RESTART VELOCITIES
+ENERGY:   90200      1587.1621      2309.4210      2108.1518       130.9310          -1321.3277      -103.2387         0.0000         0.0000      3310.8116           8021.9112       280.8388      4711.0996      8026.2940       284.2211
+
+ENERGY:   90400      1558.4163      2357.8624      2084.8543       143.0543          -1319.4093      -106.9400         0.0000         0.0000      3303.0524           8020.8904       280.1806      4717.8380      8027.3541       281.9095
+
+ENERGY:   90600      1555.0992      2350.5190      2117.2190       120.6819          -1324.1871      -110.7460         0.0000         0.0000      3385.2721           8093.8580       287.1549      4708.5860      8100.4276       283.7202
+
+ENERGY:   90800      1541.6003      2320.4549      2106.5643       120.6289          -1343.6812      -102.7127         0.0000         0.0000      3315.0589           7957.9134       281.1991      4642.8545      7964.4894       279.3888
+
+ENERGY:   91000      1533.2614      2318.2461      2116.8559       121.0313          -1333.8830      -126.5792         0.0000         0.0000      3310.8993           7939.8318       280.8462      4628.9325      7937.3470       280.2901
+
+ENERGY:   91200      1561.7968      2345.3687      2110.1882       137.4209          -1330.4375      -113.3325         0.0000         0.0000      3266.8971           7977.9018       277.1138      4711.0047      7980.9195       280.5807
+
+ENERGY:   91400      1559.8055      2382.2876      2078.4326       121.1313          -1319.7836      -115.4173         0.0000         0.0000      3274.9830           7981.4390       277.7996      4706.4560      7987.9648       280.8614
+
+ENERGY:   91600      1577.8216      2355.7967      2110.6427       131.5312          -1317.6767      -106.4653         0.0000         0.0000      3288.2706           8039.9209       278.9268      4751.6503      8045.2343       281.1927
+
+ENERGY:   91800      1560.9856      2315.8126      2120.6665       125.8735          -1291.0874      -123.1330         0.0000         0.0000      3350.4117           8059.5295       284.1979      4709.1178      8062.3583       284.5220
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 92000
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   92000      1570.0730      2391.5510      2124.4119       128.8495          -1369.6954      -118.6637         0.0000         0.0000      3378.6583           8105.1845       286.5939      4726.5262      8105.0657       282.7931
+
+ENERGY:   92200      1570.7230      2338.8857      2106.9291       138.4871          -1356.5884      -110.5080         0.0000         0.0000      3357.5727           8045.5011       284.8053      4687.9284      8045.5347       284.4023
+
+LDB: ============= START OF LOAD BALANCING ============== 342.209
+LDB: ============== END OF LOAD BALANCING =============== 342.209
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 342.209
+LDB: ============= START OF LOAD BALANCING ============== 342.561
+LDB: 373 computes have load of zero
+LDB: Largest compute 1109 load 0.089127 is 32.7% of average load 0.272264
+LDB: Average compute 0.004456 is 1.6% of average load 0.272264
+LDB: TIME 342.561 LOAD: AVG 0.272264 MAX 0.351416  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 342.561 LOAD: AVG 0.272264 MAX 0.351416  PROXIES: TOTAL 138 MAXPE 23 MAXPATCH 9 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 342.561 LOAD: AVG 0.272264 MAX 0.287191  PROXIES: TOTAL 139 MAXPE 25 MAXPATCH 9 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 342.561
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 342.562
+ENERGY:   92400      1558.8409      2323.4611      2135.9227       128.3430          -1346.0819      -135.1486         0.0000         0.0000      3332.2595           7997.5966       282.6581      4665.3372      8000.9630       280.6859
+
+ENERGY:   92600      1518.0345      2285.0457      2119.0265       127.8004          -1294.7259      -137.0248         0.0000         0.0000      3319.8175           7937.9739       281.6027      4618.1565      7939.1551       279.0113
+
+ENERGY:   92800      1515.4388      2328.7266      2122.0509       140.2512          -1316.7850       -96.0269         0.0000         0.0000      3331.9513           8025.6069       282.6320      4693.6555      8025.9817       278.9850
+
+ENERGY:   93000      1539.8297      2335.5075      2111.2446       137.7239          -1349.1924       -91.7649         0.0000         0.0000      3301.2039           7984.5522       280.0238      4683.3483      7991.1587       279.5550
+
+ENERGY:   93200      1542.2581      2340.3102      2127.3631       120.3092          -1318.0601      -105.7115         0.0000         0.0000      3269.3583           7975.8273       277.3225      4706.4690      7980.6764       279.6675
+
+ENERGY:   93400      1535.7407      2321.6766      2087.7609       130.6751          -1346.0932       -90.4972         0.0000         0.0000      3324.0453           7963.3082       281.9613      4639.2628      7963.9843       279.4687
+
+ENERGY:   93600      1524.8888      2342.0755      2116.2805       130.9690          -1333.5147       -84.0420         0.0000         0.0000      3250.6377           7947.2948       275.7346      4696.6571      7951.7326       278.8159
+
+ENERGY:   93800      1556.8669      2306.4273      2112.7503       131.2763          -1307.1048      -102.9693         0.0000         0.0000      3259.4772           7956.7240       276.4844      4697.2468      7961.5867       278.2776
+
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   94000      1555.3331      2301.9198      2107.3896       131.5318          -1317.1478       -95.0604         0.0000         0.0000      3400.2680           8084.2342       288.4269      4683.9662      8087.2631       282.4948
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 94000
+ENERGY:   94200      1611.7778      2386.8772      2060.5024       110.3968          -1324.2459      -116.0880         0.0000         0.0000      3372.2691           8101.4894       286.0519      4729.2203      8102.1159       286.8260
+
+ENERGY:   94400      1532.3001      2348.8762      2107.2005       128.6225          -1322.8892      -127.9785         0.0000         0.0000      3255.2696           7921.4014       276.1275      4666.1318      7924.6619       279.6212
+
+ENERGY:   94600      1571.9393      2395.8636      2073.0898       121.8612          -1338.2415      -131.7906         0.0000         0.0000      3327.6535           8020.3752       282.2674      4692.7217      8025.1270       280.2538
+
+ENERGY:   94800      1552.0261      2354.3134      2114.7161       125.6696          -1321.2129       -94.2915         0.0000         0.0000      3304.1997           8035.4205       280.2779      4731.2209      8040.5530       282.0115
+
+TIMING: 95000  CPU: 342.27, 0.00340883/step  Wall: 351.171, 0.0034097/step, 0.00473569 hours remaining, 165.211849 MB of memory in use.
+PERFORMANCE: 95000  averaging 11.6872 ns/day, 0.00369635 sec/step with standard deviation 0.000757015
+ENERGY:   95000      1550.2542      2369.9384      2086.3512       136.7667          -1356.8655      -121.5194         0.0000         0.0000      3350.0754           8015.0011       284.1693      4664.9256      8024.4746       281.5466
+
+ENERGY:   95200      1575.8937      2378.3994      2104.6472       127.6170          -1339.7113      -131.0937         0.0000         0.0000      3345.0756           8060.8278       283.7452      4715.7522      8061.6053       281.5490
+
+ENERGY:   95400      1637.1466      2311.8455      2106.6737       136.4576          -1354.6331       -98.2586         0.0000         0.0000      3311.4493           8050.6809       280.8929      4739.2316      8060.9863       284.6428
+
+ENERGY:   95600      1542.5050      2386.3005      2103.4887       122.3470          -1325.6931      -116.4068         0.0000         0.0000      3269.0358           7981.5771       277.2952      4712.5413      7982.9300       280.8441
+
+ENERGY:   95800      1584.6221      2292.4365      2127.9624       126.4652          -1326.9007       -89.0713         0.0000         0.0000      3350.6453           8066.1594       284.2177      4715.5141      8068.7024       281.9583
+
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   96000      1557.5338      2309.4276      2083.7730       134.5951          -1328.4084      -112.3886         0.0000         0.0000      3301.5833           7946.1157       280.0560      4644.5325      7947.5287       279.1709
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 96000
+ENERGY:   96200      1587.4385      2344.0529      2107.7318       124.9125          -1343.2770      -131.3007         0.0000         0.0000      3343.4626           8033.0205       283.6084      4689.5580      8032.5421       282.4210
+
+LDB: ============= START OF LOAD BALANCING ============== 355.484
+LDB: ============== END OF LOAD BALANCING =============== 355.484
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 355.484
+LDB: ============= START OF LOAD BALANCING ============== 355.81
+LDB: 378 computes have load of zero
+LDB: Largest compute 1108 load 0.089543 is 33.6% of average load 0.266701
+LDB: Average compute 0.004408 is 1.7% of average load 0.266701
+LDB: TIME 355.81 LOAD: AVG 0.266701 MAX 0.325375  PROXIES: TOTAL 77 MAXPE 9 MAXPATCH 2 None MEM: 165.212 MB
+LDB: TIME 355.81 LOAD: AVG 0.266701 MAX 0.325375  PROXIES: TOTAL 139 MAXPE 25 MAXPATCH 9 RefineTorusLB MEM: 165.212 MB
+LDB: TIME 355.81 LOAD: AVG 0.266701 MAX 0.278217  PROXIES: TOTAL 144 MAXPE 25 MAXPATCH 9 RefineTorusLB MEM: 165.212 MB
+LDB: ============== END OF LOAD BALANCING =============== 355.81
+Info: useSync: 0 useProxySync: 0
+LDB: =============== DONE WITH MIGRATION ================ 355.81
+ENERGY:   96400      1554.4179      2332.2446      2111.8225       125.0894          -1338.9988      -116.5157         0.0000         0.0000      3317.5239           7985.5838       281.4082      4668.0599      7994.9724       281.8167
+
+ENERGY:   96600      1546.0554      2373.0936      2082.6189       129.7495          -1337.4308      -136.9222         0.0000         0.0000      3266.7862           7923.9507       277.1044      4657.1645      7922.1015       279.5304
+
+ENERGY:   96800      1585.5922      2360.2180      2083.8399       124.2322          -1319.3792       -98.9634         0.0000         0.0000      3308.8758           8044.4154       280.6746      4735.5397      8045.1256       279.7286
+
+ENERGY:   97000      1559.7968      2349.0984      2084.7199       126.7319          -1340.6115      -104.9311         0.0000         0.0000      3325.0686           7999.8730       282.0482      4674.8043      7999.7747       282.8224
+
+ENERGY:   97200      1640.6094      2339.5380      2098.6903       122.7948          -1327.3575      -107.2868         0.0000         0.0000      3381.0000           8147.9881       286.7925      4766.9882      8152.4282       283.8724
+
+ENERGY:   97400      1541.3270      2335.3762      2045.4640       120.7991          -1318.0908       -88.8466         0.0000         0.0000      3260.7919           7896.8208       276.5959      4636.0288      7897.0814       281.2034
+
+ENERGY:   97600      1556.6755      2345.2490      2083.6993       120.5734          -1349.2277       -95.6791         0.0000         0.0000      3219.2868           7880.5770       273.0752      4661.2903      7887.5920       274.5842
+
+ENERGY:   97800      1532.2151      2340.8758      2108.1752       122.2779          -1318.8507      -113.7269         0.0000         0.0000      3376.1951           8047.1615       286.3849      4670.9664      8053.2505       278.4016
+
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:   98000      1547.3537      2320.3612      2110.5517       132.5770          -1334.7735       -80.7738         0.0000         0.0000      3261.2555           7956.5518       276.6352      4695.2964      7962.3266       283.5980
+
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 98000
+ENERGY:   98200      1550.0257      2364.0782      2107.4011       130.8645          -1316.1969      -135.8058         0.0000         0.0000      3317.3149           8017.6817       281.3904      4700.3668      8019.2011       279.4226
+
+ENERGY:   98400      1565.9842      2345.6482      2097.7466       126.5418          -1316.6250      -117.3888         0.0000         0.0000      3400.8890           8102.7961       288.4796      4701.9071      8108.6753       283.2051
+
+ENERGY:   98600      1559.0061      2351.9276      2092.8816       124.0605          -1308.7561      -129.6399         0.0000         0.0000      3278.3063           7967.7861       278.0815      4689.4798      7976.6640       283.8237
+
+ENERGY:   98800      1536.0471      2304.6448      2095.0386       122.5729          -1302.0250      -128.0936         0.0000         0.0000      3356.5528           7984.7376       284.7188      4628.1848      7984.5467       281.7491
+
+ENERGY:   99000      1579.1026      2333.2273      2095.8767       128.8932          -1323.3187      -118.3994         0.0000         0.0000      3224.0340           7919.4157       273.4779      4695.3817      7920.7383       279.0621
+
+ENERGY:   99200      1520.7848      2331.1089      2107.4781       119.3575          -1315.8865      -110.0226         0.0000         0.0000      3298.1500           7950.9702       279.7648      4652.8202      7955.0905       278.0534
+
+ENERGY:   99400      1579.9350      2278.6555      2079.1425       130.3759          -1290.7675      -120.3391         0.0000         0.0000      3346.5481           8003.5502       283.8701      4657.0021      8005.7031       280.8340
+
+ENERGY:   99600      1508.7270      2372.9259      2106.5192       135.4031          -1271.5216      -140.8738         0.0000         0.0000      3336.3722           8047.5519       283.0070      4711.1797      8053.5755       284.5011
+
+ENERGY:   99800      1518.3165      2302.7754      2107.2593       115.0302          -1284.5312      -102.3400         0.0000         0.0000      3316.4890           7972.9991       281.3204      4656.5101      7977.3320       281.0675
+
+TIMING: 100000  CPU: 358.811, 0.00330822/step  Wall: 367.764, 0.00331872/step, 0 hours remaining, 165.211849 MB of memory in use.
+PERFORMANCE: 100000  averaging 11.7472 ns/day, 0.00367747 sec/step with standard deviation 0.000741647
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG
+
+ENERGY:  100000      1581.7617      2321.0000      2103.8174       122.6723          -1296.2591      -138.3414         0.0000         0.0000      3315.7339           8010.3849       281.2563      4694.6510      8009.9872       280.5642
+
+WRITING EXTENDED SYSTEM TO RESTART FILE AT STEP 100000
+WRITING COORDINATES TO DCD FILE equil/04_gbis_eq_050fs.dcd AT STEP 100000
+WRITING COORDINATES TO RESTART FILE AT STEP 100000
+FINISHED WRITING RESTART COORDINATES
+WRITING VELOCITIES TO RESTART FILE AT STEP 100000
+FINISHED WRITING RESTART VELOCITIES
+WRITING EXTENDED SYSTEM TO OUTPUT FILE AT STEP 100000
+WRITING COORDINATES TO OUTPUT FILE AT STEP 100000
+CLOSING COORDINATE DCD FILE equil/04_gbis_eq_050fs.dcd
+WRITING VELOCITIES TO OUTPUT FILE AT STEP 100000
+====================================================
+
+WallClock: 367.842743  CPUTime: 358.871338  Memory: 165.211849 MB
+[Partition 0][Node 0] End of program

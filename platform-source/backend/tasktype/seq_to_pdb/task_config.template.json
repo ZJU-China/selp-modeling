@@ -1,0 +1,6 @@
+{
+  "_comment": "Transition task: generates a fully extended PDB from a 1-letter amino-acid sequence, plus the annotation CSV and a TIGER2 input template. Edited in Task Control via the task-specific annotation form (saved here through PUT /api/tasks/update config). Fields: protein (display name), sequence (1-letter, uppercase), annotations (array of {sequence,label,color}).",
+  "protein": "",
+  "sequence": "",
+  "annotations": []
+}

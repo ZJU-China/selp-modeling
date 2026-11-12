@@ -1,0 +1,22 @@
+integrator = steep
+nsteps = 10000
+emtol = 1000
+emstep = 0.001
+cutoff-scheme = Verlet
+nstlist = 1
+verlet-buffer-tolerance = -1
+rlist = 1.35
+coulombtype = reaction-field
+rcoulomb = 1.1
+epsilon_r = 15
+epsilon_rf = 0
+vdwtype = cutoff
+vdw-modifier = Potential-shift-verlet
+rvdw = 1.1
+pbc = xyz
+periodic-molecules = yes
+constraints = none
+
+lincs-order = 8
+lincs-iter = 4
+nstenergy = 1

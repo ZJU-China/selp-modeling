@@ -1,0 +1,17 @@
+.hero {
+  background: linear-gradient(135deg, #1d1d1f 0%, #2d2d30 100%);
+  color: white;
+  padding: var(--space-xxl) 0;
+  margin-bottom: var(--space-xl);
+}
+
+.hero h1 {
+  color: white;
+  margin-bottom: var(--space-md);
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: rgba(255,255,255,0.7);
+  max-width: 600px;
+}

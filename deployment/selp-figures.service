@@ -1,0 +1,15 @@
+[Unit]
+Description=SELP figure service (SVG charts from task data)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/selp/selp-figures
+Environment=SELP_CHARTS_PORT=8766
+Environment=MPLCONFIGDIR=/home/selp/selp-figures/.mplcache
+ExecStart=/home/selp/venvs/wjx/bin/python /home/selp/selp-figures/server.py
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target

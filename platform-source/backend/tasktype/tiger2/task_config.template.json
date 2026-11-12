@@ -1,0 +1,48 @@
+{
+  "_comment": "Default scaffold for a new TIGER2 task's scripts/task_config.json. Written once by the quick-create channel (backend/services/task-dir.js scaffoldTaskConfig, called from POST /api/tasks/create) and never overwritten afterwards, so hand edits here are permanent. Fields marked FILL-IN are placeholders the quick-create channel cannot know and a human must set. See backend/tasktype/tiger2/lib/task_config.py for how every field is consumed, and docs/task-creation.md for the full workflow.",
+  "remoteDir": "FILL-IN: absolute remote path where this task's NAMD run lives, e.g. /home/selp/igem-2026/MD/<name>",
+  "logPrefix": "FILL-IN: NAMD log/config file prefix, e.g. tiger2_<name>",
+  "defaults": {
+    "numReplicas": 4,
+    "stepsPerCycle": 15000,
+    "totalCycles": 1667,
+    "protein": "FILL-IN: short protein/construct description shown on the Dashboard, e.g. '2KY10 SELP (339 aa)'"
+  },
+  "process": {
+    "psPattern": "namd3.*{lp}|charmrun.*namd3",
+    "pgrepPattern": "namd3 .*{lp}",
+    "namdBin": "FILL-IN (optional): NAMD build directory containing charmrun and namd3, e.g. ~/igem-2026/MD/NAMD_3.0.2_Linux-x86_64-netlrts-smp. Leave empty to discover the installed build.",
+    "namdCores": 32,
+    "freshnessMinutes": 5
+  },
+  "monitor": {
+    "slurmJobId": null,
+    "intervalSeconds": 300,
+    "cyclesPerCheck": 25
+  },
+  "trajectory": {
+    "previewMaxFrames": 120,
+    "tailWindowCycles": 100
+  },
+  "convergence": {
+    "metrics": {
+      "energy": {
+        "block_size": 25,
+        "mean_threshold": 0.2,
+        "std_ratio_threshold": 2.0
+      },
+      "e2e": {
+        "mean_threshold": 1.5,
+        "std_ratio_threshold": 2.5,
+        "block_size": 25
+      },
+      "rg": {
+        "mean_threshold": 0.4,
+        "std_ratio_threshold": 2.5,
+        "block_size": 25
+      }
+    },
+    "requiredStableChecks": 3,
+    "recentWindow": 100
+  }
+}

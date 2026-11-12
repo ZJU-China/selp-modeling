@@ -1,0 +1,5 @@
+{
+  "_comment": "Transition task: extracts a stable conformation for a GROMACS CG simulation from the upstream TIGER2 task's output (via the flow link), then emits the CG input set. Edited in Task Control. Fields: temperatureC (input in Celsius, auto-converted to Kelvin by the generator), sourceTaskId (optional; defaults to the flow-linked predecessor).",
+  "temperatureC": 37.0,
+  "sourceTaskId": "FILL-IN: tiger2 task id (or leave empty to use the flow link)"
+}

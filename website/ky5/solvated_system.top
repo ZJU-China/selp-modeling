@@ -1,0 +1,13 @@
+#include "martini_v3.0.0.itp"
+#include "molecule_0.itp"
+#include "martini_v3.0.0_solvents_v1.itp"
+#include "martini_v3.0.0_ions_v1.itp"
+
+[ system ]
+2KY5 target 100 mg per mL initial precursor; NaCl approximation, NOT explicit PBS
+
+[ molecules ]
+molecule_0 32
+W 117410
+NA 1181
+CL 1405

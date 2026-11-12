@@ -1,0 +1,37 @@
+# Shared NAMD settings for the 2KY5-SnoopyTag TIGER2 replicas.
+structure              2KY5_snoopytag_hmr.psf
+coordinates            2KY5_snoopytag_hmr.pdb
+
+paraTypeCharmm         on
+parameters             toppar/par_all36m_prot.prm
+exclude                scaled1-4
+oneFourScaling         1.0
+switching              on
+switchdist             15.0
+cutoff                 16.0
+pairlistdist           18.0
+margin                 10.0
+timestep               4.0
+rigidBonds             all
+rigidTolerance         1.0e-8
+rigidIterations        5000
+rigidDieOnError        on
+nonbondedFreq          1
+fullElectFrequency     1
+stepspercycle          20
+wrapAll                off
+PME                    off
+langevinPiston         off
+langevin               on
+langevinDamping        1.0
+langevinHydrogen       off
+GBIS                   on
+dielectric             1.0
+solventDielectric      78.5
+ionConcentration       0.15
+alphaCutoff            15.0
+SASA                   on
+surfaceTension         0.005
+outputEnergies         500
+outputTiming           5000
+binaryOutput           yes

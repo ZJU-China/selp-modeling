@@ -1,0 +1,35 @@
+# ⚠ 目前不允许部署
+# dmit 部署已停用：前端与后端均部署在 iGEM 服务器（127.0.0.1）上，
+# 由 systemd 用户服务 md-frontend（vite :5173）与 md-server（API :3001）
+# 托管。请勿再部署到 dmit。
+[Unit]
+Description=MD backend reverse tunnel to dmit (expose 3001 on dmit's loopback)
+After=network-online.target
+Wants=network-online.target
+
+# iGEM 网络可出站访问 dmit:22，但 dmit 无法入站访问 iGEM 3001（防火墙/NAT）。
+# 本单元在 iGEM 服务器上维护一条 ssh -R 隧道，把后端的 127.0.0.1:3001
+# 暴露到 dmit 的 127.0.0.1:3001，供 dmit 上 nginx 的 /api 代理使用。
+#
+# 前置条件（一次性）：
+#   1) iGEM 服务器上的 igem 用户已配置到 dmit root 的免密登录
+#      ssh-keygen -t ed25519 -N ""   （若无钥匙）
+#      ssh-copy-id root@192.0.2.30
+#   2) 首次执行后确认 dmit: curl -s http://127.0.0.1:3001/api/tasks
+
+[Service]
+User=selp
+ExecStart=/usr/bin/ssh -N \
+  -R 127.0.0.1:3001:127.0.0.1:3001 \
+  -o ExitOnForwardFailure=yes \
+  -o ServerAliveInterval=15 \
+  -o ServerAliveCountMax=3 \
+  -o StrictHostKeyChecking=accept-new \
+  -o UserKnownHostsFile=/home/selp/.ssh/known_hosts \
+  root@192.0.2.30
+Restart=always
+RestartSec=10
+StartLimitIntervalSec=0
+
+[Install]
+WantedBy=multi-user.target

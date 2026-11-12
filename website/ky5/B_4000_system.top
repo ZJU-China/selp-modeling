@@ -1,0 +1,65 @@
+#include "/home/selp/CG_2KY5_batch_crosslinks_20261006/2KY5_clean_precursor/solvated/martini_v3.0.0.itp"
+#include "/home/selp/CG_2KY5_batch_crosslinks_20261006/2KY5_clean_precursor/solvated/molecule_0.itp"
+#include "/home/selp/CG_2KY5_batch_crosslinks_20261006/2KY5_clean_precursor/solvated/martini_v3.0.0_solvents_v1.itp"
+#include "/home/selp/CG_2KY5_batch_crosslinks_20261006/2KY5_clean_precursor/solvated/martini_v3.0.0_ions_v1.itp"
+
+[ system ]
+2KY5 target 100 mg per mL initial precursor; NaCl approximation, NOT explicit PBS
+
+[ molecules ]
+molecule_0 32
+W 114894
+NA 1156
+CL 1380
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[ intermolecular_interactions ]
+[ bonds ]
+10605 16395 6 0.35 4000
+3495 12048 6 0.35 4000
+7321 14658 6 0.35 4000
+4640 9732 6 0.35 4000
+5679 8289 6 0.35 4000
+12133 14483 6 0.35 4000
+11009 17458 6 0.35 4000
+11601 15641 6 0.35 4000
+3482 14496 6 0.35 4000
+4061 13405 6 0.35 4000
+4521 9153 6 0.35 4000
+8659 15237 6 0.35 4000
+5394 16101 6 0.35 4000
+6343 13904 6 0.35 4000
+6742 15522 6 0.35 4000
+2983 7416 6 0.35 4000
+6956 17936 6 0.35 4000
+600 6552 6 0.35 4000
+11953 14079 6 0.35 4000
+5005 10311 6 0.35 4000
+8868 17391 6 0.35 4000
+6457 12167 6 0.35 4000
+6969 8706 6 0.35 4000
+3562 14364 6 0.35 4000
+7710 8194 6 0.35 4000
+4236 10510 6 0.35 4000
+5100 16799 6 0.35 4000
+5185 10890 6 0.35 4000
+2784 17957 6 0.35 4000
+1166 11554 6 0.35 4000
+1745 13785 6 0.35 4000
+10396 18322 6 0.35 4000
+553 11763 6 0.35 4000
+13304 17164 6 0.35 4000

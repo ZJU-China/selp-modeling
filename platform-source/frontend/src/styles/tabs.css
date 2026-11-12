@@ -1,0 +1,31 @@
+.tabs {
+  display: flex;
+  gap: 2px;
+  background: var(--canvas-parchment);
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.tab {
+  flex: 1;
+  padding: var(--space-sm) var(--space-md);
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--body-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab:hover {
+  color: var(--body);
+}
+
+.tab.active {
+  background: var(--canvas);
+  color: var(--body);
+  box-shadow: var(--shadow-sm);
+}
